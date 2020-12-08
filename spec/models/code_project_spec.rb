@@ -10,7 +10,7 @@ describe 'Validations' do
 
   it 'is valid with valid attributes' do
     code_project = CodeProject.new(
-      title: 'Title',
+      title: 'Title1',
       description: 'DESCRIPTION',
       github_url: 'github.com/project',
       technology: 'Ruby, Rails, PostgresQL')
@@ -29,7 +29,7 @@ describe 'Validations' do
 
   it 'is not valid without description' do
     code_project = CodeProject.new(
-      title: 'Title',
+      title: 'Title1',
       github_url: 'github.com/project',
       technology: 'Ruby, Rails, PostgresQL')
       
@@ -38,7 +38,7 @@ describe 'Validations' do
 
   it 'is not valid without github_url' do
     code_project = CodeProject.new(
-      title: 'Title',
+      title: 'Title1',
       description: 'DESCRIPTION',
       technology: 'Ruby, Rails, PostgresQL')
       
@@ -47,7 +47,7 @@ describe 'Validations' do
 
   it 'is not valid without technology' do
     code_project = CodeProject.new(
-      title: 'Title',
+      title: 'Title1',
       description: 'DESCRIPTION',
       github_url: 'github.com/project')
       

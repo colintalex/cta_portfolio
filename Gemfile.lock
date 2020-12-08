@@ -77,6 +77,8 @@ GEM
     diff-lcs (1.4.4)
     docile (1.3.2)
     erubi (1.10.0)
+    fast_jsonapi (1.5)
+      activesupport (>= 4.2)
     ffi (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -221,6 +223,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara
+  fast_jsonapi
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
