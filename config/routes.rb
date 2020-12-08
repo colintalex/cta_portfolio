@@ -1,19 +1,10 @@
 Rails.application.routes.draw do
-  get 'code_projects/index'
-  get 'code_projects/show'
-  get 'code_projects/create'
-  get 'code_projects/update'
-  get 'code_projects/destroy'
-  get 'admin/show'
-  get 'admin/edit'
-  get 'admin/update'
-  root 'homepage#index'
-
+  
   namespace :api do
     namespace :v1 do
       resources :admin, only: [:show, :edit, :update]
-      resources :code_project
-      resources :graphic_project
+      resources :code_projects
+      resources :graphic_projects
     end
   end
 
