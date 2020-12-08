@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'code_projects/index'
+  get 'code_projects/show'
+  get 'code_projects/create'
+  get 'code_projects/update'
+  get 'code_projects/destroy'
   get 'admin/show'
   get 'admin/edit'
   get 'admin/update'
