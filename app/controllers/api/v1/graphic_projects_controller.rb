@@ -1,4 +1,5 @@
 class Api::V1::GraphicProjectsController < ApplicationController
+  skip_before_action :verify_authenticity_token #Remove after 3rd party request testing (Postman)
 
   def index
     graphic_projects = GraphicProject.all
@@ -18,7 +19,6 @@ class Api::V1::GraphicProjectsController < ApplicationController
 
   def create
     project = GraphicProject.new(project_params)
-
     if project.save
       render json: GraphicProjectSerializer.new(project)
     else
@@ -49,6 +49,6 @@ class Api::V1::GraphicProjectsController < ApplicationController
   private
 
   def project_params
-    params.permit(:title, :description, :image_path)
+    params.require(:data).permit(:title, :description, :image_path)
   end
 end
