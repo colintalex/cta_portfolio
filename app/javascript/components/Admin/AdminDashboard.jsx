@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import AdminLogin from './AdminLogin'
+import MainDashboard from './Dashboard/MainDashboard'
 
 const AdminDashboard = () => {
-    const [ isAuthenticated, setIsAuthenticated ] = useState(false)
-    const [ currentAdmin, setCurrentAdmin ] = useState({})
+    const [ isAuthenticated, setIsAuthenticated ] = useState(JSON.parse(sessionStorage.getItem('authenticated')) || false )
+    const [ currentAdmin, setCurrentAdmin ] = useState(JSON.parse(sessionStorage.getItem('currentAdmin')) || {})
 
     if(isAuthenticated) {
         return (
-            <div>
-                Admin Dashbord | 
-                Welcome, {currentAdmin.name}!
-            </div>
+            <MainDashboard
+                currentAdmin={currentAdmin}
+            />
         )
     }else{
         return (

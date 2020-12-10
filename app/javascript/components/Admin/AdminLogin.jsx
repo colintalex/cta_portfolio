@@ -11,8 +11,10 @@ const AdminLogin = ({ setIsAuthenticated, setCurrentAdmin }) => {
             password: data.password
         })
         .then(data => {
-            setCurrentAdmin(data.data.admin)
+            setCurrentAdmin(data.data.admin.data)
             setIsAuthenticated(true)
+            sessionStorage.setItem('currentAdmin', JSON.stringify(data.data.admin.data));
+            sessionStorage.setItem('authenticated', true);
         })
         .catch(error => console.log(error))
     }
