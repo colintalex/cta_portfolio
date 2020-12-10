@@ -1,4 +1,6 @@
 class Api::V1::CodeProjectsController < ApplicationController
+  skip_before_action :verify_authenticity_token #Remove after 3rd party request testing (Postman)
+
   def index
     code_projects = CodeProject.all
 
