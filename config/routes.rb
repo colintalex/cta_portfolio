@@ -6,6 +6,11 @@ Rails.application.routes.draw do
       resources :admin, only: [:show, :edit, :update]
       resources :code_projects
       resources :graphic_projects
+
+      namespace :admin do
+        post '/login', to: 'auth#login'
+        post '/auto-login', to: 'auth#auto_login'
+      end
     end
   end
 
