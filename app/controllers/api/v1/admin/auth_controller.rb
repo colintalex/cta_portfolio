@@ -7,7 +7,7 @@ class Api::V1::Admin::AuthController < ApplicationController
             payload = {admin_id: admin.id}
             admin.token = JWT.encode(payload, 'secret') # Hide secret in ENV
             admin.save
-            render json: {admin: admin, token: admin.token, success: "Welcome back #{admin.name}!"}
+            render json: {admin: AdminSerializer.new(admin), success: "Welcome back #{admin.name}!"}
         else
             render json: {errors: 'Credentails failed!'}
         end
