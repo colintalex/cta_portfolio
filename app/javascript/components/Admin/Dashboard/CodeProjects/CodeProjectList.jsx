@@ -5,7 +5,7 @@ const CodeProjectList = ({ codeProjects }) => {
     const listCodeProjects = codeProjects.map(item => {
         var proj = item.attributes
         return (
-            <div>
+            <div key={item.id} >
                 Title: {proj.title},
                 Desc: {proj.description},
                 GitHub: {proj.github_url},
