@@ -3,8 +3,9 @@ import axios from 'axios'
 import GraphicProjectCreate from './GraphicProjectCreate'
 import GraphicProjectList from './GraphicProjectList'
 
-const ContainerGraphicProjects = () => {
+const ContainerGraphicProjects = ({ currentAdmin }) => {
     const [ graphicProjects, setGraphicProjects ] = useState([])
+    const [ updated, setUpdated ] = useState(false)
 
     useEffect(() => {
         axios.get('/api/v1/graphic_projects')
@@ -12,14 +13,18 @@ const ContainerGraphicProjects = () => {
             setGraphicProjects(data.data.data)
         })
         .catch(error => console.log(error))
-    },[])
+    },[updated])
 
     return (
         <div>
             <GraphicProjectList
                 graphicProjects={graphicProjects}
+                setUpdated={setUpdated}
             />
-            <GraphicProjectCreate/>
+            <GraphicProjectCreate
+                currentAdmin={currentAdmin}
+                setUpdated={setUpdated}
+            />
         </div>
     )
 }
