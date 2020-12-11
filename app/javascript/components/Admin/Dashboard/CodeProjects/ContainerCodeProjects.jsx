@@ -5,6 +5,7 @@ import CodeProjectList from './CodeProjectList'
 
 const ContainerCodeProjects = () => {
     const [ codeProjects, setCodeProjects ] = useState([])
+    const [ updated, setUpdated ] = useState(false)
 
     useEffect(() => {
         axios.get('/api/v1/code_projects')
@@ -12,14 +13,17 @@ const ContainerCodeProjects = () => {
             setCodeProjects(data.data.data)
         })
         .catch(error => console.log(error))
-    },[])
+    },[updated])
 
     return (
         <div>
             <CodeProjectList
                 codeProjects={codeProjects}
+                setUpdated={setUpdated}
             />
-            <CodeProjectCreate/>
+            <CodeProjectCreate
+                setUpdated={setUpdated}
+            />
         </div>
     )
 }
