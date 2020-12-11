@@ -1,11 +1,21 @@
 import React from 'react'
+import axios from 'axios'
 import { useForm } from 'react-hook-form'
 
-const CodeProjectCreate = () => {
+const CodeProjectCreate = ({ setUpdated }) => {
     const { register, handleSubmit, watch, errors } = useForm();
 
-    const _handleProjectCreate = (data) => {
-        debugger
+    const _handleProjectCreate = (data, e) => {
+        axios.post('/api/v1/code_projects', {
+            data,
+            // headers: {'Authorization': 'bearer ' + currentAdmin.attributes.token}
+        })
+        .then(resp => {
+            setUpdated(true)
+            setUpdated(false)
+            e.target.reset()
+        })
+        .catch(error => console.log(error))
     }
 
     return (

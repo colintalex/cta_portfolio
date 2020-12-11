@@ -10,6 +10,16 @@ RSpec.describe "CodeProjects", type: :request do
     technology: 'List'
   )}
 
+  before(:each) {
+    CodeProject.create(
+      title: 'Title4',
+      description: 'Content',
+      github_url: 'url',
+      deploy_url: 'url',
+      technology: 'List'
+    )
+  }
+
   describe "GET All CodeProjects" do
     it "returns http success" do
       get "/api/v1/code_projects"
