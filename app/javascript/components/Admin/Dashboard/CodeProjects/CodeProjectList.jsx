@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
+import CodeEditForm from './CodeEditForm'
 
 const CodeProjectList = ({ codeProjects, setUpdated }) => {
+    const [ editMode, setEditMode ] = useState(false)
+    const [ currentCodeProject, setCurrentCodeProject ] = useState({})
 
     const _handleProjectDelete = (data) => {
         axios.delete(`/api/v1/code_projects/${parseInt(data)}`)
         .then(data => {
             setUpdated(true)
             setUpdated(false)
+        })
+        .catch(error => console.log(error))
+    }
+
+    const _handleProjectUpdate = (data) => {
+        axios.put(`/api/v1/code_projects/${parseInt(data.id)}`, { data })
+        .then(resp => {
+            setUpdated(true)
+            setUpdated(false)
+            setEditMode(false)
         })
         .catch(error => console.log(error))
     }
@@ -22,6 +35,11 @@ const CodeProjectList = ({ codeProjects, setUpdated }) => {
                 Deployment: {proj.deploy_url},
                 Image: {proj.image_path},
                 Technology: {proj.technology}
+                <button type='submit' onClick={e => {
+                    setEditMode(true)
+                    setCurrentCodeProject(item)
+                    }}
+                >Edit</button>
                 <button type='submit' onClick={e => _handleProjectDelete(item.id)}>Delete</button>
             </div>
         )
@@ -31,6 +49,13 @@ const CodeProjectList = ({ codeProjects, setUpdated }) => {
         <div>
             List of code projects
             {listCodeProjects}
+            { editMode &&
+                <CodeEditForm
+                currentCodeProject={currentCodeProject}
+                setEditMode={setEditMode}
+                _handleProjectUpdate={_handleProjectUpdate}
+                />
+            }
         </div>
     )
 }
