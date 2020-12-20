@@ -3,4 +3,5 @@ class CodeProject < ApplicationRecord
     validates :description, presence: true
     validates :github_url, presence: true
     validates :technology, presence: true
+    has_many_attached :images
 end
