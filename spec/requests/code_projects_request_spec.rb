@@ -59,7 +59,7 @@ RSpec.describe "CodeProjects", type: :request do
       deploy_url: 'url',
       technology: 'List'
     }
-      post "/api/v1/code_projects/", :params => data
+      post "/api/v1/code_projects/", :params => {data: data}
 
       expect(response).to have_http_status(:success)
       resp = JSON.parse(response.body,:symbolize_names => true)
@@ -87,7 +87,7 @@ RSpec.describe "CodeProjects", type: :request do
       deploy_url: 'url',
       technology: 'List'
     }
-      put "/api/v1/code_projects/#{project.id}", :params => data
+      put "/api/v1/code_projects/#{project.id}", :params => {data: data}
 
       expect(response).to have_http_status(:success)
       resp = JSON.parse(response.body,:symbolize_names => true)
