@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :code_projects
       resources :graphic_projects
 
-      namespace :admin do
+      namespace :auth do
         post '/login', to: 'auth#login'
         post '/auto-login', to: 'auth#auto_login'
       end
