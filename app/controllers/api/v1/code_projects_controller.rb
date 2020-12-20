@@ -50,6 +50,6 @@ class Api::V1::CodeProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:data).permit(:title, :description, :github_url, :deploy_url, :technology)
+    params.require(:data).permit(:title, :description, :github_url, :deploy_url, :technology, images: [])
   end
 end

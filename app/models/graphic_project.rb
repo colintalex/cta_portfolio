@@ -3,5 +3,4 @@ class GraphicProject < ApplicationRecord
     validates :description, presence: true
     validates :image_path, presence: true
     has_many_attached :images
-
 end
