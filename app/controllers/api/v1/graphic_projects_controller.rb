@@ -21,7 +21,6 @@ class Api::V1::GraphicProjectsController < ApplicationController
     image_params[:images].each do |img|
       img.class == ActionDispatch::Http::UploadedFile ? project.images.attach(img) : next
     end
-
     if project.save!
       render json: {project: GraphicProjectSerializer.new(project)}
     else
