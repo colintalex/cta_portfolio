@@ -9,8 +9,8 @@ RSpec.describe "Admin endpoints", type: :request do
 
     describe "logs in admin with good credentials" do
         it "returns a successful response" do
-        get "/api/v1/login", params: => {email: admin.email, password: admin.password}
-        
+        post "/api/v1/auth/login", :params => {email: admin.email, password: admin.password}
+
         expect(response).to have_http_status(:success)
         resp = JSON.parse(response.body,:symbolize_names => true)
 

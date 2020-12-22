@@ -19,7 +19,9 @@ class Api::V1::CodeProjectsController < ApplicationController
 
   def create
     project = CodeProject.new(project_params)
-
+    image_params[:images].each do |img|
+      img.class == ActionDispatch::Http::UploadedFile ? project.images.attach(img) : next
+    end
     if project.save
       render json: CodeProjectSerializer.new(project)
     else
@@ -50,6 +52,10 @@ class Api::V1::CodeProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:data).permit(:title, :description, :github_url, :deploy_url, :technology)
+    params.permit(:title, :description, :github_url, :deploy_url, :technology)
+  end
+
+  def image_params
+    params.permit( images: [] )
   end
 end

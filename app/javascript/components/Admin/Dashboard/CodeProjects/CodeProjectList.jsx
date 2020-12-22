@@ -33,7 +33,9 @@ const CodeProjectList = ({ codeProjects, setUpdated }) => {
                 Desc: {proj.description},
                 GitHub: {proj.github_url},
                 Deployment: {proj.deploy_url},
-                Image: {proj.image_path},
+                Image: {
+                    proj.images && proj.images.map(img => <img src={img} height='200' width='200'/>)
+                },
                 Technology: {proj.technology}
                 <button type='submit' onClick={e => {
                     setEditMode(true)

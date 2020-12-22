@@ -6,10 +6,23 @@ const CodeProjectCreate = ({ setUpdated }) => {
     const { register, handleSubmit, watch, errors } = useForm();
 
     const _handleProjectCreate = (data, e) => {
-        axios.post('/api/v1/code_projects', {
-            data,
-            // headers: {'Authorization': 'bearer ' + currentAdmin.attributes.token}
-        })
+        const imageData = new FormData();
+        for( var name in data){
+                if (name !== 'images'){
+                    imageData.append(name, data[name])
+                }
+        }
+        for(var img in data['images']){
+                imageData.append('images[]', data['images'][img])
+
+        }
+
+        const config = {
+            headers: {
+                'content-type': `multipart/form-data; boundary=${imageData._boundary}`
+            }
+        }
+        axios.post('/api/v1/code_projects', imageData, config)
         .then(resp => {
             setUpdated(true)
             setUpdated(false)
@@ -26,7 +39,7 @@ const CodeProjectCreate = ({ setUpdated }) => {
                 <input type='text' name='description' placeholder='Description' ref={register} />
                 <input type='text' name='github_url' placeholder='GitHub URL' ref={register} />
                 <input type='text' name='deploy_url' placeholder='Deployment URL' ref={register} />
-                <input type='text' name='image_path' placeholder='Image Path' ref={register} />
+                <input type='file' multiple name='images' placeholder='Images' ref={register} />
                 <input type='text' name='technology' placeholder='Technology' ref={register} />
                 <input type='submit' />
             </form>

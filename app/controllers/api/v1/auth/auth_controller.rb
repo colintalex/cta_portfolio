@@ -1,4 +1,4 @@
-class Api::V1::Admin::AuthController < ApplicationController
+class Api::V1::Auth::AuthController < ApplicationController
     skip_before_action :verify_authenticity_token #Remove after 3rd party request testing (Postman)
     
     def login
@@ -7,7 +7,7 @@ class Api::V1::Admin::AuthController < ApplicationController
             payload = {admin_id: admin.id}
             admin.token = JWT.encode(payload, 'secret') # Hide secret in ENV
             admin.save
-            render json: {admin: AdminSerializer.new(admin), success: "Welcome back #{admin.name}!"}
+            render json: AdminSerializer.new(admin)
         else
             render json: {errors: 'Credentails failed!'}
         end
@@ -24,6 +24,6 @@ class Api::V1::Admin::AuthController < ApplicationController
     private
 
     def admin_params
-        params.permit(:email, :password)
+        params.require(:auth).permit(:email, :password)
     end
 end

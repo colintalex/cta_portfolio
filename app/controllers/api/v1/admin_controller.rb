@@ -1,4 +1,4 @@
-class Api::V1::Admin::AdminController < ApplicationController
+class Api::V1::AdminController < ApplicationController
   def show
     admin = Admin.find(params[:id].to_i)
 

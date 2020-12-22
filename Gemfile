@@ -14,6 +14,8 @@ gem 'fast_jsonapi'
 gem 'jwt'
 gem 'bcrypt'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'image_processing', '~> 1.2'
+gem 'rmagick'
 
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.1'

@@ -3,7 +3,6 @@ class Api::V1::GraphicProjectsController < ApplicationController
 
   def index
     graphic_projects = GraphicProject.all
-
     render json: GraphicProjectSerializer.new(graphic_projects)
   end
 
@@ -19,17 +18,20 @@ class Api::V1::GraphicProjectsController < ApplicationController
 
   def create
     project = GraphicProject.new(project_params)
-    if project.save
-      render json: GraphicProjectSerializer.new(project)
+    image_params[:images].each do |img|
+      img.class == ActionDispatch::Http::UploadedFile ? project.images.attach(img) : next
+    end
+    if project.save!
+      render json: {project: GraphicProjectSerializer.new(project)}
     else
-      # render errors here
+      render json: 'ERROR'
     end
   end
 
   def update
     graphic_project = GraphicProject.find(params[:id].to_i)
-    graphic_project.update(project_params)
-    if graphic_project.save
+    graphic_project.update!(project_params)
+    if graphic_project.save!
       render json: GraphicProjectSerializer.new(graphic_project)
     else
       # errors here
@@ -49,6 +51,10 @@ class Api::V1::GraphicProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:data).permit(:title, :description, :image_path)
+    params.permit(:title, :description)
+  end
+
+  def image_params
+    params.permit( images: [] )
   end
 end
