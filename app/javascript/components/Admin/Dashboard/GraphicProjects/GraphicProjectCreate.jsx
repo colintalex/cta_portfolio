@@ -9,12 +9,15 @@ const GraphicProjectCreate = ({ currentAdmin, setUpdated }) => {
     const _handleProjectCreate = (data) => {
         const imageData = new FormData();
         for( var name in data){
-            if(name === 'images'){
-                imageData.append('images', data['images'][0])
-            }else {
-                imageData.append(name, data[name])
-            }
+                if (name !== 'images'){
+                    imageData.append(name, data[name])
+                }
         }
+        for(var img in data['images']){
+                imageData.append('images[]', data['images'][img])
+
+        }
+
 
         const config = {
             headers: {
@@ -37,7 +40,7 @@ const GraphicProjectCreate = ({ currentAdmin, setUpdated }) => {
             <form onSubmit={handleSubmit(_handleProjectCreate)} encType='multipart/form-data'>
                 <input type='text' name='title' placeholder='Title' ref={register} />
                 <input type='text' name='description' placeholder='Description' ref={register} />
-                <input type='file' name='images' placeholder='Images' ref={register} />
+                <input type='file' multiple name='images' placeholder='Images' ref={register} />
                 <button type='submit'>Submit</button>
             </form>
         </div>
