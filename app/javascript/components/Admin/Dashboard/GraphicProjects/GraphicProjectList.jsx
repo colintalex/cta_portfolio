@@ -28,15 +28,16 @@ const GraphicProjectList = ({ graphicProjects, setUpdated }) => {
     }
 
 
-
     const listGraphicProjects = graphicProjects && graphicProjects.map(item => {
             var proj = item.attributes
+            
             return (
                 <div key={item.id} >
                     Title: {proj.title},
                     Desc: {proj.description},
-                    Images:  <img src={`http://localhost:3000${proj.images[0]}`} height='200' width='200'/>
-                        )
+                    Images: {
+                        proj.images && proj.images.map(img => <img src={img} height='200' width='200'/>)
+                    }
                     <button type='submit' onClick={e => {
                         setEditMode(true)
                         setCurrentGraphicProject(item)
