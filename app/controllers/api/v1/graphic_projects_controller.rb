@@ -18,11 +18,14 @@ class Api::V1::GraphicProjectsController < ApplicationController
 
   def create
     project = GraphicProject.new(project_params)
+    image_params[:images].each do |img|
+      img.class == ActionDispatch::Http::UploadedFile ? project.images.attach(img) : next
+    end
+
     if project.save!
-      project.images.attach(project_params[:images])
-      render json: {project: GraphicProjectSerializer.new(project), images: rails_blob_path(project.images[0])}
+      render json: {project: GraphicProjectSerializer.new(project)}
     else
-      # render errors here
+      render json: 'ERROR'
     end
   end
 
@@ -49,6 +52,10 @@ class Api::V1::GraphicProjectsController < ApplicationController
   private
 
   def project_params
-    params.permit(:title, :description, :images)
+    params.permit(:title, :description)
+  end
+
+  def image_params
+    params.permit( images: [] )
   end
 end
