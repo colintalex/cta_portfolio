@@ -8,20 +8,24 @@ const GraphicProjectCreate = ({ currentAdmin, setUpdated }) => {
 
     const _handleProjectCreate = (data) => {
         const imageData = new FormData();
-        imageData.append('images', data.images[0])
-        const json = JSON.stringify(data)
-        const blob = new Blob([json], {
-            type: 'application/json'
-        });
-        const config = {
-            headers: { 'content-type': 'multipart/form-data' }
+        for( var name in data){
+            if(name === 'images'){
+                imageData.append('images', data['images'][0])
+            }else {
+                imageData.append(name, data[name])
+            }
         }
-        imageData.append('data', blob)
-        axios.post('/api/v1/graphic_projects', data => {body => imageData, params => data}, config)
+
+        const config = {
+            headers: {
+                'content-type': `multipart/form-data; boundary=${imageData._boundary}`
+            }
+        }
+        axios.post('/api/v1/graphic_projects', imageData, config)
         .then(resp => {
             setUpdated(true)
             setUpdated(false)
-            e.target.reset()
+            data.target.reset()
         })
         .catch(error => console.log(error))
     }
@@ -33,7 +37,6 @@ const GraphicProjectCreate = ({ currentAdmin, setUpdated }) => {
             <form onSubmit={handleSubmit(_handleProjectCreate)} encType='multipart/form-data'>
                 <input type='text' name='title' placeholder='Title' ref={register} />
                 <input type='text' name='description' placeholder='Description' ref={register} />
-                <input type='text' name='image_path' placeholder='Image Path' ref={register} />
                 <input type='file' name='images' placeholder='Images' ref={register} />
                 <button type='submit'>Submit</button>
             </form>

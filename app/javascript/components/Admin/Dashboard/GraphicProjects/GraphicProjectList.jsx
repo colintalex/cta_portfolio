@@ -27,22 +27,25 @@ const GraphicProjectList = ({ graphicProjects, setUpdated }) => {
         .catch(error => console.log(error))
     }
 
-    const listGraphicProjects = graphicProjects.map(item => {
-        var proj = item.attributes
-        return (
-            <div key={item.id} >
-                Title: {proj.title},
-                Desc: {proj.description},
-                Image: {proj.image_path}
-                <button type='submit' onClick={e => {
-                    setEditMode(true)
-                    setCurrentGraphicProject(item)
-                    }}
-                >Edit</button>
-                <button type='submit' onClick={e => _handleProjectDelete(item.id)}>Delete</button>
-            </div>
-        )
-    })  
+
+
+    const listGraphicProjects = graphicProjects && graphicProjects.map(item => {
+            var proj = item.attributes
+            return (
+                <div key={item.id} >
+                    Title: {proj.title},
+                    Desc: {proj.description},
+                    Images:  <img src={`http://localhost:3000${proj.images[0]}`} height='200' width='200'/>
+                        )
+                    <button type='submit' onClick={e => {
+                        setEditMode(true)
+                        setCurrentGraphicProject(item)
+                        }}
+                    >Edit</button>
+                    <button type='submit' onClick={e => _handleProjectDelete(item.id)}>Delete</button>
+                </div>
+            )
+        })  
 
     return (
         <div>

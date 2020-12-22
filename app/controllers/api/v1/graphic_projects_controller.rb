@@ -3,7 +3,6 @@ class Api::V1::GraphicProjectsController < ApplicationController
 
   def index
     graphic_projects = GraphicProject.all
-
     render json: GraphicProjectSerializer.new(graphic_projects)
   end
 
@@ -20,7 +19,8 @@ class Api::V1::GraphicProjectsController < ApplicationController
   def create
     project = GraphicProject.new(project_params)
     if project.save!
-      render json: GraphicProjectSerializer.new(project)
+      project.images.attach(project_params[:images])
+      render json: {project: GraphicProjectSerializer.new(project), images: rails_blob_path(project.images[0])}
     else
       # render errors here
     end
@@ -49,7 +49,6 @@ class Api::V1::GraphicProjectsController < ApplicationController
   private
 
   def project_params
-    require 'pry'; binding.pry
-    params.require(:data).permit(:title, :description, :image_path, images: [])
+    params.permit(:title, :description, :images)
   end
 end

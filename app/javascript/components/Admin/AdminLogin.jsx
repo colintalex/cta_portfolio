@@ -6,14 +6,15 @@ const AdminLogin = ({ setIsAuthenticated, setCurrentAdmin }) => {
     const { register, handleSubmit, watch, errors } = useForm();
 
     const _handleAdminLogin = (data) => {
-        axios.post('/api/v1/admin/login', {
+        axios.post('/api/v1/auth/login', {
             email: data.email,
             password: data.password
         })
         .then(data => {
-            setCurrentAdmin(data.data.admin.data)
+            debugger
+            setCurrentAdmin(data.data.data)
             setIsAuthenticated(true)
-            sessionStorage.setItem('currentAdmin', JSON.stringify(data.data.admin.data));
+            sessionStorage.setItem('currentAdmin', JSON.stringify(data.data.data));
             sessionStorage.setItem('authenticated', true);
         })
         .catch(error => console.log(error))

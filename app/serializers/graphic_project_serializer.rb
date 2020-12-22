@@ -1,4 +1,9 @@
 class GraphicProjectSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :title, :description, :image_path
+  attributes :title, :description
+  
+  attribute :images do |obj|
+      obj.get_image_url
+  end
+
 end

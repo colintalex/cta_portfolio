@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'homepage#index'
+  mount ActiveStorage::Engine, at: '/'
 
   namespace :api do
     namespace :v1 do
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
       end
     end
   end
-
-  get '*path', to: 'homepage#index', via: :all  # Allows for React routing setup in index, w/o it triggers a no path warning. 
+  get '*path', to: 'homepage#index', via: :all, constraints: lambda { |req|
+    req.path.exclude? 'rails/active_storage'
+  }
+  # Allows for React routing setup in index, w/o it triggers a no path warning. 
 end

@@ -18,6 +18,7 @@ const GraphicProjectModule = () => {
             <div>
                 Title: {item.attributes.title},
                 Desc: {item.attributes.description}
+                <img src={item.attributes.images[0]} width='200' height='200'/>
             </div>
         )
     })
