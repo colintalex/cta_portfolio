@@ -30,6 +30,13 @@ class Api::V1::GraphicProjectsController < ApplicationController
 
   def update
     graphic_project = GraphicProject.find(params[:id].to_i)
+    if image_params[:images] then
+      integer_ids = image_params[:images].map(&:to_i)
+      to_be_destroyed = graphic_project.images.find(integer_ids)
+      to_be_destroyed.each(&:purge)
+    else
+      graphic_project.images[0].purge
+    end
     graphic_project.update!(project_params)
     if graphic_project.save!
       render json: GraphicProjectSerializer.new(graphic_project)

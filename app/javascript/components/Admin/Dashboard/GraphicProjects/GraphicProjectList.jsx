@@ -19,7 +19,7 @@ const GraphicProjectList = ({ graphicProjects, setUpdated }) => {
     }
 
     const _handleProjectUpdate = (data) => {
-        axios.put(`/api/v1/graphic_projects/${parseInt(data.id)}`, { data })
+        axios.put(`/api/v1/graphic_projects/${parseInt(data.id)}`, data)
         .then(resp => {
             setUpdated(true)
             setUpdated(false)
@@ -36,7 +36,7 @@ const GraphicProjectList = ({ graphicProjects, setUpdated }) => {
                     Title: {proj.title},
                     Desc: {proj.description} <br/>
                     Images: {
-                        proj.images && proj.images.map(img => <img src={img} height='150' width='150'/>) // Add keys!!
+                        proj.images && proj.images.map(img => <img src={img.url} key={img.id} height='150' width='150'/>) // Add keys!!
                     } <br/>
                     <button type='submit' onClick={e => {
                         setEditMode(true)

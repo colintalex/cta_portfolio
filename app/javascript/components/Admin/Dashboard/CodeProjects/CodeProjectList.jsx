@@ -16,7 +16,7 @@ const CodeProjectList = ({ codeProjects, setUpdated }) => {
     }
 
     const _handleProjectUpdate = (data) => {
-        axios.put(`/api/v1/code_projects/${parseInt(data.id)}`, { data })
+        axios.put(`/api/v1/code_projects/${parseInt(data.id)}`, data)
         .then(resp => {
             setUpdated(true)
             setUpdated(false)
@@ -35,7 +35,7 @@ const CodeProjectList = ({ codeProjects, setUpdated }) => {
                 Deployment: {proj.deploy_url},
                 Technology: {proj.technology} <br/>
                 Image: {
-                    proj.images && proj.images.map(img => <img src={img} height='150' width='150'/>)
+                    proj.images && proj.images.map(img => <img src={img.url} key={img.id} height='150' width='150'/>)
                 } <br/>
                 <button type='submit' onClick={e => {
                     setEditMode(true)
