@@ -31,6 +31,13 @@ class Api::V1::CodeProjectsController < ApplicationController
 
   def update
     code_project = CodeProject.find(params[:id].to_i)
+    if image_params[:images] then
+      integer_ids = image_params[:images].map(&:to_i)
+      to_be_destroyed = code_project.images.find(integer_ids)
+      to_be_destroyed.each(&:purge)
+    elsif params[:images].present? then
+      code_project.images[0].purge ## FIXX WILL DELETE FINAL IMG IF NOT CHECKED IN A SUBMIT
+    end
     code_project.update(project_params)
     if code_project.save
       render json: CodeProjectSerializer.new(code_project)

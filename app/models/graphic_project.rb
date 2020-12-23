@@ -6,7 +6,7 @@ class GraphicProject < ApplicationRecord
 
     def get_image_urls
         urls = self.images.map do |img|
-            rails_blob_path(img)
+            {url: rails_blob_path(img), id: img.id}
         end
         urls
     end

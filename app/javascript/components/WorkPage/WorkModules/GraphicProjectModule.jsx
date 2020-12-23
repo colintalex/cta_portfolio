@@ -19,7 +19,7 @@ const GraphicProjectModule = ({ activeTab }) => {
             <div>
                 Title: {proj.title},
                 Desc: {proj.description} <br/>
-                Images: {proj.images && proj.images.map(img => <img src={img} height='150' width='150'/>)}
+                Images: {proj.images && proj.images.map(img => <img src={img.url} height='150' width='150'/>)}
             </div>
         )
     })
