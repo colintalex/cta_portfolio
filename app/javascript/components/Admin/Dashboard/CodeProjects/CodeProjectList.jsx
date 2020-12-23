@@ -33,10 +33,10 @@ const CodeProjectList = ({ codeProjects, setUpdated }) => {
                 Desc: {proj.description},
                 GitHub: {proj.github_url},
                 Deployment: {proj.deploy_url},
+                Technology: {proj.technology} <br/>
                 Image: {
-                    proj.images && proj.images.map(img => <img src={img} height='200' width='200'/>)
-                },
-                Technology: {proj.technology}
+                    proj.images && proj.images.map(img => <img src={img} height='150' width='150'/>)
+                } <br/>
                 <button type='submit' onClick={e => {
                     setEditMode(true)
                     setCurrentCodeProject(item)
@@ -49,7 +49,6 @@ const CodeProjectList = ({ codeProjects, setUpdated }) => {
 
     return (
         <div>
-            List of code projects
             {listCodeProjects}
             { editMode &&
                 <CodeEditForm
