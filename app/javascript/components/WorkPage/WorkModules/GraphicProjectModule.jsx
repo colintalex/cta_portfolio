@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const GraphicProjectModule = () => {
+const GraphicProjectModule = ({ activeTab }) => {
     const [graphicProjects, setGraphicProjects] = useState([]);
 
     useEffect (() => {
@@ -14,16 +14,19 @@ const GraphicProjectModule = () => {
     },[])
 
     const graphicProjectItems = graphicProjects.map(item => {
+        var proj = item.attributes
         return (
             <div>
-                Title: {item.attributes.title},
-                Desc: {item.attributes.description}
-                <img src={item.attributes.images[0]} width='200' height='200'/>
+                Title: {proj.title},
+                Desc: {proj.description} <br/>
+                Images: {proj.images && proj.images.map(img => <img src={img} height='150' width='150'/>)}
             </div>
         )
     })
     return (
-        <div>
+        <div
+            style={{display: (activeTab == 'tab-graphic-projects') ? 'block' : 'none'}}
+        >
             Graphic Project Module
             {graphicProjectItems}
         </div>
