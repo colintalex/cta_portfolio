@@ -19,7 +19,7 @@ class Api::V1::CodeProjectsController < ApplicationController
 
   def create
     project = CodeProject.new(project_params)
-    image_params[:images].each do |img|
+    image_params[:images] && image_params[:images].each do |img|
       img.class == ActionDispatch::Http::UploadedFile ? project.images.attach(img) : next
     end
     if project.save

@@ -18,13 +18,13 @@ class Api::V1::GraphicProjectsController < ApplicationController
 
   def create
     project = GraphicProject.new(project_params)
-    image_params[:images].each do |img|
+    image_params[:images] && image_params[:images].each do |img|
       img.class == ActionDispatch::Http::UploadedFile ? project.images.attach(img) : next
     end
-    if project.save!
-      render json: {project: GraphicProjectSerializer.new(project)}
+    if project.save
+      render json: GraphicProjectSerializer.new(project)
     else
-      render json: 'ERROR'
+      render json: {error: 'error'}
     end
   end
 

@@ -17,6 +17,7 @@ const ContainerCodeProjects = () => {
 
     return (
         <div>
+            <h3>Code Projects</h3>
             <CodeProjectList
                 codeProjects={codeProjects}
                 setUpdated={setUpdated}
