@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const CodeProjectModule = () => {
+const CodeProjectModule = ({ activeTab }) => {
     const [codeProjects, setCodeProjects] = useState([]);
 
     useEffect (() => {
@@ -14,16 +14,20 @@ const CodeProjectModule = () => {
     },[])
 
     const codeProjectItems = codeProjects.map(item => {
+        var proj = item.attributes
         return (
             <div>
-                Title: {item.attributes.title},
-                Desc: {item.attributes.description}
+                Title: {proj.title},
+                Desc: {proj.description} <br/>
+                Images: {proj.images && proj.images.map(img => <img src={img} height='150' width='150'/>)}
             </div>
         )
     })
 
     return (
-        <div>
+        <div
+            style={{display: (activeTab == 'tab-code-projects') ? 'block' : 'none'}}
+        >
             Code project module
             {codeProjectItems}
         </div>

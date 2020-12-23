@@ -7,9 +7,10 @@ const MainDashboard = ({ currentAdmin }) => {
     return (
         <div>
             <h4>Main Dashboard</h4>
+            <hr/>
             <ContainerCodeProjects
                 currentAdmin={currentAdmin}
-            />
+            /> <hr/>
             <ContainerGraphicProjects
                 currentAdmin={currentAdmin}
             />

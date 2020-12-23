@@ -18,11 +18,11 @@ const ContainerCodeProjects = () => {
     return (
         <div>
             <h3>Code Projects</h3>
-            <CodeProjectList
-                codeProjects={codeProjects}
+            <CodeProjectCreate
                 setUpdated={setUpdated}
             />
-            <CodeProjectCreate
+            <CodeProjectList
+                codeProjects={codeProjects}
                 setUpdated={setUpdated}
             />
         </div>
