@@ -28,7 +28,7 @@ RSpec.describe "GraphicProjects", type: :request do
 
       expect(resp[:data][0][:attributes]).to have_key(:title)
       expect(resp[:data][0][:attributes]).to have_key(:description)
-      expect(resp[:data][0][:attributes]).to have_key(:image_path)
+      expect(resp[:data][0][:attributes]).to have_key(:images)
     end
   end
 
@@ -41,7 +41,7 @@ RSpec.describe "GraphicProjects", type: :request do
 
       expect(resp[:data][:attributes]).to have_key(:title)
       expect(resp[:data][:attributes]).to have_key(:description)
-      expect(resp[:data][:attributes]).to have_key(:image_path)
+      expect(resp[:data][:attributes]).to have_key(:images)
     end
   end
 
@@ -52,18 +52,18 @@ RSpec.describe "GraphicProjects", type: :request do
       description: 'Content',
       image_path: './new/path'
     }
-      post "/api/v1/graphic_projects/", :params => {data: data}
+      post "/api/v1/graphic_projects/", :params => data
 
       expect(response).to have_http_status(:success)
       resp = JSON.parse(response.body, :symbolize_names => true)
 
       expect(resp[:data][:attributes]).to have_key(:title)
       expect(resp[:data][:attributes]).to have_key(:description)
-      expect(resp[:data][:attributes]).to have_key(:image_path)
+      expect(resp[:data][:attributes]).to have_key(:images)
 
       expect(resp[:data][:attributes][:title]).to eql(data[:title])
       expect(resp[:data][:attributes][:description]).to eql(data[:description])
-      expect(resp[:data][:attributes][:image_path]).to eql(data[:image_path])
+      expect(resp[:data][:attributes][:image_path]).to eql(data[:images])
     end
   end
 
@@ -83,11 +83,11 @@ RSpec.describe "GraphicProjects", type: :request do
 
       expect(resp[:data][:attributes]).to have_key(:title)
       expect(resp[:data][:attributes]).to have_key(:description)
-      expect(resp[:data][:attributes]).to have_key(:image_path)
+      expect(resp[:data][:attributes]).to have_key(:images)
 
       expect(resp[:data][:attributes][:title]).to eql(data[:title])
       expect(resp[:data][:attributes][:description]).to eql(data[:description])
-      expect(resp[:data][:attributes][:image_path]).to eql(data[:image_path])
+      expect(resp[:data][:attributes][:image_path]).to eql(data[:images])
     end
   end
 

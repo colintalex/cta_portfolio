@@ -17,6 +17,7 @@ const ContainerGraphicProjects = ({ currentAdmin }) => {
 
     return (
         <div>
+            <h3>Graphic Projects</h3>
             <GraphicProjectList
                 graphicProjects={graphicProjects}
                 setUpdated={setUpdated}

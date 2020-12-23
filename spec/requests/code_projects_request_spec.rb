@@ -59,10 +59,10 @@ RSpec.describe "CodeProjects", type: :request do
       deploy_url: 'url',
       technology: 'List'
     }
-      post "/api/v1/code_projects/", :params => {data: data}
+      post "/api/v1/code_projects/", :params => data
 
       expect(response).to have_http_status(:success)
-      resp = JSON.parse(response.body,:symbolize_names => true)
+      resp = JSON.parse(response.body, :symbolize_names => true)
 
       expect(resp[:data][:attributes]).to have_key(:title)
       expect(resp[:data][:attributes]).to have_key(:description)
