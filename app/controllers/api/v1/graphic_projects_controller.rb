@@ -34,7 +34,7 @@ class Api::V1::GraphicProjectsController < ApplicationController
       integer_ids = image_params[:images].map(&:to_i)
       to_be_destroyed = graphic_project.images.find(integer_ids)
       to_be_destroyed.each(&:purge)
-    else
+    elsif params[:images].present? then
       graphic_project.images[0].purge
     end
     graphic_project.update!(project_params)

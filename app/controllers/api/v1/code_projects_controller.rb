@@ -35,8 +35,8 @@ class Api::V1::CodeProjectsController < ApplicationController
       integer_ids = image_params[:images].map(&:to_i)
       to_be_destroyed = code_project.images.find(integer_ids)
       to_be_destroyed.each(&:purge)
-    else
-      code_project.images[0].purge
+    elsif params[:images].present? then
+      code_project.images[0].purge ## FIXX WILL DELETE FINAL IMG IF NOT CHECKED IN A SUBMIT
     end
     code_project.update(project_params)
     if code_project.save
