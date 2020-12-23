@@ -13,6 +13,7 @@ const GraphicProjectList = ({ graphicProjects, setUpdated }) => {
         .then(data => {
             setUpdated(true)
             setUpdated(false)
+            setEditMode(false)
         })
         .catch(error => console.log(error))
     }

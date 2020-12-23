@@ -18,7 +18,6 @@ const GraphicProjectCreate = ({ currentAdmin, setUpdated }) => {
 
         }
 
-
         const config = {
             headers: {
                 'content-type': `multipart/form-data; boundary=${imageData._boundary}`
@@ -28,7 +27,7 @@ const GraphicProjectCreate = ({ currentAdmin, setUpdated }) => {
         .then(resp => {
             setUpdated(true)
             setUpdated(false)
-            data.target.reset()
+            document.getElementById('graphicCreateForm').reset();
         })
         .catch(error => console.log(error))
     }
@@ -37,7 +36,7 @@ const GraphicProjectCreate = ({ currentAdmin, setUpdated }) => {
     return (
         <div>
             Create a new graphic project here
-            <form onSubmit={handleSubmit(_handleProjectCreate)} encType='multipart/form-data'>
+            <form id='graphicCreateForm' onSubmit={handleSubmit(_handleProjectCreate)} encType='multipart/form-data'>
                 <input type='text' name='title' placeholder='Title' ref={register} />
                 <input type='text' name='description' placeholder='Description' ref={register} />
                 <input type='file' multiple name='images' placeholder='Images' ref={register} />
