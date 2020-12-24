@@ -1,0 +1,17 @@
+language: ruby
+cache: bundler
+rvm:
+  - 2.6.5
+
+services:
+  - postgresql
+before_script:
+  - gem install rmagick
+  - psql -c 'create database cta_portfolio_test;' -U postgres
+test:
+  adapter: postgresql
+  database: travis_ci_test
+deploy:
+  provider: heroku
+  api_key:
+    secure: "YOUR ENCRYPTED API KEY"
