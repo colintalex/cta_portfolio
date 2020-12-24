@@ -1,4 +1,5 @@
 # README
+[![Build Status](https://travis-ci.com/colintalex/cta_portfolio.svg?branch=main)](https://travis-ci.com/colintalex/cta_portfolio)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
