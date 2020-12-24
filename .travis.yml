@@ -5,6 +5,7 @@ rvm:
 services:
   - postgresql
 before_script:
+  - gem install rmagick
   - psql -c 'create database cta_portfolio_test;' -U postgres
 test:
   adapter: postgresql
