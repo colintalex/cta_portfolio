@@ -26,6 +26,10 @@ group :development, :test do
   gem 'simplecov'
 end
 
+group :test do
+  gem 'simplecov-shields-badge', require: false
+end
+
 group :development do
 
   gem 'web-console', '>= 3.3.0'
