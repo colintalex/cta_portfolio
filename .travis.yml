@@ -4,3 +4,6 @@ rvm:
   - jruby
 services:
   - postgresql
+test:
+  adapter: postgresql
+  database: travis_ci_test
