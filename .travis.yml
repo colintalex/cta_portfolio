@@ -10,7 +10,7 @@ before_script:
   - psql -c 'create database cta_portfolio_test;' -U postgres
 test:
   adapter: postgresql
-  database: travis_ci_test
+  database: cta_portfolio_test
 deploy:
   provider: heroku
   api_key:
