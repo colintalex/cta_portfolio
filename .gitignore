@@ -7,6 +7,10 @@
 # Ignore bundler config.
 /.bundle
 /vendor
+.env
+
+# Ignore SimpleCov coverage files
+/coverage
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*

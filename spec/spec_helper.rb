@@ -1,3 +1,7 @@
+require 'simplecov'
+SimpleCov.start
+require 'simplecov-shield'
+SimpleCov.formatter = SimpleCov::Formatter::ShieldFormatter
 
 RSpec.configure do |config|
 

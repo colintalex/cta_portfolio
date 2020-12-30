@@ -16,6 +16,7 @@ gem 'bcrypt'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'image_processing', '~> 1.2'
 gem 'rmagick', '~> 4.1.2'
+gem 'dotenv'
 
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.1'
@@ -24,6 +25,10 @@ group :development, :test do
   gem 'capybara'
   gem 'shoulda-matchers'
   gem 'simplecov'
+end
+
+group :test do
+  gem 'simplecov-shield'
 end
 
 group :development do
