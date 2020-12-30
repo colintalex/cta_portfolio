@@ -28,7 +28,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'simplecov-small-badge', :require => false
+  gem 'simplecov-shield'
 end
 
 group :development do
