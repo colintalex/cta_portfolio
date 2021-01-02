@@ -1,9 +1,10 @@
 import React from 'react'
+import AnimationComponent from './Animation'
 
 const Homepage = () => {
     return (
         <div>
-            Hola 2
+            <AnimationComponent/>
         </div>
     )
 }
