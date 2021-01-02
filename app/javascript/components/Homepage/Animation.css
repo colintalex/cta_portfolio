@@ -26,12 +26,12 @@ body {
 #logo line:nth-child(3) {
   stroke-dasharray: 82.03;
   animation: start-lines   3.4s ease-in-out   ;
-  animation-delay: 1.4s;
+  animation-delay: 1.7s;
 }
 #logo line:nth-child(4) {
   stroke-dasharray: 82.03;
   animation: start-lines   3.4s ease-in-out   ;
-  animation-delay: 1.4s;
+  animation-delay: 1.7s;
 }
 
 @keyframes start-lines {
