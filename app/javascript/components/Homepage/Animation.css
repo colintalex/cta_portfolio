@@ -1,0 +1,216 @@
+body {
+  background: #222;
+}
+
+#circle-border {
+  stroke: green;
+}
+
+.animation-wrapper {
+  text-align: center;
+}
+
+#logo{
+  margin: auto;
+  stroke-linecap: round;
+}
+
+#logo line:nth-child(1) {
+  stroke-dasharray: 406;
+  animation: start-lines 3s ease-in ;
+}
+#logo line:nth-child(2) {
+  stroke-dasharray: 76;
+  animation: start-lines   3s ease-in   ;
+}
+#logo line:nth-child(3) {
+  stroke-dasharray: 82.03;
+  animation: start-lines   3.4s ease-in-out   ;
+  animation-delay: 1.4s;
+}
+#logo line:nth-child(4) {
+  stroke-dasharray: 82.03;
+  animation: start-lines   3.4s ease-in-out   ;
+  animation-delay: 1.4s;
+}
+
+@keyframes start-lines {
+  0%{
+    stroke: white;
+    stroke-dashoffset: 1000;
+    stroke-dasharray: 366;
+    opacity: 0%; 
+  }
+  25%{
+    opacity: 100%;
+    stroke-dasharray: 366;
+    
+  }
+  50%{
+    stroke: white; 
+  
+  }
+  100%{
+    stroke: white; 
+    stroke-dashoffset: 366;
+    stroke-dasharray: 366;
+  }
+}
+
+#logo path:nth-child(1) {
+  stroke-dasharray: 950;
+  stroke-dashoffset: 0;
+  animation: line-anim 6.5s ease-in-out backwards;
+  animation-delay: 3.5s;
+}
+#logo path:nth-child(2) {
+  stroke-dasharray: 1905;
+  stroke-dashoffset: 951;
+  animation: line-anim 8s ease-in-out forwards;
+  animation-delay: 5s;
+  
+}
+
+/* inner think bubble */
+#logo path:nth-child(3) {
+  stroke-dasharray: 86;
+  stroke-dashoffset: 200;
+  animation: cloud-circle-line-anim 6.5s ease-in-out infinite alternate;
+  animation-delay: 5s;
+}
+#logo path:nth-child(4) {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 0;
+  animation: line-anim 7.5s ease-in-out forwards;
+  animation-delay: 4.8s;
+}
+#logo path:nth-child(5) {
+  stroke-dasharray: 250;
+  stroke-dashoffset: 0;
+  animation: cloud-circle-line-anim 7.5s ease-in-out infinite alternate;
+  animation-delay: 4s;
+  
+}
+#logo path:nth-child(6) {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 0;
+  animation: line-anim 6.5s ease-in-out forwards;
+  animation-delay: 4.5s;
+}
+#logo path:nth-child(7) {
+  stroke-dasharray: 105;
+  stroke-dashoffset: 0;
+  animation: cloud-circle-line-anim 6.5s ease-in-out infinite alternate;
+  animation-delay: 3.5s;
+}
+
+#logo path#hexagon {
+  animation: hex-line-anim 30s ease-in-out infinite alternate;
+  animation-delay: 1.7s;
+}
+
+#logo #circle {
+  animation: circle-line-anim 40s ease-in-out infinite alternate;
+  animation-delay: 2s;
+}
+
+
+
+
+@keyframes circle-line-anim {
+  0%{
+    stroke: white;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+    opacity: 0%;
+  }
+  25%{
+    opacity: 100%;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+  }
+  50%{
+    stroke: turquoise;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 300;
+  }
+  100%{
+    stroke: limegreen;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 400;
+  }
+}
+
+@keyframes cloud-circle-line-anim {
+  0%{
+    opacity: 0%;
+    stroke: red;
+    stroke-dasharray: 60;
+    stroke-dashoffset: 400;
+    stroke-width: 4px; 
+  }
+  20%{
+    opacity: 100%;
+    stroke: yellow;
+  }
+  25%{
+    stroke: orange;
+  }
+  50%{
+    stroke: purple;
+  }
+  75%{
+    stroke: blue;
+  }
+  85%{
+    stroke: turquoise;
+  }
+  100%{
+ stroke: limegreen;
+  }
+}
+
+@keyframes hex-line-anim {
+  0%{
+    stroke: limegreen;
+    stroke-dasharray: 700;
+    stroke-dashoffset: 0;
+    stroke-width: 3px;
+    opacity: 0%;
+  }
+  20%{
+    opacity: 100%;
+    
+  }
+    50%{
+    stroke: turquoise;
+  }
+  100% {
+    stroke: white;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 400;
+  }
+}
+
+@keyframes line-anim {
+  
+  0% {
+    opacity: 0%;
+    stroke: limegreen;
+    stroke-width: 2px;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+  }
+  50%{
+    opacity: 100%;
+    stroke-dasharray: 1000;
+    stroke: purple;
+  }
+  75%{
+    stroke: blue;
+  }
+  100% {
+    stroke: white;
+    stroke-width: 4px;
+  }
+}
