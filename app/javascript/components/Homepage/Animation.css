@@ -1,5 +1,5 @@
 body {
-  background: #222;
+  background: #111;
 }
 
 #circle-border {
@@ -25,12 +25,12 @@ body {
 }
 #logo line:nth-child(3) {
   stroke-dasharray: 82.03;
-  animation: start-lines   3.4s ease-in-out   ;
+  animation: start-lines   3s ease-in-out   ;
   animation-delay: 1.7s;
 }
 #logo line:nth-child(4) {
   stroke-dasharray: 82.03;
-  animation: start-lines   3.4s ease-in-out   ;
+  animation: start-lines   3s ease-in-out   ;
   animation-delay: 1.7s;
 }
 
@@ -67,7 +67,7 @@ body {
   stroke-dasharray: 1905;
   stroke-dashoffset: 951;
   animation: line-anim 8s ease-in-out forwards;
-  animation-delay: 5s;
+  animation-delay: 5.2s;
   
 }
 
@@ -76,13 +76,13 @@ body {
   stroke-dasharray: 86;
   stroke-dashoffset: 200;
   animation: cloud-circle-line-anim 6.5s ease-in-out infinite alternate;
-  animation-delay: 5s;
+  animation-delay: 4.5s;
 }
 #logo path:nth-child(4) {
   stroke-dasharray: 500;
   stroke-dashoffset: 0;
   animation: line-anim 7.5s ease-in-out forwards;
-  animation-delay: 4.8s;
+  animation-delay: 5.1s;
 }
 #logo path:nth-child(5) {
   stroke-dasharray: 250;
@@ -95,22 +95,22 @@ body {
   stroke-dasharray: 120;
   stroke-dashoffset: 0;
   animation: line-anim 6.5s ease-in-out forwards;
-  animation-delay: 4.5s;
+  animation-delay: 5s;
 }
 #logo path:nth-child(7) {
   stroke-dasharray: 105;
   stroke-dashoffset: 0;
   animation: cloud-circle-line-anim 6.5s ease-in-out infinite alternate;
-  animation-delay: 3.5s;
+  animation-delay: 4.5s;
 }
 
 #logo path#hexagon {
-  animation: hex-line-anim 30s ease-in-out infinite alternate;
+  animation: hex-line-anim 10s ease-in-out forwards;
   animation-delay: 1.7s;
 }
 
 #logo #circle {
-  animation: circle-line-anim 40s ease-in-out infinite alternate;
+  animation: circle-line-anim 8s ease-in-out forwards;
   animation-delay: 2s;
 }
 
@@ -125,19 +125,22 @@ body {
     opacity: 0%;
   }
   25%{
-    opacity: 100%;
-    stroke-dasharray: 200;
+    stroke-dasharray: 300;
     stroke-dashoffset: 200;
   }
   50%{
     stroke: turquoise;
-    stroke-dasharray: 400;
+    stroke-dasharray: 600;
     stroke-dashoffset: 300;
+  }
+  75%{
+    opacity: 100%;
+
   }
   100%{
     stroke: limegreen;
-    stroke-dasharray: 600;
-    stroke-dashoffset: 400;
+    stroke-dasharray: 210;
+    stroke-dashoffset: 380;
   }
 }
 
@@ -149,33 +152,47 @@ body {
     stroke-dashoffset: 400;
     stroke-width: 4px; 
   }
-  20%{
-    opacity: 100%;
-    stroke: yellow;
-  }
-  25%{
+  10%{
     stroke: orange;
   }
+  20%{
+    stroke: yellow;
+  }
+  30%{
+    stroke: limegreen;
+
+  }
+  40%{
+    stroke: aqua;
+  }
   50%{
+    stroke: skyblue;
+  }
+  60%{
+    opacity: 70%;
+    stroke: blueviolet;
+  }
+  70%{
     stroke: purple;
   }
-  75%{
-    stroke: blue;
+  80%{
+    stroke: hotpink;
   }
-  85%{
-    stroke: turquoise;
+  90%{
+    stroke: orange;
   }
   100%{
- stroke: limegreen;
+    stroke-width: 4px; 
+    stroke: red;
   }
 }
 
 @keyframes hex-line-anim {
   0%{
     stroke: limegreen;
-    stroke-dasharray: 700;
+    stroke-dasharray: 520;
     stroke-dashoffset: 0;
-    stroke-width: 3px;
+    stroke-width: 1px;
     opacity: 0%;
   }
   20%{
@@ -186,8 +203,8 @@ body {
     stroke: turquoise;
   }
   100% {
-    stroke: white;
-    stroke-dasharray: 200;
+    stroke: fuchsia;
+    stroke-dasharray: 150;
     stroke-dashoffset: 400;
   }
 }
@@ -197,20 +214,40 @@ body {
   0% {
     opacity: 0%;
     stroke: limegreen;
-    stroke-width: 2px;
-    stroke-dasharray: 100;
+    stroke-dasharray: 200;
     stroke-dashoffset: 0;
   }
-  50%{
+  10%{
+    stroke: yellow;
+  }
+  20%{
     opacity: 100%;
+    stroke: orange;
+  }
+  30%{
+    stroke: red;
+  }
+  50%{
     stroke-dasharray: 1000;
-    stroke: purple;
+    stroke: magenta;
   }
-  75%{
-    stroke: blue;
+  70%{
+    stroke: blueviolet;
+
   }
+  80%{
+    stroke: skyblue;
+
+  }
+  90%{
+    stroke: turquoise;
+    stroke-width: 2px;
+    opacity: 100%;
+  }
+
   100% {
     stroke: white;
     stroke-width: 4px;
+    opacity: 80%;
   }
 }
