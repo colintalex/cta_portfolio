@@ -1,27 +1,30 @@
 # README
 [![Build Status](https://travis-ci.com/colintalex/cta_portfolio.svg?branch=main)](https://travis-ci.com/colintalex/cta_portfolio)
-[![Coverage](https://colintalex.github.io/cta_portfolio/badge.svg)](https://github.com/colintalex/cta_portfolio)
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Personal Portfolio Website
 
-Things you may want to cover:
+#### Ruby on Rails App with MySQL utilizing Webpack tags to render ReactJS in view.
 
-* Ruby version
+<hr/>
+<p align="center" style="margin-top:15px">
+  <a href="" target="">
+    <img src="" alt="drawing" width="800"/>
+  </a>
+</p>
+<hr/>
 
-* System dependencies
+#### What It's About 
+The ultimate goal of this
 
-* Configuration
+#### Why I Did It
 
-* Database creation
 
-* Database initialization
+#### Challenges
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Wins
+- 
 
-* Deployment instructions
-
-* ...
+#### Future Goals
+- 
