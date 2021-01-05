@@ -14,17 +14,17 @@
 </p>
 <hr/>
 
-#### What It's About 
+## What It's About 
 The ultimate goal of this
 
-#### Why I Did It
+## Why I Did It
 
 
-#### Challenges
+## Challenges
 
 
-#### Wins
+## Wins
 - 
 
-#### Future Goals
+## Future Goals
 - 
