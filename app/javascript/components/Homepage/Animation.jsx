@@ -249,7 +249,7 @@ const StyledSVG = styled.svg`
 `
 
 const StyledWrapper = styled.div`
-    background: black;
+    text-align: center;
 `
 
 const AnimationComponent = () => {

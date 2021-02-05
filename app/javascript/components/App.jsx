@@ -6,6 +6,13 @@ import Homepage from './Homepage/Homepage'
 import WorkPage from './WorkPage/WorkPage';
 import AdminDashboard from './Admin/AdminDashboard';
 import Nav from './Nav'
+import styled from 'styled-components'
+
+const StyledMain = styled.div`
+    background: black;
+    margin: 0;
+    padding: 0;
+`
 
 const App = () => {
     const token = 
@@ -15,7 +22,7 @@ const App = () => {
 
 
     return (
-        <div>
+        <StyledMain>
             <Nav/>
             <Switch>
                 <Route exact path="/" component={Homepage}/>
@@ -23,7 +30,7 @@ const App = () => {
                 <Route exact path="/about" component={AboutPage}/>
                 <Route exact path="/admin" component={AdminDashboard}/>
             </Switch>
-        </div>
+        </StyledMain>
     )
 };
 
