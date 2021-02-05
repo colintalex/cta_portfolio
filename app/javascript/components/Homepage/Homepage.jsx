@@ -1,5 +1,7 @@
 import React from 'react'
 import AnimationComponent from './Animation'
+// import './Animation.css'
+
 
 const Homepage = () => {
     return (
