@@ -1,11 +1,16 @@
 import React from 'react'
 import AnimationComponent from './Animation'
+import styled from 'styled-components'
+
+const StyledHomepage = styled.div`
+    background: black;
+`
 
 const Homepage = () => {
     return (
-        <div>
+        <StyledHomepage>
             <AnimationComponent/>
-        </div>
+        </StyledHomepage>
     )
 }
 
