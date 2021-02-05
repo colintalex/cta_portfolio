@@ -22,8 +22,12 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "@babel/preset-react": "^7.12.10",
+    "@babel/preset-react": "^7.12.13",
     "@svgr/webpack": "^5.5.0",
     "webpack-dev-server": "^3.11.1"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/colintalex/cta_portfolio.git",
+  "author": "Colin Alexander <colintalex@gmail.com>",
+  "license": "MIT"
 }
