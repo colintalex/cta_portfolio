@@ -10,7 +10,7 @@ const StyledWorkPage = styled.div`
     overflow: scroll;
     background: gray;
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 10px auto;
 `
 
 const WorkPage = () => {
