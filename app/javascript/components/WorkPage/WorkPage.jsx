@@ -10,6 +10,7 @@ const StyledWorkPage = styled.div`
     overflow: scroll;
     background: gray;
     max-width: 1400px;
+    font-family: 'Big Shoulders Display', light;
     margin: 10px auto;
 `
 
