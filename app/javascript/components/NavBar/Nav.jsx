@@ -1,16 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import StyledIcons from './StyledIcons'
 
 const StyledNav = styled.nav`
-    padding: 10px;
     font-family: 'Big Shoulders Display', light;
     border-radius: 10px;
-    height: 70px;
+    height: 60px;
 `
 
 const StyledList = styled.ul`
-    width: 30%;
     display: inline-block;
     text-align: end;
     padding: 0px;
@@ -18,20 +17,31 @@ const StyledList = styled.ul`
 
 const StyledListItem = styled.li`
     display: inline;
-    margin: 10px 10px;
+    margin: 10px 20px;
     padding: 2px 10px;
-    font-size: 1.5em;
+    font-size: 1.8em;
     background: gray;
     border-radius: 5px;
+    color: white;
 
     &:last-child {
         margin-right: 25px;
     }
+
+    transition: background-color .4s;
+    &:hover {
+        background-color: turquoise;
+    }
 `
 
 const StyledLink = styled(Link)`
-    color: white;
+    color: #d8d8d8;
     text-decoration: none;
+    transition: color .4s;
+
+    &:hover {
+        color: black
+    }
 `
 const StyledName = styled.h2`
     margin-top: 6px;
@@ -51,17 +61,22 @@ const StyledSubName = styled.h5`
     font-size: 1.5em;
     margin-left: 3px;
     margin-bottom: 0px;
+    margin-top: 0px;
     opacity: 90%;
 `
 
 const StyledLogoWrapper = styled.div`
     width: 50%;
     display: inline-block;
+    vertical-align: middle;
 `
 
-const StyledIcons = styled.div`
+const StyledMenuContentWrapper = styled.div`
+    width: 50%;
+    text-align: end;
     display: inline-block;
-    width: 20%;
+    height: 100%;
+    vertical-align: middle;
 `
 
 
@@ -72,20 +87,20 @@ const Nav = () => {
                 <StyledName>Colin Alexander</StyledName>
                 <StyledSubName> Backend Software Engineer</StyledSubName>
             </StyledLogoWrapper>
-            <StyledIcons>
-                Social icons
-            </StyledIcons>
-            <StyledList>
-                <StyledListItem>
-                    <StyledLink to='/'>Home</StyledLink>
-                </StyledListItem>
-                <StyledListItem>
-                    <StyledLink to='/work'>My Work</StyledLink>
-                </StyledListItem>
-                <StyledListItem>
-                    <StyledLink to='/about'>About</StyledLink>
-                </StyledListItem>
-            </StyledList>
+            <StyledMenuContentWrapper>
+                <StyledList>
+                    <StyledListItem>
+                        <StyledLink to='/'>Home</StyledLink>
+                    </StyledListItem>
+                    <StyledListItem>
+                        <StyledLink to='/work'>My Work</StyledLink>
+                    </StyledListItem>
+                    <StyledListItem>
+                        <StyledLink to='/about'>About</StyledLink>
+                    </StyledListItem>
+                </StyledList>
+                <StyledIcons/>
+            </StyledMenuContentWrapper>
         </StyledNav>
     )
 }
