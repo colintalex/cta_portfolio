@@ -5,11 +5,12 @@ import AboutPage from './About/About';
 import Homepage from './Homepage/Homepage'
 import WorkPage from './WorkPage/WorkPage';
 import AdminDashboard from './Admin/AdminDashboard';
-import Nav from './Nav'
+import Nav from './NavBar/Nav'
 import styled from 'styled-components'
+import Footer from './Footer';
 
 const StyledMain = styled.div`
-    background: black;
+    background: gray;
     margin: 0;
     padding: 0;
 `
@@ -30,6 +31,7 @@ const App = () => {
                 <Route exact path="/about" component={AboutPage}/>
                 <Route exact path="/admin" component={AdminDashboard}/>
             </Switch>
+            <Footer/>
         </StyledMain>
     )
 };
