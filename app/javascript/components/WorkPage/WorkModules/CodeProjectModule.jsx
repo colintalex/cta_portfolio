@@ -24,7 +24,7 @@ const StyledProjGridModule = styled.div`
 const StyledProjHeading = styled.h3`
     margin: 5px;
     display: inline;
-    font-size: 1.6em;
+    font-size: 1.9em;
 `
 
 const StyledProjDescription = styled.p`
@@ -106,11 +106,11 @@ const CodeProjectModule = ({ activeTab }) => {
     })
 
     return (
-        <StyledProjGridContainer
-            style={{display: (activeTab == 'tab-code-projects') ? 'block' : 'none'}}
-        >
-            {codeProjectItems}
-        </StyledProjGridContainer>
+        <div style={{display: (activeTab == 'tab-code-projects') ? 'block' : 'none'}}>
+            <StyledProjGridContainer>
+                {codeProjectItems}
+            </StyledProjGridContainer>
+        </div>
     )
 }
 
