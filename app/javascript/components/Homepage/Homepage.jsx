@@ -3,7 +3,7 @@ import AnimationComponent from './AnimationComponent'
 import styled from 'styled-components'
 
 const StyledHomepage = styled.div`
-    background: black;
+    background: #484848;
     min-height: 90vh;
 `
 

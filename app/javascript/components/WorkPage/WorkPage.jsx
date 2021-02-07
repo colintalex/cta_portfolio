@@ -9,6 +9,8 @@ const StyledWorkPage = styled.div`
     min-height: 100vh;
     overflow: scroll;
     background: gray;
+    max-width: 1400px;
+    margin: 0 auto;
 `
 
 const WorkPage = () => {

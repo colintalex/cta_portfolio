@@ -5,8 +5,8 @@ import StyledIcons from './StyledIcons'
 
 const StyledNav = styled.nav`
     font-family: 'Big Shoulders Display', light;
-    border-radius: 10px;
     height: 60px;
+    background: black;
 `
 
 const StyledList = styled.ul`

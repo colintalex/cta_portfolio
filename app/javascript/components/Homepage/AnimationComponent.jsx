@@ -6,7 +6,7 @@ const StyledSVG = styled.svg`
 
 
     body {
-    background: #111;
+    background: gray;
     }
 
     #circle-border {
