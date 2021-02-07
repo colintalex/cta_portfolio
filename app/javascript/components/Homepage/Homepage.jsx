@@ -4,7 +4,9 @@ import styled from 'styled-components'
 
 const StyledHomepage = styled.div`
     background: black;
+    min-height: 90vh;
 `
+
 
 const Homepage = () => {
     return (
