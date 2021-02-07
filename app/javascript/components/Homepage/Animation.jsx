@@ -2,6 +2,9 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
 const StyledSVG = styled.svg`
+    transform: scale(1.5) translate(-3%, 0%);
+
+
     body {
     background: #111;
     }
@@ -10,59 +13,17 @@ const StyledSVG = styled.svg`
     stroke: green;
     }
 
-    g line:nth-child(1) {
-    stroke-dasharray: 406;
-    animation: start-lines 3s ease-in ;
-    }
-    g line:nth-child(2) {
-    stroke-dasharray: 76;
-    animation: start-lines   3s ease-in   ;
-    }
-    g line:nth-child(3) {
-    stroke-dasharray: 82.03;
-    animation: start-lines   3s ease-in-out   ;
-    animation-delay: 1.7s;
-    }
-    g line:nth-child(4) {
-    stroke-dasharray: 82.03;
-    animation: start-lines   3s ease-in-out   ;
-    animation-delay: 1.7s;
-    }
-
-    @keyframes start-lines {
-    0%{
-        stroke: white;
-        stroke-dashoffset: 1000;
-        stroke-dasharray: 366;
-        opacity: 0%; 
-    }
-    25%{
-        opacity: 100%;
-        stroke-dasharray: 366;
-        
-    }
-    50%{
-        stroke: white; 
-    
-    }
-    100%{
-        stroke: white; 
-        stroke-dashoffset: 366;
-        stroke-dasharray: 366;
-    }
-    }
-
     path:nth-child(1) {
     stroke-dasharray: 950;
     stroke-dashoffset: 0;
     animation: line-anim 6.5s ease-in-out backwards;
-    animation-delay: 3.5s;
+    animation-delay: 1.5s;
     }
     path:nth-child(2) {
     stroke-dasharray: 1905;
     stroke-dashoffset: 951;
-    animation: line-anim 8s ease-in-out forwards;
-    animation-delay: 5.2s;
+    animation: line-anim 6s ease-in-out forwards;
+    animation-delay: 5s;
     
     }
 
@@ -70,20 +31,20 @@ const StyledSVG = styled.svg`
     path:nth-child(3) {
     stroke-dasharray: 86;
     stroke-dashoffset: 200;
-    animation: cloud-circle-line-anim 7.1s ease-in-out infinite alternate;
-    animation-delay: 5.1s;
+    animation: cloud-circle-line-anim 9s ease-in-out;
+    animation-delay: 5s;
     }
     path:nth-child(4) {
     stroke-dasharray: 500;
     stroke-dashoffset: 0;
-    animation: line-anim 7.5s ease-in-out forwards;
-    animation-delay: 5.1s;
+    animation: line-anim 5.5s ease-in-out forwards;
+    animation-delay: 6s;
     }
     path:nth-child(5) {
     stroke-dasharray: 250;
     stroke-dashoffset: 0;
-    animation: cloud-circle-line-anim 7.5s ease-in-out infinite alternate;
-    animation-delay: 4.5s;
+    animation: cloud-circle-line-anim 8.5s ease-in-out;
+    animation-delay: 3.5s;
     
     }
     path:nth-child(6) {
@@ -95,18 +56,13 @@ const StyledSVG = styled.svg`
     path:nth-child(7) {
     stroke-dasharray: 105;
     stroke-dashoffset: 0;
-    animation: cloud-circle-line-anim 6.5s ease-in-out infinite alternate;
-    animation-delay: 4s;
-    }
-
-    path#hexagon {
-    animation: hex-line-anim 10s ease-in-out forwards;
-    animation-delay: 1.9s;
+    animation: cloud-circle-line-anim 7.5s ease-in-out;
+    animation-delay: 2s;
     }
 
     #circle {
-    animation: circle-line-anim 8s ease-in-out forwards;
-    animation-delay: 2s;
+    animation: circle-line-anim 7.5s ease-in-out forwards 2 alternate;
+    animation-delay: 1s
     }
 
 
@@ -115,26 +71,27 @@ const StyledSVG = styled.svg`
     @keyframes circle-line-anim {
     0%{
         stroke: white;
-        stroke-dasharray: 1000;
+        stroke-dasharray: 1400;
         stroke-dashoffset: 0;
-        opacity: 0%;
+    }
+    10%{
+        opacity: 100%;
     }
     25%{
-        stroke-dasharray: 300;
-        stroke-dashoffset: 200;
+        // stroke-dasharray: 300;
+        // stroke-dashoffset: 400;
     }
     50%{
         stroke: turquoise;
-        stroke-dasharray: 600;
-        stroke-dashoffset: 300;
+        // stroke-dasharray: 600;
+        // stroke-dashoffset: 300;
     }
     75%{
-        opacity: 100%;
 
     }
     100%{
         stroke: limegreen;
-        stroke-dasharray: 210;
+        stroke-dasharray: 140;
         stroke-dashoffset: 380;
     }
     }
@@ -151,6 +108,7 @@ const StyledSVG = styled.svg`
         stroke: orange;
     }
     20%{
+        opacity: 100%;
         stroke: yellow;
     }
     30%{
@@ -164,11 +122,11 @@ const StyledSVG = styled.svg`
         stroke: skyblue;
     }
     60%{
-        opacity: 70%;
         stroke: blueviolet;
     }
     70%{
         stroke: purple;
+        opacity: 100%
     }
     80%{
         stroke: hotpink;
@@ -178,6 +136,7 @@ const StyledSVG = styled.svg`
     }
     100%{
         stroke-width: 4px; 
+        opacity: 0%;
         stroke: red;
     }
     }
@@ -257,10 +216,6 @@ const AnimationComponent = () => {
         <StyledWrapper className="animation-wrapper">
             <StyledSVG id="logo" width="806" height="681" viewBox="0 0 806 681" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g fill="">
-                    <line y1="84.5" x2="366" y2="84.5" />
-                    <line x1="846" y1="85.5" x2="480" y2="85.5" />
-                    <line x1="365.354" y1="84.6464" x2="423.354" y2="142.646" />
-                    <line x2="422.646" y2="143.646" x1="480.646" y1="85.6464" />
                     <circle id="circle" cx="428" cy="398" r="206.5" />
                 </g>
                 <path d="M368.598 247.134C370.719 246.855 373.025 247.099 375.165 247.099C377.901 247.099 380.657 247.021 383.374 247.368C386.375 247.751 389.377 248.634 392.24 249.588C398.363 251.63 404.364 254.557 409.396 258.641C412.408 261.085 415.172 263.818 417.653 266.799C418.488 267.803 419.231 268.876 420.016 269.918C420.383 270.406 420.812 271.109 421.381 271.38C421.766 271.563 422.298 271.334 422.694 271.267C423.674 271.103 424.665 271.043 425.649 270.927C428.681 270.569 431.873 270.666 434.925 270.74C439.043 270.841 443.211 271.755 447.156 272.908C448.292 273.24 449.421 273.607 450.522 274.039C451.079 274.258 451.811 274.71 452.41 274.743C452.986 274.775 453.757 273.66 454.134 273.284L458.813 268.605C463.883 263.543 469.993 259.494 476.462 256.438C496.038 247.192 519.258 247.203 538.767 256.642C545.266 259.786 551.298 263.938 556.58 268.858C572.896 284.057 581.103 306.595 578.894 328.691C578.369 333.94 577.166 339.043 575.499 344.041C574.963 345.651 574.369 347.241 573.701 348.802C573.483 349.312 572.825 350.207 572.914 350.772C573.038 351.57 574.393 352.695 574.906 353.316C576.388 355.113 577.708 357.068 578.908 359.063C582.45 364.955 585.09 371.592 586.394 378.353C587.078 381.9 586.952 385.507 586.952 389.106C586.952 392.781 587.104 396.482 586.394 400.105C583.293 415.914 573.466 430.373 559.781 438.896C552.897 443.184 545.354 445.896 537.371 447.215C531.455 448.193 525.362 447.456 519.394 447.717C513.34 447.983 507.234 447.796 501.17 447.796C491.957 447.796 482.727 447.878 473.507 447.878C431.559 447.878 389.607 447.796 347.666 447.796C337.843 447.796 328.015 447.632 318.196 447.632C314.2 447.632 310.202 447.55 306.211 447.55C303.653 447.55 300.952 447.745 298.413 447.444C288.984 446.329 279.84 442.47 272.309 436.725C261.624 428.573 253.967 416.234 251.576 402.978C251.101 400.348 251.194 397.754 251.129 395.098C251.049 391.836 250.924 388.416 251.318 385.166C251.824 380.993 253.211 376.835 254.727 372.935C256.486 368.407 258.906 363.992 261.856 360.13C262.978 358.66 264.239 357.336 265.449 355.943C265.811 355.525 266.608 355.015 266.744 354.466C266.88 353.922 266.387 352.945 266.235 352.414C265.818 350.96 265.503 349.472 265.256 347.981C264.537 343.632 264.568 339.156 264.76 334.765C265.57 316.27 276.213 299.212 291.928 289.603C298.099 285.83 305.086 283.416 312.204 282.238C314.593 281.842 317.087 281.493 319.51 281.492C320.311 281.492 321.179 281.467 321.972 281.363C322.218 281.331 322.543 281.371 322.741 281.196C323.11 280.872 323.262 280.2 323.471 279.768C324.052 278.567 324.597 277.35 325.194 276.157C326.797 272.95 328.679 269.903 330.955 267.127C339.202 257.067 350.385 250.58 363.016 247.79C364.882 247.378 366.727 247.379 368.598 247.134Z" stroke="" strokeWidth="0.5"/>
@@ -269,7 +224,6 @@ const AnimationComponent = () => {
                 <path d="M375.822 474.194C381.837 473.977 387.846 478.724 389.554 484.406C390.318 486.951 390.042 490.544 389.158 493.025C388.06 496.107 385.178 498.891 382.307 500.351C380.653 501.192 378.757 501.805 376.889 501.887C374.826 501.977 372.827 501.669 370.897 500.94C369.229 500.311 367.72 499.288 366.464 498.032C359.732 491.301 361.672 479.616 370.322 475.499C372.042 474.68 373.928 474.263 375.822 474.194Z" stroke="" strokeWidth="0.5"/>
                 <path d="M349.39 512.597C351.611 512.36 354.061 512.945 356.121 513.726C362.354 516.089 367.449 522.068 368.092 528.814C368.312 531.119 368.283 533.623 367.682 535.874C365.777 543.019 359.355 548.932 351.934 549.65C347.877 550.042 343.842 549.601 340.278 547.493C336.919 545.505 333.936 542.353 332.387 538.746C329.578 532.206 330.916 523.767 335.77 518.554C338.241 515.9 341.724 513.792 345.285 513.006C346.656 512.704 348.011 512.744 349.39 512.597Z" stroke="" strokeWidth="0.5"/>
                 <path d="M348.24 521.297C354.339 520.487 360.23 525.889 359.637 532.098C359.343 535.177 357.599 537.781 355.054 539.485C353.817 540.313 352.508 540.822 351.032 541.022C349.321 541.252 347.577 541.16 345.942 540.578C344.726 540.145 343.651 539.406 342.741 538.5C341.791 537.555 340.906 536.472 340.397 535.217C337.984 529.259 341.781 522.155 348.24 521.297Z" stroke="" strokeWidth="0.5"/>
-                <path id="hexagon" d="M423.6 143.046L643.96 276.153L649.054 533.544L433.821 657.809L213.46 524.702L208.367 267.311L423.6 143.046Z" stroke=""/>
             </StyledSVG>
 
         </StyledWrapper>
