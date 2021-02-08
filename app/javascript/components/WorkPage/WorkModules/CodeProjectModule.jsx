@@ -7,7 +7,7 @@ import Carousel from 'react-elastic-carousel';
 
 const StyledProjGridContainer = styled.div`
     display: grid !important;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 30px;
     justify-content: space-around;
     padding: 25px;
@@ -25,7 +25,7 @@ const StyledProjGridModule = styled.div`
 const StyledProjHeading = styled.h3`
     margin: 5px;
     display: inline;
-    font-size: 1.9em;
+    font-size: 2em;
 `
 
 const StyledProjDescription = styled.p`
@@ -40,20 +40,20 @@ const StyledProjImage = styled.img`
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
-    max-height: 500px;
+    width: auto;
+    max-height: 600px;
     border-radius: 5px;
 `
 
 const ImageWrapper = styled.div`
-    height: 500px;
+    height: auto;
     width: auto;
     padding-top: 30px;
     margin-bottom: 25px;
 `
 
 const StyledProjectContent = styled.div`
-    height: 200px;
+    height: auto;
     display: grid;
     grid-template-columns: 2fr 2fr;
 `
@@ -75,14 +75,14 @@ const StyledLinksWrapper = styled.div`
 
 const StyledHerokuIcon = styled(SiHeroku)`
     color: black;
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
 `
 
 const StyledGitIcon = styled(FaGithub)`
     color: black;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
 `
 
 
@@ -107,14 +107,13 @@ const CodeProjectModule = ({ activeTab }) => {
                         <StyledProjHeading>{proj.title}</StyledProjHeading>
                     </div>
                     <StyledtechWrapper>
-                        <StyledProjTech>{proj.technology}</StyledProjTech>
+                        <StyledProjTech>Built with: {proj.technology}</StyledProjTech>
                     </StyledtechWrapper>
                     <StyledProjDescription>{proj.description}</StyledProjDescription>
                 </StyledProjectContent>
                 <ImageWrapper>
                     <Carousel
                         enableAutoPlay autoPlaySpeed={5500}
-                        showArrows={false}
                     >
                         {proj.images && proj.images.map(img => <StyledProjImage src={img.url}/>)}
                     </Carousel>
