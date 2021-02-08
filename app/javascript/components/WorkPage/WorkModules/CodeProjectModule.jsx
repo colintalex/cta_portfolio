@@ -3,6 +3,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 import { SiHeroku } from 'react-icons/si'
 import { FaGithub } from 'react-icons/fa'
+import Carousel from 'react-elastic-carousel';
 
 const StyledProjGridContainer = styled.div`
     display: grid !important;
@@ -29,23 +30,36 @@ const StyledProjHeading = styled.h3`
 
 const StyledProjDescription = styled.p`
     margin: 5px;
-    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
     grid-column: 1 / 3;
+    overflow: scroll;
 `
 
 const StyledProjImage = styled.img`
-    height: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-height: 500px;
+    border-radius: 5px;
+`
+
+const ImageWrapper = styled.div`
+    height: 500px;
     width: auto;
+    padding-top: 30px;
+    margin-bottom: 25px;
 `
 
 const StyledProjectContent = styled.div`
-    height: 100px;
+    height: 200px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 2fr;
 `
 
 const StyledProjTech = styled.p`
-    font-size: 1.2em;
+    font-size: 1.7em;
     margin: 5px;
 `
 const StyledtechWrapper = styled.div`
@@ -56,6 +70,7 @@ const StyledtechWrapper = styled.div`
 const StyledLinksWrapper = styled.div`
     grid-column: 1 / 3;
     text-align: center;
+    font-size: 1.3em;
 `
 
 const StyledHerokuIcon = styled(SiHeroku)`
@@ -66,9 +81,10 @@ const StyledHerokuIcon = styled(SiHeroku)`
 
 const StyledGitIcon = styled(FaGithub)`
     color: black;
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
 `
+
 
 const CodeProjectModule = ({ activeTab }) => {
     const [codeProjects, setCodeProjects] = useState([]);
@@ -95,7 +111,14 @@ const CodeProjectModule = ({ activeTab }) => {
                     </StyledtechWrapper>
                     <StyledProjDescription>{proj.description}</StyledProjDescription>
                 </StyledProjectContent>
-                {proj.images && proj.images.map(img => <StyledProjImage src={img.url}/>)}
+                <ImageWrapper>
+                    <Carousel
+                        enableAutoPlay autoPlaySpeed={5500}
+                        showArrows={false}
+                    >
+                        {proj.images && proj.images.map(img => <StyledProjImage src={img.url}/>)}
+                    </Carousel>
+                </ImageWrapper>
                 <hr/>
                 <StyledLinksWrapper>
                     <a href={proj.github_url}>GitHub Repo <StyledGitIcon/></a>
