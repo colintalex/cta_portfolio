@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
-import { SiHeroku } from 'react-icons/si'
+import { GrHeroku } from 'react-icons/gr'
 import { FaGithub } from 'react-icons/fa'
 import Carousel from 'react-elastic-carousel';
 
@@ -73,7 +73,7 @@ const StyledLinksWrapper = styled.div`
     font-size: 1.3em;
 `
 
-const StyledHerokuIcon = styled(SiHeroku)`
+const StyledHerokuIcon = styled(GrHeroku)`
     color: black;
     height: 40px;
     width: 40px;
@@ -121,7 +121,7 @@ const CodeProjectModule = ({ activeTab }) => {
                 <hr/>
                 <StyledLinksWrapper>
                     <a href={proj.github_url}>GitHub Repo <StyledGitIcon/></a>
-                    <a href={proj.deploy_url}>Deployment Link <StyledHerokuIcon/></a>
+                    <a href={proj.deploy_url}>Deployment Link<StyledHerokuIcon/></a>
                 </StyledLinksWrapper>
             </StyledProjGridModule>
         )

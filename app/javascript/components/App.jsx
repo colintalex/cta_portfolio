@@ -15,6 +15,7 @@ const StyledMain = styled.div`
     padding: 0;
 `
 
+
 const App = () => {
     const token = 
         document.querySelector('[name=csrf-token]').content
