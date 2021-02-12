@@ -7,7 +7,7 @@ const StyledNav = styled.nav`
     font-family: 'Big Shoulders Display', light;
     height: 60px;
     background: black;
-    padding-bottom: 10px;
+    padding: 10px 20px;
 `
 
 const StyledList = styled.ul`
