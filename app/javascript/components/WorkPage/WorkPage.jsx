@@ -8,10 +8,13 @@ import styled from 'styled-components'
 const StyledWorkPage = styled.div`
     min-height: 100vh;
     overflow: scroll;
-    background: gray;
+    // background: gray;
+    background: rgb(56,163,165);
+    background: linear-gradient(0deg, rgba(56,163,165,1) 0%, rgba(20,20,20,1) 100%);
     max-width: 1400px;
     font-family: 'Big Shoulders Display', light;
     margin: 10px auto;
+    border-radius: 5px;
 `
 
 const WorkPage = () => {
