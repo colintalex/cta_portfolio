@@ -1,5 +1,60 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import Carousel from 'react-elastic-carousel';
+import styled from 'styled-components'
+
+const StyledProjGridContainer = styled.div`
+    display: grid !important;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+    justify-content: space-around;
+    padding: 25px;
+
+
+`
+
+const StyledProjGridModule = styled.div`
+    display: inline-block;
+    border-radius: 10px;
+    background: #888;
+    padding: 15px;
+`
+
+const StyledProjHeading = styled.h3`
+    margin: 5px;
+    display: inline;
+    font-size: 2em;
+`
+
+const StyledProjDescription = styled.p`
+    margin: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    grid-column: 1 / 3;
+    overflow: scroll;
+`
+
+const StyledProjImage = styled.img`
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    max-height: 600px;
+    border-radius: 5px;
+`
+
+const ImageWrapper = styled.div`
+    height: auto;
+    width: auto;
+    padding-top: 30px;
+    margin-bottom: 25px;
+`
+
+const StyledProjectContent = styled.div`
+    height: auto;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+`
 
 const GraphicProjectModule = ({ activeTab }) => {
     const [graphicProjects, setGraphicProjects] = useState([]);
@@ -16,19 +71,32 @@ const GraphicProjectModule = ({ activeTab }) => {
     const graphicProjectItems = graphicProjects.map(item => {
         var proj = item.attributes
         return (
-            <div>
-                Title: {proj.title},
-                Desc: {proj.description} <br/>
-                Images: {proj.images && proj.images.map(img => <img src={img.url} height='150' width='150'/>)}
-            </div>
+            <StyledProjGridModule>
+                <StyledProjectContent>
+                    <div>
+                        <StyledProjHeading>{proj.title}</StyledProjHeading>
+                    </div>
+                    <StyledProjDescription>
+                        {proj.description}
+                    </StyledProjDescription>
+                </StyledProjectContent>
+                <ImageWrapper>
+                    <Carousel
+                        enableAutoPlay autoPlaySpeed={5500}
+                    >
+                        {proj.images && proj.images.map(img => <StyledProjImage src={img.url}/>)}
+                    </Carousel>
+                </ImageWrapper>
+            </StyledProjGridModule>
         )
     })
     return (
         <div
             style={{display: (activeTab == 'tab-graphic-projects') ? 'block' : 'none'}}
         >
-            Graphic Project Module
-            {graphicProjectItems}
+            <StyledProjGridContainer>
+                {graphicProjectItems}
+            </StyledProjGridContainer>
         </div>
     )
 }

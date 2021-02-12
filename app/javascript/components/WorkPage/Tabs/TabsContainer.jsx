@@ -47,7 +47,7 @@ const StyledArrowIcon = styled(HiArrowNarrowLeft)`
 
     transition: transform .6s;
     transform: ${props => 
-        (props.activeTab == 'tab-code-projects') ? 'rotateZ(0)' : 'rotateZ(180deg)'
+        (props.activetab == 'tab-code-projects') ? 'rotateZ(0)' : 'rotateZ(180deg)'
     };
 
 `
@@ -63,7 +63,7 @@ const TabsContainer = () => {
                     <StyledTabs onClick={e => setActiveTab('tab-code-projects')}>Code Work</StyledTabs>
                 </StyledTabItem>
                     <StyledArrowIcon
-                        activeTab={activeTab}
+                        activetab={activeTab}
                     />
                 <StyledTabItem className='tab' id='tab-graphic-projects'>
                     <StyledTabs onClick={e => setActiveTab('tab-graphic-projects')}>Graphic Design</StyledTabs>
