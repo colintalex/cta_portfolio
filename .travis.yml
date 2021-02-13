@@ -1,19 +1,18 @@
 language: ruby
 cache: bundler
 rvm:
-  - 2.6.5
-
+- 2.6.5
 services:
-  - postgresql
+- postgresql
 before_script:
-  - gem install rmagick
-  - psql -c 'create database cta_portfolio_test;' -U postgres
+- gem install rmagick
+- psql -c 'create database cta_portfolio_test;' -U postgres
 test:
   adapter: postgresql
   database: cta_portfolio_test
 deploy:
   provider: heroku
   api_key:
-    secure: 3ddcce24-2a3b-4f78-8a59-e98160ee63b8
-  on:
+    secure: MNRs7jQn5KJLKGWDpLndrkPHFFpjpULsuasSqshysQC88D3fJa+nT92F5PjIDKNWawuQ8TxKU9g8IcpObNxe7EFQ0OE61K5XnxjshVWPFQlm7UjWct8I3VdC/XAF23M7lUu/EGCdsbY1dTlZVk3tebswp5syX/wrK68e0BIozLsCEpYLww7EnhtFbbZ53nxPpqwc5J1sgWYZYFYxUXx/5d7R7SfRTI9mIy/017Rr30e/i+ptydwuJwKHY6w2v24sM2zoqCowb34K3YolLsjUiZdaFb2EPu0llKJbpr3t109tZ/Co2KSeg9//0XH823FIHVXtyNbZRsq19H5WJ6ldFXQrmqxqDu9+JfijB2xWSG+P+rWxag6PGIlM75eiGtZEmt3HVh+EFCOUjxiPPGhTyLXmz17DWRiFQ0tiwM33VlSiKIBr3uKRXq+MDe6MAA1rv36KoTxKzqQbB7MWtVeWepRsQbpEhsF08LJ6UuIcUdRWxJuJBqzSPZwv5PskK4MC7VUvRtBBL0GuDLlIM9r2HmMAgYtrs4AaKsAY5A1i5YTTBJ271VREeo1e6hZ+dgFcCDWKDPqlRMMGd2MMws8sPCtxFhiZiX8u+N916KxN9jVzcWpbfFDZY/NNZj6PzVhOPZDXZ4xbuJTueSH8ktJAeyrMUVLgYjD9iA2Ls+mcDpU=
+  true:
     branch: main
