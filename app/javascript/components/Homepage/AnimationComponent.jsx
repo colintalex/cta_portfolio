@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
 const StyledSVG = styled.svg`
-    transform: scale(1.5) translate(-5%, 0%);
+    transform: scale(1.5) translate(-5%, 10%);
 
 
     body {
