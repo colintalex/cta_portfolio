@@ -62,6 +62,6 @@ class Api::V1::GraphicProjectsController < ApplicationController
   end
 
   def image_params
-    params.permit( images: [] )
+    params.permit(images: [])
   end
 end
