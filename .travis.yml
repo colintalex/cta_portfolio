@@ -14,5 +14,5 @@ test:
 deploy:
   provider: heroku
   api_key:
-    secure: 3ddcce24-2a3b-4f78-8a59-e98160ee63b8
+    secure: dc682e5e22e1705ec805df5bab65650115fbd38f8ef868e37dd6ecd1565d32cdcace8044c93844598e850c880f39476fcdb96d8cbe8b1bbcae599540a55a2eba
 
