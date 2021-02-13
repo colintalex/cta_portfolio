@@ -78,6 +78,9 @@ GEM
     diff-lcs (1.4.4)
     docile (1.1.5)
     dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     fast_jsonapi (1.5)
       activesupport (>= 4.2)
@@ -245,6 +248,7 @@ DEPENDENCIES
   byebug
   capybara
   dotenv
+  dotenv-rails
   fast_jsonapi
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
@@ -271,4 +275,4 @@ RUBY VERSION
    ruby 2.6.5p57
 
 BUNDLED WITH
-   2.1.4
+   2.2.4
