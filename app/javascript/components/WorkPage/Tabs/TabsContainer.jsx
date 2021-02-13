@@ -8,15 +8,19 @@ import { FaArrowCircleLeft } from 'react-icons/fa'
 const StyledTabs = styled.button`
     font-family: 'Big Shoulders Display', light;
     font-size: 2em;
-    color: black;
-    button-style: none;
+    color: #E1AD5B;
+    background-color: #000000;
+    border-radius: 5px;
+    transition: color .6s;
+    outline: none;
 
     &:hover {
-        color: white;
+        color: #e5e5e5;
     }
 
     &:active {
         color: turquoise;
+        
     }
 `
 
