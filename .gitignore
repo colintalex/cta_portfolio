@@ -39,5 +39,3 @@
 yarn-debug.log*
 .yarn-integrity
 
-
-config/keyfile.json

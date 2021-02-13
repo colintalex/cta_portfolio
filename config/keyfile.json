@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "ctaportfolio",
+  "private_key_id": "64ac39f6de4fa3bb80e2d36c851936b572a7a6d7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDn08rw0IyZwnAn\neKpnxWV/qpEQoztjxpUTQ9XFN3fQALKUGaFHY+yelGIrYjH5zdAQZSENUl2Gj6fb\nBCI11+d4lXzwOIVmWSB0K0r26ExK7zgsfcD4OQloFJZKJnPDxcZXLT2gHAagg4gW\nhXW2tEKqOMiIKJVzxd1ppQc6Sw0GBU/mUeFm2qCsqjQ7kLZ8RfJw7WZOyUa+x+Ej\n6Yt0TU2zWsqpO7tXkxQICqpWtmjG27ywOgDZKBCwY2JVtRPy2yfEbToLmKSiLvqd\nnIgWeBxBS6KRAB8IKn0bFb5mZjH2UtfexIXKBVT2IltEfhODuhMgjntJ+c6W9rU0\nNpymKLOHAgMBAAECggEAasoACPA4ZDfSDAykioq+l5GNo1ld6Tc3wpkT5vYHJfS8\nTkaEKWuZOu9lTVC9brHk7zh2gjl3xZ11GAmObLkY8k4CMHII2T2jGoA61wPo6PfL\nK4t+EZnMgHpDRMLzvrHjDJNVeOSQFO6iCKXPtKrSrrDbhwUS2zLBLIINk0exJxz4\nqqJ6xIwKMmD1qCx6Gn39UB1yFFwR9iWCbLDbN+l03CAiStR0/oGbYE9PP5oVJtT8\n4kldiBtTvsyCRFlIl97xF5TI+53sGpJ199MG+jNKw0IBQmNvYFa2ieKRMhP9S3ie\n8MPNr9G+gvHuo6Kwn1YY1pIXtTZ/wE0l6tFULR+5mQKBgQD+fyzOMs36DO+KnqCk\nHTEGAsJqKYGMqjRTolbsBXOHyzzQnOHQ9NXoDV/M0IpYOXcTbz+CTb2F4MGkZB/w\nnKlfrNXSVu9LMNI2uxmBuUOH9IixufXU2CHCqlBiAu5GnGEMNW2KoAy+AUxCvkl6\nu24Va5HMEmHoNipmF0vjraI5swKBgQDpMlbU6wwpRTaYnBSGSJeb7f8BqMKJ53e+\nBsgBLKaZR83wl+yYFHsy96JhdI554crluMN6a1rWtIchptPWx1zgd6t7Egawq+T3\nBCj+znpNKmt5f7d38Exfoe/Cf4biGrXmAVrcb5q7MZUm1WEsatvtdCz5pIqe5OhO\nztcbyrWM3QKBgHBFyo5s+1GEw2hz8op0FlyAeyQ6i1xy+gKra41UGlOd5YZir3xv\nhq6It+qzVVT2hQGd4naptSKKtOLBCRYtBsueg/X3RDn3n8VlZStFf/VKe8NsNndf\nogUu/ac/g77C3k10hI7TbMul5u7K47+xUC9C9V8B/Q9kVfAT9vbKcvbhAoGAEisb\n3MbbUbPUxxsR9kxdk4Z9YbG2RmxERgfdOUozSKnxf5c2lbqyxovImPMtzo0q867r\ne/Q1RZkXFiYbRxaNQ+fO8m27G7SoyB4I26FWogB2EydCMhQEv0asmWi6J4+RMHRW\nkeoYEhGQ30+snHtO2zc78c9CBZMsDkfLNp0ae/kCgYEA8ioBuL8t1pUybNPMwgin\nekpDMPbEMLEgl+o1FSZgDAJzr2DYqKcaLAdTt28K+KjHfXhiG/aG80rDRhkVEtMX\n+v65D1qXDDvVcnxdY5ApdLAPNB65+U3nHQw6ewcPo3XzuibJKRzNIHtz1Z47HzYx\nIz36ouIU6hsIchvcVWQhJhI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "cta-portfolio@ctaportfolio.iam.gserviceaccount.com",
+  "client_id": "117850298650963420998",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cta-portfolio%40ctaportfolio.iam.gserviceaccount.com"
+}
