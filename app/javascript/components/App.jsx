@@ -10,7 +10,7 @@ import styled from 'styled-components'
 import Footer from './Footer';
 
 const StyledMain = styled.div`
-    background: #222;
+    background: #3a3a3a;
     margin: 0;
     padding: 0;
 `
