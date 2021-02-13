@@ -12,13 +12,16 @@ const StyledProjGridContainer = styled.div`
     justify-content: space-around;
     padding: 25px;
 
-
+    hr {
+        border-color: gray;
+        margin-top: 0px;
+    }
 `
 
 const StyledProjGridModule = styled.div`
     display: inline-block;
     border-radius: 10px;
-    background: #888;
+    background: #35868C;
     padding: 15px;
 `
 
@@ -34,6 +37,7 @@ const StyledProjDescription = styled.p`
     font-size: 1.2em;
     grid-column: 1 / 3;
     overflow: scroll;
+    height: 150px;
 `
 
 const StyledProjImage = styled.img`
@@ -56,6 +60,9 @@ const StyledProjectContent = styled.div`
     height: auto;
     display: grid;
     grid-template-columns: 2fr 2fr;
+    background: #d2d2d266;
+    padding: 8px;
+    border-radius: 5px;
 `
 
 const StyledProjTech = styled.p`
@@ -70,19 +77,45 @@ const StyledtechWrapper = styled.div`
 const StyledLinksWrapper = styled.div`
     grid-column: 1 / 3;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.8em;
+    a {
+        text-decoration: none;
+        color: #a9a9a9;
+        margin: 0 10px;
+
+        transition color .6s;
+
+        &:hover {
+            color: black;
+        }
+        &:hover svg {
+            color: black;
+        }
+    }
 `
 
 const StyledHerokuIcon = styled(GrHeroku)`
-    color: black;
+    color: #E1AD5B;
     height: 40px;
     width: 40px;
+    stroke: #CC851E;
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 0;
+    stroke-width: 0.5px;
+    vertical-align: bottom;
+    transition color .6s;
 `
 
 const StyledGitIcon = styled(FaGithub)`
-    color: black;
+    color: #E1AD5B;
     height: 40px;
     width: 40px;
+    stroke: #CC851E;
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 0;
+    stroke-width: 10px;
+    vertical-align: bottom;
+    transition color .6s;
 `
 
 
@@ -109,16 +142,16 @@ const CodeProjectModule = ({ activeTab }) => {
                     <StyledtechWrapper>
                         <StyledProjTech>Built with: {proj.technology}</StyledProjTech>
                     </StyledtechWrapper>
-                    <StyledProjDescription>{proj.description}</StyledProjDescription>
+                    <StyledProjDescription>
+                        <hr/>
+                        {proj.description}
+                    </StyledProjDescription>
                 </StyledProjectContent>
                 <ImageWrapper>
-                    <Carousel
-                        enableAutoPlay autoPlaySpeed={5500}
-                    >
+                    <Carousel>
                         {proj.images && proj.images.map(img => <StyledProjImage src={img.url}/>)}
                     </Carousel>
                 </ImageWrapper>
-                <hr/>
                 <StyledLinksWrapper>
                     <a href={proj.github_url}>GitHub Repo <StyledGitIcon/></a>
                     <a href={proj.deploy_url}>Deployment Link<StyledHerokuIcon/></a>
