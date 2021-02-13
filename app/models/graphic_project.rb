@@ -5,9 +5,8 @@ class GraphicProject < ApplicationRecord
     has_many_attached :images
 
     def get_image_urls
-        urls = self.images.map do |img|
+        self.images.map do |img|
             {url: rails_blob_path(img), id: img.id}
         end
-        urls
     end
 end
