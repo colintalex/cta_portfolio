@@ -7,7 +7,7 @@
 # Ignore bundler config.
 /.bundle
 /vendor
-.env
+*.env
 
 # Ignore SimpleCov coverage files
 /coverage
@@ -38,3 +38,6 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+
+config/ctaportfolio-a531751aaea5.json
