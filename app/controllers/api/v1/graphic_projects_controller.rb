@@ -21,7 +21,6 @@ class Api::V1::GraphicProjectsController < ApplicationController
     image_params[:images] && image_params[:images].each do |img|
       img.class == ActionDispatch::Http::UploadedFile ? project.images.attach(img) : next
     end
-    require 'pry'; binding.pry
     if project.save
       render json: GraphicProjectSerializer.new(project)
     else
