@@ -10,10 +10,11 @@ import styled from 'styled-components'
 import Footer from './Footer';
 
 const StyledMain = styled.div`
-    background: gray;
+    background: #3a3a3a;
     margin: 0;
     padding: 0;
 `
+
 
 const App = () => {
     const token = 

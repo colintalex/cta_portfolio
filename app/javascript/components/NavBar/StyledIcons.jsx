@@ -8,44 +8,32 @@ import styled from 'styled-components'
 const StyledIconWrapper = styled.div`
     display: inline-block;
     vertical-align: middle;
-    width: 30%;
+    width: auto;
     height: 100%;
     text-align: center;
 
     svg {
-        margin: 5px 20px;
+        margin: 5px 5px;
+        color: gray;
+        height: 35px;
+        width: 35px;
+        display: inline-block;
+        &:hover {
+            color: turquoise;
+        }
     }
-
 `
 
 const StyledGitHubIcon = styled(AiOutlineGithub)`
-    color: white;
-    height: 35px;
-    width: 35px;
-    display: inline-block;
-    &:hover {
-        color: turquoise;
-    }
+   
 `
 
 const StyledMailIcon = styled(HiOutlineMail)`
-    color: white;
-    height: 35px;
-    width: 35px;
-    display: inline-block;
-    &:hover {
-        color: turquoise;
-    }
+   
 `
 
 const StyledLinkedInIcon = styled(AiOutlineLinkedin)`
-    color: white;
-    height: 35px;
-    width: 35px;
-    display: inline-block;
-    &:hover {
-        color: turquoise;
-    }
+    
 `
 
 const StyledIcons = () => {

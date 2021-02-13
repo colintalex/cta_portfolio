@@ -8,7 +8,11 @@ import styled from 'styled-components'
 const StyledWorkPage = styled.div`
     min-height: 100vh;
     overflow: scroll;
-    background: gray;
+    // background: #E1AD5B;
+    max-width: 1400px;
+    font-family: 'Big Shoulders Display', light;
+    margin: 10px auto;
+    border-radius: 5px;
 `
 
 const WorkPage = () => {

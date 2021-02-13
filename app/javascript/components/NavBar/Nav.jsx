@@ -5,8 +5,9 @@ import StyledIcons from './StyledIcons'
 
 const StyledNav = styled.nav`
     font-family: 'Big Shoulders Display', light;
-    border-radius: 10px;
     height: 60px;
+    background: black;
+    padding: 10px 20px;
 `
 
 const StyledList = styled.ul`
@@ -28,7 +29,7 @@ const StyledListItem = styled.li`
         margin-right: 25px;
     }
 
-    transition: background-color .4s;
+    transition: background-color;
     &:hover {
         background-color: turquoise;
     }
@@ -37,7 +38,7 @@ const StyledListItem = styled.li`
 const StyledLink = styled(Link)`
     color: #d8d8d8;
     text-decoration: none;
-    transition: color .4s;
+    transition: color;
 
     &:hover {
         color: black
