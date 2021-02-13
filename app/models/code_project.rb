@@ -8,7 +8,7 @@ class CodeProject < ApplicationRecord
 
     def get_image_urls
         urls = self.images_blobs.map do |img|
-            {url: rails_blob_path(img), id: img.id}
+            {url: img.service_url, id: img.id}
         end
         urls
     end
