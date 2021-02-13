@@ -16,7 +16,7 @@ gem 'bcrypt'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'image_processing', '~> 1.2'
 gem 'rmagick', '~> 4.1.2'
-gem 'dotenv'
+gem "google-cloud-storage", "~> 1.11", require: false
 
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.1'

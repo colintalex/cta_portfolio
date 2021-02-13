@@ -19,3 +19,8 @@ deploy:
     repo: colintalex/cta_portfolio
     branch: main
   skip_cleanup: 'true'
+  google:
+    service: GCS
+    credentials: <%= Rails.root.join("path/to/keyfile.json") %>
+    project: "CtaPortfolio"
+    bucket: "images_ctaportfolio"
