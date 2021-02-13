@@ -60,7 +60,7 @@ const StyledProjectContent = styled.div`
     height: auto;
     display: grid;
     grid-template-columns: 2fr 2fr;
-    background: #d2d2d266;
+    background: rgb(255 255 255 / 58%);
     padding: 8px;
     border-radius: 5px;
 `
