@@ -14,8 +14,10 @@ test:
 deploy:
   provider: heroku
   api_key:
-    secure: "3ddcce24-2a3b-4f78-8a59-e98160ee63b8"
-  github_token: ENV['GITHUB_ACCESS_TOKEN']
+    secure: 3ddcce24-2a3b-4f78-8a59-e98160ee63b8
+  app: cta_portfolio # being app name on heroku which am deploying to.
+  on:
+    repo: colintalex/cta_portfolio # GitHub Repo
   keep-history: true
   verbose: true
   on:
