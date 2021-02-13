@@ -21,7 +21,8 @@ const StyledProjGridContainer = styled.div`
 const StyledProjGridModule = styled.div`
     display: inline-block;
     border-radius: 10px;
-    background: #35868C;
+    background: rgb(80,80,79);
+    background: linear-gradient(0deg,rgb(0 0 0 / 80%) 30%,rgb(181 134 62 / 95%) 100%);
     padding: 15px;
 `
 
