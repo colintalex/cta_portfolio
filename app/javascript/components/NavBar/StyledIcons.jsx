@@ -2,8 +2,12 @@ import React from 'react'
 import { AiOutlineGithub } from 'react-icons/ai'
 import { HiOutlineMail } from 'react-icons/hi'
 import { AiOutlineLinkedin } from 'react-icons/ai'
-
 import styled from 'styled-components'
+
+const linkUrls = {
+    'github': 'https://github.com/colintalex',
+    'linkedin': 'https://www.linkedin.com/in/colintalex/'
+}
 
 const StyledIconWrapper = styled.div`
     display: inline-block;
@@ -39,9 +43,14 @@ const StyledLinkedInIcon = styled(AiOutlineLinkedin)`
 const StyledIcons = () => {
     return(
         <StyledIconWrapper>
-            <StyledGitHubIcon className="socialIcon"/>
-            <StyledMailIcon className="socialIcon"/>
-            <StyledLinkedInIcon className="socialIcon"/>
+            <a href={linkUrls['github']}>
+                <StyledGitHubIcon className="socialIcon"/>
+            </a>
+            <a href={linkUrls['github']}>
+                <StyledLinkedInIcon className="socialIcon"/>
+            </a>
+            {/* <a> LINK TO EMAIL FORM </a> */}
+            <StyledMailIcon className="socialIcon"/> 
         </StyledIconWrapper>
     )
 }
