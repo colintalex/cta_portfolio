@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 
 const StyledHomepage = styled.div`
-    background: #484848;
+    background: #3a3a3a;
     min-height: 90vh;
     
 `
