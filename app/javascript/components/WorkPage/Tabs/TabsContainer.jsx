@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import CodeProjectModule from '../WorkModules/CodeProjectModule'
 import GraphicProjectModule from '../WorkModules/GraphicProjectModule'
 import styled from 'styled-components'
-import { HiArrowNarrowLeft } from 'react-icons/hi'
+import { FaArrowCircleLeft } from 'react-icons/fa'
 
 const StyledTabs = styled.button`
     font-family: 'Big Shoulders Display', light;
@@ -36,19 +36,27 @@ const StyledPageHeader = styled.h2`
     margin: 10px auto;
     text-align: center;
     font-size: 2.5em;
-    color: lightgray;
+    color: #e5e5e5;
 `
 
-const StyledArrowIcon = styled(HiArrowNarrowLeft)`
-    width: 40px;
-    height: 40px;
+const StyledArrowIcon = styled(FaArrowCircleLeft)`
+    width: 45px;
+    height: 45px;
     vertical-align: bottom;
-    color: turquoise;
+    color: #E1AD5B;
+    border: 1px black;
+
+    stroke: #CC851E;
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 0;
+    stroke-width: 10px;
 
     transition: transform .6s;
     transform: ${props => 
         (props.activetab == 'tab-code-projects') ? 'rotateZ(0)' : 'rotateZ(180deg)'
     };
+    
+/
 
 `
 
