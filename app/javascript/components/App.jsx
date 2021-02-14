@@ -10,11 +10,18 @@ import styled from 'styled-components'
 import Footer from './Footer';
 
 const StyledMain = styled.div`
-    background: #3a3a3a;
+    // background: #3a3a3a;
     margin: 0;
     padding: 0;
+    background: url('background.jpg');
+    background-size: cover;
+    background-position-y: -130px;
+    background-position-x: -20px;
 `
 
+const StyledMainBlurEffect = styled.div`
+    backdrop-filter: blur(15px);
+`
 
 const App = () => {
     const token = 
@@ -25,14 +32,16 @@ const App = () => {
 
     return (
         <StyledMain>
-            <Nav/>
-            <Switch>
-                <Route exact path="/" component={Homepage}/>
-                <Route exact path="/work" component={WorkPage}/>
-                <Route exact path="/about" component={AboutPage}/>
-                <Route exact path="/admin" component={AdminDashboard}/>
-            </Switch>
-            <Footer/>
+            <StyledMainBlurEffect>
+                <Nav/>
+                <Switch>
+                    <Route exact path="/" component={Homepage}/>
+                    <Route exact path="/work" component={WorkPage}/>
+                    <Route exact path="/about" component={AboutPage}/>
+                    <Route exact path="/admin" component={AdminDashboard}/>
+                </Switch>
+                <Footer/>
+            </StyledMainBlurEffect>
         </StyledMain>
     )
 };
