@@ -18,6 +18,12 @@ gem 'image_processing', '~> 1.2'
 gem 'rmagick', '~> 4.1.2'
 gem "google-cloud-storage", "~> 1.11", require: false
 
+gem 'capistrano', '~> 3.11'
+gem 'capistrano-rails', '~> 1.4'
+gem 'capistrano-passenger', '~> 0.2.0'
+gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+
+
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.1'
   gem 'dotenv-rails'

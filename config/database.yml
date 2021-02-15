@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: cta_portfolio_production
-  username: cta_portfolio
+  username: <%= ENV['CTA_PORTFOLIO_DATABASE_USER'] %>
   password: <%= ENV['CTA_PORTFOLIO_DATABASE_PASSWORD'] %>
