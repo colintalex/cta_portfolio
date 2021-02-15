@@ -37,6 +37,3 @@ set :keep_releases, 5
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
-set :rvm_ruby_version, '2.6.6-146'
-set :default_env, { rvm_bin_path: '~/.rvm/bin' }
-SSHKit.config.command_map[:rake] = "#{fetch(:default_env)[:rvm_bin_path]}/rvm ruby-#{fetch(:rvm_ruby_version)} do bundle exec rake"
