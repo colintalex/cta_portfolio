@@ -2,7 +2,7 @@
 lock "~> 3.15.0"
 
 set :application, "portfolio-app"
-set :repo_url, "git@github.com:colintalex/cta_portfolio.git"
+set :repo_url, "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0KhziuZcAaCmS5bWAsb/rHaASUeipyzAc4NFWAsHzhfdwOAhma0MlRalXWsfb2GO3PqTJF1ojsCfphJ7q9+e835lcu8GJtFX3MkglAdlysqg8x+p5KCTiA0uK3wfK1YCoaPqmI///WEaDq3uEd536kq7D1juzpbbEjjRf1YIEZCX441Vj6lN5hFUD974dWMBxuBTKv0k8EjWIhkLpOT4stH7iRKQ5PNJzh6KcS0GeIz+ys6u8/jPFmMq6YxkGWd5KMpr0m17T9EGL8aLTBSwOEtagu7tijxYgDM1s4izyQqeGNIyB77SUAi3nfyS2B3DHbZc6fDdHnYm1qhT84MSa3nRnsIEh3tMq2s6fEoKzTaVwDwu880IcB2cqDIFTfDVEQLji9/6FfIal+BNvEBgMCZeAQ2YO6dDkFHiaunk5S6MsGDG6+t6WfbrU2OTygy5bNzpd6lBbsttnqDIvKHgw0EZgiFSW/6Sca0Luvez67yqdZA0qLIxwuITRgD+fBV0= colinalexander@Colins-iMac.local: git@github.com:colintalex/cta_portfolio.git"
 
 # Default branch is :main
 ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
