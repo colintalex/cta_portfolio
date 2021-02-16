@@ -21,15 +21,9 @@ const StyledProjGridContainer = styled.div`
 const StyledProjGridModule = styled.div`
     display: inline-block;
     border-radius: 10px;
-    background: url(https://www.campfireiowa.org/wp-content/uploads/2016/07/Topographic-Map-Pattern-8.png);
-`
-
-const StyledGridModuleTexture = styled.div`
     background: rgb(80,80,79);
-    background: linear-gradient(0deg,rgb(0 0 0 / 100%) 30%,rgb(181 134 62 / 95%) 100%);
+    background: linear-gradient(0deg,rgb(0 0 0 / 80%) 30%,rgb(181 134 62 / 95%) 100%);
     padding: 15px;
-    border-radius: 10px;
-    backdrop-filter: blur(1px);
 `
 
 const StyledProjHeading = styled.h3`
@@ -67,7 +61,7 @@ const StyledProjectContent = styled.div`
     height: auto;
     display: grid;
     grid-template-columns: 2fr 2fr;
-    background: rgb(255 230 189 / 85%);
+    background: rgb(255 255 255 / 58%);
     padding: 8px;
     border-radius: 5px;
 `
@@ -85,25 +79,24 @@ const StyledLinksWrapper = styled.div`
     grid-column: 1 / 3;
     text-align: center;
     font-size: 1.8em;
-    padding-left: 35px;
     a {
         text-decoration: none;
-        color: black;
+        color: #a9a9a9;
         margin: 0 10px;
 
         transition color .6s;
 
         &:hover {
-            color: #a9a9a9;
+            color: black;
         }
         &:hover svg {
-            color: #a9a9a9;
+            color: black;
         }
     }
 `
 
 const StyledHerokuIcon = styled(GrHeroku)`
-    color: black;
+    color: #E1AD5B;
     height: 40px;
     width: 40px;
     stroke: #CC851E;
@@ -115,7 +108,7 @@ const StyledHerokuIcon = styled(GrHeroku)`
 `
 
 const StyledGitIcon = styled(FaGithub)`
-    color: black;
+    color: #E1AD5B;
     height: 40px;
     width: 40px;
     stroke: #CC851E;
@@ -143,7 +136,6 @@ const CodeProjectModule = ({ activeTab }) => {
         var proj = item.attributes
         return (
             <StyledProjGridModule>
-                <StyledGridModuleTexture>
                 <StyledProjectContent>
                     <div>
                         <StyledProjHeading>{proj.title}</StyledProjHeading>
@@ -163,9 +155,8 @@ const CodeProjectModule = ({ activeTab }) => {
                 </ImageWrapper>
                 <StyledLinksWrapper>
                     <a href={proj.github_url}>GitHub Repo <StyledGitIcon/></a>
-                    <a href={proj.deploy_url}><StyledHerokuIcon/> Deployment Link</a>
+                    <a href={proj.deploy_url}>Deployment Link<StyledHerokuIcon/></a>
                 </StyledLinksWrapper>
-                </StyledGridModuleTexture>
             </StyledProjGridModule>
         )
     })
