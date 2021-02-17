@@ -4,9 +4,11 @@ google:
   credentials: <%= Rails.root.join("config/keyfile.json") %>
   project: "CtaPortfolio"
   bucket: "images_ctaportfolio"
+
 local: 
   root: <%= Rails.root.join('storage') %>
   service: Disk
+  
 test: 
   root: <%= Rails.root.join('tmp/storage') %>
   service: Disk

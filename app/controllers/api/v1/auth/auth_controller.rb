@@ -5,7 +5,7 @@ class Api::V1::Auth::AuthController < ApplicationController
         admin = Admin.find_by(email: admin_params[:email])
         if admin && admin.authenticate(params[:password])
             payload = {admin_id: admin.id}
-            admin.token = JWT.encode(payload, ENV["JWT_SECRET"]) # Hide secret in ENV
+            admin.token = JWT.encode(payload, Rails.application.credentails.JWT_SECRET) # Hide secret in ENV
             admin.save
             render json: AdminSerializer.new(admin)
         else
