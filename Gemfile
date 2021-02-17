@@ -19,11 +19,6 @@ gem 'image_processing', '~> 1.2'
 gem 'rmagick', '~> 4.1.2'
 gem "google-cloud-storage", "~> 1.11", require: false
 
-gem 'capistrano', '~> 3.11'
-gem 'capistrano-rails', '~> 1.4'
-gem 'capistrano-passenger', '~> 0.2.0'
-gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
-
 gem 'ed25519', '>= 1.2', '< 2.01'
 gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 
