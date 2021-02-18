@@ -10,8 +10,6 @@ before_script:
 test:
   adapter: postgresql
   database: cta_portfolio_test
-  username: 'postgres'
-  password: ''
 deploy:
   provider: heroku
   api_key:
