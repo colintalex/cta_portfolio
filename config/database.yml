@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: cta_portfolio_production
+  database: cta_portfolio
   username: <%= Rails.application.credentials.production[:cta_portfolio_db_user]  %>
   password: <%= Rails.application.credentials.production[:cta_portfolio_db_password]  %>
