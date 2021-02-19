@@ -6,7 +6,7 @@ import TabsContainer from './Tabs/TabsContainer';
 import styled from 'styled-components'
 
 const StyledWorkPage = styled.div`
-    min-height: 100vh;
+    min-height: 90vh;
     overflow: scroll;
     // background: #E1AD5B;
     max-width: 1400px;

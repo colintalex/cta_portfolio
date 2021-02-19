@@ -2,9 +2,11 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
 const StyledSVG = styled.svg`
-    transform: scale(1.5) translate(-5%, 10%);
-
-
+    position:absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+    height: 60%;
+    
     body {
     background: gray;
     }
@@ -16,13 +18,13 @@ const StyledSVG = styled.svg`
     path:nth-child(1) {
     stroke-dasharray: 950;
     stroke-dashoffset: 0;
-    animation: line-anim 6.5s ease-in-out backwards;
+    animation: line-anim 5s ease-in-out backwards;
     animation-delay: 1.5s;
     }
     path:nth-child(2) {
     stroke-dasharray: 1905;
     stroke-dashoffset: 951;
-    animation: line-anim 6s ease-in-out forwards;
+    animation: line-anim 4s ease-in-out forwards;
     animation-delay: 5s;
     
     }
@@ -31,37 +33,37 @@ const StyledSVG = styled.svg`
     path:nth-child(3) {
     stroke-dasharray: 86;
     stroke-dashoffset: 200;
-    animation: cloud-circle-line-anim 9s ease-in-out;
+    animation: cloud-circle-line-anim 6s ease-in-out;
     animation-delay: 5s;
     }
     path:nth-child(4) {
     stroke-dasharray: 500;
     stroke-dashoffset: 0;
-    animation: line-anim 5.5s ease-in-out forwards;
+    animation: line-anim 3.5s ease-in-out forwards;
     animation-delay: 6s;
     }
     path:nth-child(5) {
     stroke-dasharray: 250;
     stroke-dashoffset: 0;
-    animation: cloud-circle-line-anim 8.5s ease-in-out;
+    animation: cloud-circle-line-anim 6.5s ease-in-out;
     animation-delay: 3.5s;
     
     }
     path:nth-child(6) {
     stroke-dasharray: 120;
     stroke-dashoffset: 0;
-    animation: line-anim 6.5s ease-in-out forwards;
+    animation: line-anim 4.5s ease-in-out forwards;
     animation-delay: 5s;
     }
     path:nth-child(7) {
     stroke-dasharray: 105;
     stroke-dashoffset: 0;
-    animation: cloud-circle-line-anim 7.5s ease-in-out;
+    animation: cloud-circle-line-anim 5.5s ease-in-out;
     animation-delay: 2s;
     }
 
     #circle {
-    animation: circle-line-anim 7.5s ease-in-out forwards 2 alternate;
+    animation: circle-line-anim 6s ease-in-out forwards 2 alternate;
     animation-delay: 1s
     }
 
@@ -71,7 +73,7 @@ const StyledSVG = styled.svg`
     @keyframes circle-line-anim {
     0%{
         stroke: white;
-        stroke-dasharray: 1400;
+        stroke-dasharray: 1800;
         stroke-dashoffset: 0;
     }
     10%{
@@ -209,12 +211,14 @@ const StyledSVG = styled.svg`
 
 const StyledWrapper = styled.div`
     text-align: center;
+    height: 100%;
+    postion: relative;
 `
 
 const AnimationComponent = () => {
     return(
         <StyledWrapper className="animation-wrapper">
-            <StyledSVG id="logo" width="806" height="681" viewBox="0 0 806 681" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <StyledSVG id="logo" width="556" height="681" viewBox="200 175 450 460" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g fill="">
                     <circle id="circle" cx="428" cy="398" r="206.5" />
                 </g>
@@ -225,7 +229,6 @@ const AnimationComponent = () => {
                 <path d="M349.39 512.597C351.611 512.36 354.061 512.945 356.121 513.726C362.354 516.089 367.449 522.068 368.092 528.814C368.312 531.119 368.283 533.623 367.682 535.874C365.777 543.019 359.355 548.932 351.934 549.65C347.877 550.042 343.842 549.601 340.278 547.493C336.919 545.505 333.936 542.353 332.387 538.746C329.578 532.206 330.916 523.767 335.77 518.554C338.241 515.9 341.724 513.792 345.285 513.006C346.656 512.704 348.011 512.744 349.39 512.597Z" stroke="" strokeWidth="0.5"/>
                 <path d="M348.24 521.297C354.339 520.487 360.23 525.889 359.637 532.098C359.343 535.177 357.599 537.781 355.054 539.485C353.817 540.313 352.508 540.822 351.032 541.022C349.321 541.252 347.577 541.16 345.942 540.578C344.726 540.145 343.651 539.406 342.741 538.5C341.791 537.555 340.906 536.472 340.397 535.217C337.984 529.259 341.781 522.155 348.24 521.297Z" stroke="" strokeWidth="0.5"/>
             </StyledSVG>
-
         </StyledWrapper>
     )
 }
