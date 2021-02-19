@@ -85,7 +85,6 @@ const FogEffectLayer = styled.div`
     padding: 10px;
     background: #120b018a;
     border-radius: 10px;
-    backdrop-filter: invert(1) blur(2px);
 `
 
 const TabsContainer = () => {
