@@ -18,13 +18,13 @@ const StyledSVG = styled.svg`
     path:nth-child(1) {
     stroke-dasharray: 950;
     stroke-dashoffset: 0;
-    animation: line-anim 6.5s ease-in-out backwards;
+    animation: line-anim 4.5s ease-in-out backwards;
     animation-delay: 1.5s;
     }
     path:nth-child(2) {
     stroke-dasharray: 1905;
     stroke-dashoffset: 951;
-    animation: line-anim 6s ease-in-out forwards;
+    animation: line-anim 4s ease-in-out forwards;
     animation-delay: 5s;
     
     }
@@ -33,37 +33,37 @@ const StyledSVG = styled.svg`
     path:nth-child(3) {
     stroke-dasharray: 86;
     stroke-dashoffset: 200;
-    animation: cloud-circle-line-anim 9s ease-in-out;
+    animation: cloud-circle-line-anim 7s ease-in-out;
     animation-delay: 5s;
     }
     path:nth-child(4) {
     stroke-dasharray: 500;
     stroke-dashoffset: 0;
-    animation: line-anim 5.5s ease-in-out forwards;
+    animation: line-anim 3.5s ease-in-out forwards;
     animation-delay: 6s;
     }
     path:nth-child(5) {
     stroke-dasharray: 250;
     stroke-dashoffset: 0;
-    animation: cloud-circle-line-anim 8.5s ease-in-out;
+    animation: cloud-circle-line-anim 6.5s ease-in-out;
     animation-delay: 3.5s;
     
     }
     path:nth-child(6) {
     stroke-dasharray: 120;
     stroke-dashoffset: 0;
-    animation: line-anim 6.5s ease-in-out forwards;
+    animation: line-anim 4.5s ease-in-out forwards;
     animation-delay: 5s;
     }
     path:nth-child(7) {
     stroke-dasharray: 105;
     stroke-dashoffset: 0;
-    animation: cloud-circle-line-anim 7.5s ease-in-out;
+    animation: cloud-circle-line-anim 5.5s ease-in-out;
     animation-delay: 2s;
     }
 
     #circle {
-    animation: circle-line-anim 7.5s ease-in-out forwards 2 alternate;
+    animation: circle-line-anim 5.5s ease-in-out forwards 2 alternate;
     animation-delay: 1s
     }
 
