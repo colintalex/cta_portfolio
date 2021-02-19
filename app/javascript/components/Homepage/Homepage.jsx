@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 
 const StyledHomepage = styled.div`
-    min-height: 95vh;
+    min-height: 90vh;
 `
 
 const Homepage = () => {

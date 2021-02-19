@@ -23,7 +23,7 @@ const StyledIconWrapper = styled.div`
         width: 45px;
         display: inline-block;
 
-        transition: color .3s;
+        transition: color .4s;
         &:hover {
             color: #CC851E;
         }

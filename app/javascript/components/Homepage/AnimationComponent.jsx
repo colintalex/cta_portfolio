@@ -18,7 +18,7 @@ const StyledSVG = styled.svg`
     path:nth-child(1) {
     stroke-dasharray: 950;
     stroke-dashoffset: 0;
-    animation: line-anim 4.5s ease-in-out backwards;
+    animation: line-anim 5s ease-in-out backwards;
     animation-delay: 1.5s;
     }
     path:nth-child(2) {
@@ -33,7 +33,8 @@ const StyledSVG = styled.svg`
     path:nth-child(3) {
     stroke-dasharray: 86;
     stroke-dashoffset: 200;
-    animation: cloud-circle-line-anim 7s ease-in-out;
+    animation: cloud-circle-line-anim 6s ease-in-out;
+
     animation-delay: 5s;
     }
     path:nth-child(4) {
@@ -63,7 +64,7 @@ const StyledSVG = styled.svg`
     }
 
     #circle {
-    animation: circle-line-anim 5.5s ease-in-out forwards 2 alternate;
+    animation: circle-line-anim 6s ease-in-out forwards 2 alternate;
     animation-delay: 1s
     }
 
@@ -73,7 +74,7 @@ const StyledSVG = styled.svg`
     @keyframes circle-line-anim {
     0%{
         stroke: white;
-        stroke-dasharray: 1400;
+        stroke-dasharray: 1800;
         stroke-dashoffset: 0;
     }
     10%{
@@ -218,7 +219,7 @@ const StyledWrapper = styled.div`
 const AnimationComponent = () => {
     return(
         <StyledWrapper className="animation-wrapper">
-            <StyledSVG id="logo" width="806" height="681" viewBox="250 175 350 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <StyledSVG id="logo" width="556" height="681" viewBox="200 175 450 460" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g fill="">
                     <circle id="circle" cx="428" cy="398" r="206.5" />
                 </g>

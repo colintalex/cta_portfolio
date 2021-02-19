@@ -6,7 +6,7 @@ import StyledIcons from './StyledIcons'
 const StyledNav = styled.nav`
     font-family: 'Big Shoulders Display', light;
     height: 60px;
-    background: black;
+    background: #1f1f1f;
     padding: 10px 20px;
 `
 
@@ -29,7 +29,7 @@ const StyledListItem = styled.li`
         margin-right: 25px;
     }
 
-    transition: background-color .3s;
+    transition: background-color .4s;
     &:hover {
         background-color: turquoise;
     }
