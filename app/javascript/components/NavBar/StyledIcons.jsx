@@ -25,7 +25,7 @@ const StyledIconWrapper = styled.div`
 
         transition: color .4s;
         &:hover {
-            color: turquoise;
+            color: #CC851E;
         }
     }
 `

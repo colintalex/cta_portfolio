@@ -34,6 +34,7 @@ const StyledSVG = styled.svg`
     stroke-dasharray: 86;
     stroke-dashoffset: 200;
     animation: cloud-circle-line-anim 6s ease-in-out;
+
     animation-delay: 5s;
     }
     path:nth-child(4) {
