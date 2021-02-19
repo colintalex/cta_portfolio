@@ -2,9 +2,11 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
 const StyledSVG = styled.svg`
-    transform: scale(1.5) translate(-5%, 10%);
-
-
+    position:absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+    height: 60%;
+    
     body {
     background: gray;
     }
@@ -209,6 +211,8 @@ const StyledSVG = styled.svg`
 
 const StyledWrapper = styled.div`
     text-align: center;
+    height: 100%;
+    postion: relative;
 `
 
 const AnimationComponent = () => {
