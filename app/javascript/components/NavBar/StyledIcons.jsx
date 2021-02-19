@@ -17,13 +17,15 @@ const StyledIconWrapper = styled.div`
     text-align: center;
 
     svg {
-        margin: 5px 5px;
+        margin: 0px 5px;
         color: gray;
-        height: 35px;
-        width: 35px;
+        height: 45px;
+        width: 45px;
         display: inline-block;
+
+        transition: color .3s;
         &:hover {
-            color: turquoise;
+            color: #CC851E;
         }
     }
 `

@@ -12,17 +12,17 @@ before_script:
 test:
   adapter: postgresql
   database: cta_portfolio_test
-deploy:
-  provider: heroku
-  api_key:
-    secure: pwQHYU6dS+i90BNvVYBH2Rnj5QukuWj8DpR4CQCrXaYcaErGdV3iiBC71/djbKLVqLn9BaCmKUFdppr3yUR7pRLDVVrhfY5d/WebByErtijyU+43DXzwiuf5uegraHKep6ZjeidlSOGV7hK2/+8sywWJrj/R+flTViHZwqeWHFXstSsD6MNjQXGCcgOjLh6vCP0I+k3ZmLTF29V4mh58c09mvCRfCGdAqzHiF4S0pSdlTtUHqxqoH/lX4R5jkXtK5iOtHLKNlsp802ENAcPW5b6JPJI7vA9Lw9eEXfmVSAVStk50kjr+XZ8KJMpVEb+uHVeaXN8SnFEIekWWUYwbMNDCP+mdfwwIO/lUi7p+Dx0jmHGafyZtObKFoPvEfMAviUORv2CgHvzRWO0LK4jd7CelGUcxke5MlVlRRXoUOmW7Lb50p/TBG8o/C3rkUucW0HQDes59lR0hpQsDmnT9bDTkdMiPYOEKLfDSbCwXekgZ13Z1lHoFboNf6wAElZRcT9i5AfcvekJR7SsbULjPZxsvUm2xxSTkQE8iQIR0nHidrg4tibLaz/Zmg0YWUXqjTQliMnzOxK/I+10TZ2Pr+K8MXRUO7E9qjeiuIvKVuwyOhWljCRJeTHkX2cZraMx85sG81wXNQK6u48vJM8QdWDv2j62masX30HskdS1Ri8E=
-  app: cta-portfolio
-  on:
-    repo: colintalex/cta_portfolio
-    branch: main
-  skip_cleanup: 'true'
-  google:
-    service: GCS
-    credentials: <%= Rails.root.join("path/to/keyfile.json") %>
-    project: "CtaPortfolio"
-    bucket: "images_ctaportfolio"
+# deploy:
+#   provider: heroku
+#   api_key:
+#     secure: pwQHYU6dS+i90BNvVYBH2Rnj5QukuWj8DpR4CQCrXaYcaErGdV3iiBC71/djbKLVqLn9BaCmKUFdppr3yUR7pRLDVVrhfY5d/WebByErtijyU+43DXzwiuf5uegraHKep6ZjeidlSOGV7hK2/+8sywWJrj/R+flTViHZwqeWHFXstSsD6MNjQXGCcgOjLh6vCP0I+k3ZmLTF29V4mh58c09mvCRfCGdAqzHiF4S0pSdlTtUHqxqoH/lX4R5jkXtK5iOtHLKNlsp802ENAcPW5b6JPJI7vA9Lw9eEXfmVSAVStk50kjr+XZ8KJMpVEb+uHVeaXN8SnFEIekWWUYwbMNDCP+mdfwwIO/lUi7p+Dx0jmHGafyZtObKFoPvEfMAviUORv2CgHvzRWO0LK4jd7CelGUcxke5MlVlRRXoUOmW7Lb50p/TBG8o/C3rkUucW0HQDes59lR0hpQsDmnT9bDTkdMiPYOEKLfDSbCwXekgZ13Z1lHoFboNf6wAElZRcT9i5AfcvekJR7SsbULjPZxsvUm2xxSTkQE8iQIR0nHidrg4tibLaz/Zmg0YWUXqjTQliMnzOxK/I+10TZ2Pr+K8MXRUO7E9qjeiuIvKVuwyOhWljCRJeTHkX2cZraMx85sG81wXNQK6u48vJM8QdWDv2j62masX30HskdS1Ri8E=
+#   app: cta-portfolio
+#   on:
+#     repo: colintalex/cta_portfolio
+#     branch: main
+#   skip_cleanup: 'true'
+#   google:
+#     service: GCS
+#     credentials: <%= Rails.root.join("path/to/keyfile.json") %>
+#     project: "CtaPortfolio"
+#     bucket: "images_ctaportfolio"
