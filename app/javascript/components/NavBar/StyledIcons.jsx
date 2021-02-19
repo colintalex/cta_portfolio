@@ -19,8 +19,8 @@ const StyledIconWrapper = styled.div`
     svg {
         margin: 5px 5px;
         color: gray;
-        height: 35px;
-        width: 35px;
+        height: 45px;
+        width: 45px;
         display: inline-block;
         &:hover {
             color: turquoise;
