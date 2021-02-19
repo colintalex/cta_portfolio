@@ -11,6 +11,9 @@ const AboutPage = () => {
     return (
         <StyledAboutPage>
             About page
+            <div>
+                Photo
+            </div>
         </StyledAboutPage>
     )
 }
