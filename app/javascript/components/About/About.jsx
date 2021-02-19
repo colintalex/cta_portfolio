@@ -4,7 +4,6 @@ import styled from 'styled-components'
 const StyledAboutPage = styled.div`
     min-height: 100vh;
     overflow: scroll;
-    background: gray;
 `
 
 const AboutPage = () => {

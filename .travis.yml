@@ -4,9 +4,10 @@ rvm:
 - 2.7.2
 services:
 - postgresql
+before_install:
+- openssl aes-256-cbc -K $encrypted_0a6446eb3ae3_key -iv $encrypted_0a6446eb3ae3_iv -in master.key.enc -out master.key -d
 before_script:
 - gem install rmagick
-- openssl aes-256-cbc -K $encrypted_0a6446eb3ae3_key -iv $encrypted_0a6446eb3ae3_key -in master.key.enc -out master.key -d
 - psql -c 'create database cta_portfolio_test;' -U postgres
 test:
   adapter: postgresql
