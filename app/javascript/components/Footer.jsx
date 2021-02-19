@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledFooter = styled.div`
-    background: gray;
+    background: black;
     height: 5vh;
     border-style: solid;
     border-width: 2px;
