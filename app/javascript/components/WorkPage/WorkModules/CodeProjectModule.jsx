@@ -37,7 +37,7 @@ const StyledProjDescription = styled.p`
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
     grid-column: 1 / 3;
-    overflow: scroll;
+    overflow: hidden;
     height: 150px;
 `
 
@@ -141,9 +141,9 @@ const CodeProjectModule = ({ activeTab }) => {
                         <StyledProjHeading>{proj.title}</StyledProjHeading>
                     </div>
                     <StyledtechWrapper>
-                        <StyledProjTech>Built with: {proj.technology}</StyledProjTech>
+                        <StyledProjTech className="project-tech" >Built with: {proj.technology}</StyledProjTech>
                     </StyledtechWrapper>
-                    <StyledProjDescription>
+                    <StyledProjDescription className="project-desc">
                         <hr/>
                         {proj.description}
                     </StyledProjDescription>
@@ -153,7 +153,7 @@ const CodeProjectModule = ({ activeTab }) => {
                         {proj.images && proj.images.map(img => <StyledProjImage src={img.url}/>)}
                     </Carousel>
                 </ImageWrapper>
-                <StyledLinksWrapper>
+                <StyledLinksWrapper className='project-links'>
                     <a href={proj.github_url}>GitHub Repo <StyledGitIcon/></a>
                     <a href={proj.deploy_url}>Deployment Link<StyledHerokuIcon/></a>
                 </StyledLinksWrapper>
