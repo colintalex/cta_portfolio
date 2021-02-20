@@ -43,6 +43,13 @@ const StyledWorkPage = styled.div`
         #tabs-container button {
             font-size: 1.5em;
         }
+        .tab {
+            margin: 0 15px;
+        }
+        #tab-arrow {
+            width: 30px;
+            height: 30px;
+        }
         .project-links {
             font-size: 1.4em;
             svg {

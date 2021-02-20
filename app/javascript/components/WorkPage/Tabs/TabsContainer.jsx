@@ -100,6 +100,7 @@ const TabsContainer = () => {
                         <StyledTabs id='code-tab-button' onClick={e => setActiveTab('tab-code-projects')}>Code Work</StyledTabs>
                     </StyledTabItem>
                         <StyledArrowIcon
+                        id="tab-arrow"
                             activetab={activeTab}
                         />
                     <StyledTabItem activetab={activeTab} className='tab' id='tab-graphic-projects'>
