@@ -30,12 +30,16 @@ const StyledNav = styled.nav`
             vertical-align: middle;
         }
         #menu-list {
-            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: #2c3e50;
+            top: 80px;
+            left: -100%;
+            text-align: center;
         }
 
-        h2 {
-            padding-left: 5px;
-        }
+        padding-left: 10px;
 
         #logo-wrapper {
             width: 80%;
@@ -52,6 +56,11 @@ const StyledNav = styled.nav`
         h5{
             font-size: 1em;
         }
+    }
+
+    @media (max-width:400px){
+        height: 70px;
+        padding-left: 5px;
     }
 `
 
@@ -122,7 +131,7 @@ const StyledMenuContentWrapper = styled.div`
     text-align: end;
     display: inline-block;
     height: 100%;
-    vertical-align: baseline;
+    vertical-align: middle;
 `
 
 const MenuIcon = styled(AiOutlineMenu)`
@@ -131,6 +140,7 @@ const MenuIcon = styled(AiOutlineMenu)`
     height: 50px;
     width: 50px;
     vertical-align: baseline;
+    margin-right: 10px;
 `
 
 const MenuButton = styled.button`

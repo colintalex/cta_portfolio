@@ -13,6 +13,49 @@ const StyledWorkPage = styled.div`
     font-family: 'Big Shoulders Display', light;
     margin: 10px auto;
     border-radius: 5px;
+
+    @media (max-width: 900px){
+        margin: 0px;
+        h2 {
+            font-size: 1.7em;
+        }
+        h3 {
+            font-size: 1.5em;
+        }
+        .project-tech {
+            font-size: 1em;
+        }
+        img {
+            max-width: 600px;
+        }
+        .project_desc {
+            font-size: 1em;
+            height: 100px;
+        }
+        #work-header {
+            h2 {
+                margin: 5px 0;
+            }
+            ul {
+                margin: 5px 0;
+            }
+        }
+        #tabs-container button {
+            font-size: 1.5em;
+        }
+        .project-links {
+            font-size: 1.4em;
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+    @media (max-width: 400px){
+        img {
+            max-width: 350px;
+        }
+    }
 `
 
 const WorkPage = () => {

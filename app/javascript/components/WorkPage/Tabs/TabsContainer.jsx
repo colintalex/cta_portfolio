@@ -92,7 +92,7 @@ const TabsContainer = () => {
 
     return (
         <div className='' id='tabs-container'>
-            <StyledHeaderWrapper>
+            <StyledHeaderWrapper id='work-header'>
                 <FogEffectLayer>
                 <StyledPageHeader>My Personal Work</StyledPageHeader>
                 <StyledTabList activeTab={activeTab}>
