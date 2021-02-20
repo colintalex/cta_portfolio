@@ -124,12 +124,12 @@ const Nav = () => {
                 <StyledName>Colin Alexander</StyledName>
                 <StyledSubName> Backend Software Engineer</StyledSubName>
             </StyledLogoWrapper>
+            <HoverNav hoverMenuVis={hoverMenuVis} setHoverMenuVis={setHoverMenuVis}/>
             <StyledMenuContentWrapper id='menu-wrapper'>
                 <MenuButton onClick={_handleHoverToggle}>
                     <MenuIcon id='menu-icon'/>
                 </MenuButton>
                 <NavList/>
-                <HoverNav hoverMenuVis={hoverMenuVis}/>
                 <StyledIcons id='social-icons'/>
             </StyledMenuContentWrapper>
         </StyledNav>
