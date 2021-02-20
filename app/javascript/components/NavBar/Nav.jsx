@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import StyledIcons from './StyledIcons'
 import { AiOutlineMenu } from 'react-icons/ai'
+import NavList from './NavList'
+import HoverNav from './HoverNav'
 
 
 const StyledNav = styled.nav`
@@ -30,13 +32,7 @@ const StyledNav = styled.nav`
             vertical-align: middle;
         }
         #menu-list {
-            position: fixed;
-            width: 100%;
-            height: 100vh;
-            background: #2c3e50;
-            top: 80px;
-            left: -100%;
-            text-align: center;
+            display: none;
         }
 
         padding-left: 10px;
@@ -64,40 +60,7 @@ const StyledNav = styled.nav`
     }
 `
 
-const StyledList = styled.ul`
-    display: inline-block;
-    text-align: end;
-    padding: 0px;
-`
 
-const StyledListItem = styled.li`
-    display: inline;
-    margin: 10px 20px;
-    padding: 2px 10px;
-    font-size: 1.8em;
-    background: gray;
-    border-radius: 5px;
-    color: white;
-
-    &:last-child {
-        margin-right: 25px;
-    }
-
-    transition: background-color .4s;
-    &:hover {
-        background-color: turquoise;
-    }
-`
-
-const StyledLink = styled(Link)`
-    color: #d8d8d8;
-    text-decoration: none;
-    transition: color .4s;
-
-    &:hover {
-        color: black
-    }
-`
 const StyledName = styled.h2`
     margin-top: 6px;
     margin-bottom: 0px;
@@ -149,8 +112,12 @@ const MenuButton = styled.button`
     outline:none;
 `
 
-
 const Nav = () => {
+    const [hoverMenuVis, setHoverMenuVis] = useState(false)
+    
+    const _handleHoverToggle = () => {
+        (hoverMenuVis == false) ? setHoverMenuVis(true) : setHoverMenuVis(false) 
+    }
     return (
         <StyledNav>
             <StyledLogoWrapper id='logo-wrapper'>
@@ -158,20 +125,11 @@ const Nav = () => {
                 <StyledSubName> Backend Software Engineer</StyledSubName>
             </StyledLogoWrapper>
             <StyledMenuContentWrapper id='menu-wrapper'>
-                <MenuButton>
+                <MenuButton onClick={_handleHoverToggle}>
                     <MenuIcon id='menu-icon'/>
                 </MenuButton>
-                <StyledList id='menu-list'>
-                    <StyledListItem>
-                        <StyledLink to='/'>Home</StyledLink>
-                    </StyledListItem>
-                    <StyledListItem>
-                        <StyledLink to='/work'>My Work</StyledLink>
-                    </StyledListItem>
-                    <StyledListItem>
-                        <StyledLink to='/about'>About</StyledLink>
-                    </StyledListItem>
-                </StyledList>
+                <NavList/>
+                <HoverNav hoverMenuVis={hoverMenuVis}/>
                 <StyledIcons id='social-icons'/>
             </StyledMenuContentWrapper>
         </StyledNav>
