@@ -6,6 +6,16 @@ const StyledSVG = styled.svg`
     top: 0; bottom: 0; left: 0; right: 0;
     margin: auto;
     height: 60%;
+    width: 556px;
+    height: 681px;
+
+    @media (max-width:900px){
+        max-width: 400px;
+    }
+
+    @media (max-width:450px){
+        max-width: 325px;
+    }
     
     body {
     background: gray;
@@ -219,7 +229,7 @@ const StyledWrapper = styled.div`
 const AnimationComponent = () => {
     return(
         <StyledWrapper className="animation-wrapper">
-            <StyledSVG id="logo" width="556" height="681" viewBox="200 175 450 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <StyledSVG id="logo"viewBox="200 175 450 460" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g fill="">
                     <circle id="circle" cx="428" cy="398" r="206.5" />
                 </g>

@@ -2,12 +2,57 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import StyledIcons from './StyledIcons'
+import { AiOutlineMenu } from 'react-icons/ai'
+
 
 const StyledNav = styled.nav`
     font-family: 'Big Shoulders Display', light;
     height: 60px;
     background: #1f1f1f;
-    padding: 10px 20px;
+
+    @media (max-width: 1200px){
+        svg {
+            display: none;
+        }
+        h2 {
+            font-size: 2.5em;
+            padding-left: 5px;
+        }
+
+        h5 {
+            font-size: 1.5em
+        }
+    }
+
+    @media (max-width:900px){
+        #menu-icon {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        #menu-list {
+            display: none;
+        }
+
+        h2 {
+            padding-left: 5px;
+        }
+
+        #logo-wrapper {
+            width: 80%;
+        }
+        #menu-wrapper {
+            width: 20%;
+        }
+    }
+
+    @media (max-width:900px){
+        h2{
+            font-size: 2em;  
+        }
+        h5{
+            font-size: 1em;
+        }
+    }
 `
 
 const StyledList = styled.ul`
@@ -77,19 +122,35 @@ const StyledMenuContentWrapper = styled.div`
     text-align: end;
     display: inline-block;
     height: 100%;
-    vertical-align: middle;
+    vertical-align: baseline;
+`
+
+const MenuIcon = styled(AiOutlineMenu)`
+    color: white;
+    display: none;
+    height: 50px;
+    width: 50px;
+    vertical-align: baseline;
+`
+
+const MenuButton = styled.button`
+    background: none;
+    border: none;
 `
 
 
 const Nav = () => {
     return (
         <StyledNav>
-            <StyledLogoWrapper>
+            <StyledLogoWrapper id='logo-wrapper'>
                 <StyledName>Colin Alexander</StyledName>
                 <StyledSubName> Backend Software Engineer</StyledSubName>
             </StyledLogoWrapper>
-            <StyledMenuContentWrapper>
-                <StyledList>
+            <StyledMenuContentWrapper id='menu-wrapper'>
+                <MenuButton>
+                    <MenuIcon id='menu-icon'/>
+                </MenuButton>
+                <StyledList id='menu-list'>
                     <StyledListItem>
                         <StyledLink to='/'>Home</StyledLink>
                     </StyledListItem>
@@ -100,7 +161,7 @@ const Nav = () => {
                         <StyledLink to='/about'>About</StyledLink>
                     </StyledListItem>
                 </StyledList>
-                <StyledIcons/>
+                <StyledIcons id='social-icons'/>
             </StyledMenuContentWrapper>
         </StyledNav>
     )
