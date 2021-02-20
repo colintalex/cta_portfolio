@@ -31,15 +31,12 @@ const StyledIconWrapper = styled.div`
 `
 
 const StyledGitHubIcon = styled(AiOutlineGithub)`
-   
 `
 
 const StyledMailIcon = styled(HiOutlineMail)`
-   
 `
 
 const StyledLinkedInIcon = styled(AiOutlineLinkedin)`
-    
 `
 
 const StyledIcons = () => {
