@@ -146,6 +146,7 @@ const MenuIcon = styled(AiOutlineMenu)`
 const MenuButton = styled.button`
     background: none;
     border: none;
+    outline:none;
 `
 
 
