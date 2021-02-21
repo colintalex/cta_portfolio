@@ -10,10 +10,10 @@ const StyledHovList = styled.ul`
     z-index: 10;
     width: 100%;
     height: auto;
-    background: #2c3e50;
+    background: #1f1f1f;
     opacity: 100%;
     top: 59px;
-    border-radius: 10px;
+    border-radius: 0 0 10px 10px;
     transition: left .3s;
     left: ${props => (props.hoverMenuVis == true ? '0%' : '-100%')};
     text-align: center;
@@ -25,14 +25,14 @@ const StyledHovList = styled.ul`
 const StyledHovListItem = styled.li`
     width: 85%;
     font-size: 1.8em;
-    background: gray;
+    background: #1e97cc;
     border-radius: 5px;
     color: white;
     padding: 15px 0px;
     margin: 25px auto;
     transition: background-color .4s;
     &:hover {
-        background-color: turquoise;
+        background-color: #E1AD5B;
     }
     a{ 
         width: 350px;
@@ -44,7 +44,6 @@ const StyledLink = styled(Link)`
     color: #d8d8d8;
     text-decoration: none;
     transition: color .4s;
-   
 
     &:hover {
         color: black

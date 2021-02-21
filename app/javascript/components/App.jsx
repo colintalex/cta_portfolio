@@ -20,7 +20,8 @@ const StyledMain = styled.div`
 `
 
 const StyledMainBlurEffect = styled.div`
-    backdrop-filter: blur(15px);
+    backdrop-filter: invert(1) blur(4px);
+    background: #00000094;
 `
 
 const App = () => {
