@@ -56,10 +56,17 @@ const StyledProjImage = styled.img`
 `
 
 const ImageWrapper = styled.div`
-    height: auto;
+    height: 400px;
     width: auto;
     padding-top: 30px;
     margin-bottom: 25px;
+
+    button {
+        background: #1e97cc63;
+        &:hover {
+            background: #1e97cc
+        }
+    }
 `
 
 const StyledProjectContent = styled.div`
