@@ -56,7 +56,7 @@ const StyledWorkPage = styled.div`
             height: 30px;
         }
         .project-links {
-            font-size: 1.4em;
+            font-size: 1.2em;
             svg {
                 width: 30px;
                 height: 30px;
