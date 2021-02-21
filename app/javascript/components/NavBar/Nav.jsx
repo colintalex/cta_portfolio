@@ -73,7 +73,7 @@ const StyledName = styled.h2`
 `
 
 const StyledSubName = styled.h5`
-    color: turquoise;
+    color: #E1AD5B;
     text-align: center;
     display: inline-block;
     font-size: 1.5em;

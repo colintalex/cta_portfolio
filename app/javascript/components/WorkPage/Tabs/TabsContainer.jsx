@@ -38,13 +38,13 @@ const StyledTabItem = styled.li`
     
     #code-tab-button {
         color: ${props => 
-            (props.activetab == 'tab-code-projects') ? 'turquoise' : '#E1AD5B'
+            (props.activetab == 'tab-code-projects') ? '#E1AD5B' : '#1e97cc'
         };
     }
     
     #graphic-tab-button {
         color: ${props => 
-            (props.activetab == 'tab-graphic-projects') ? 'turquoise' : '#E1AD5B'
+            (props.activetab == 'tab-graphic-projects') ? '#E1AD5B' : '#1e97cc'
         };
     }
 
@@ -61,7 +61,7 @@ const StyledArrowIcon = styled(FaArrowCircleLeft)`
     width: 45px;
     height: 45px;
     vertical-align: bottom;
-    color: turquoise;
+    color: #E1AD5B;
     border: 1px black;
 
     stroke: #CC851E;
