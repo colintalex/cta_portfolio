@@ -61,6 +61,7 @@ const StyledWorkPage = styled.div`
     @media (max-width: 400px){
         img {
             max-width: 350px;
+            max-height: 300px;
         }
     }
 `
