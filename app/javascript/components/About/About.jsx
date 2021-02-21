@@ -17,6 +17,10 @@ const StyledAboutPage = styled.div`
         text-align: center;
     }
 
+    hr {
+        border: #ccc 1px solid;
+    }
+
     div#top-row {
         display: grid;
         grid-template-columns: 1fr 2fr;

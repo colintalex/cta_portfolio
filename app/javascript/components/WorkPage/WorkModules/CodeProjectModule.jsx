@@ -38,7 +38,7 @@ const StyledProjDescription = styled.p`
     font-size: 1.2em;
     grid-column: 1 / 3;
     overflow: hidden;
-    height: 150px;
+    min-height: 150px;
 `
 
 const StyledProjImage = styled.img`
