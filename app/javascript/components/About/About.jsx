@@ -15,6 +15,7 @@ const StyledAboutPage = styled.div`
 
     .module-header{
         text-align: center;
+        color: #1e97cc;
     }
 
     hr {
@@ -81,7 +82,7 @@ const QuoteWrapper = styled.div`
     border-radius: 30px;
     display: grid;
     background: url(https://media.istockphoto.com/vectors/seamless-wooden-pattern-wood-grain-texture-dense-lines-abstract-white-vector-id1202084477?b=1&k=6&m=1202084477&s=612x612&w=0&h=kJP6WEtSY1-mJkD7tFgX_A7NFX-EZv1hrjxLDpxFdjg=);
-    grid-template-rows: .2fr 1fr;
+    grid-template-rows: .2fr 1.6fr;
     backdrop-filter: drop-shadow(2px 10px 6px black);
     justify-self: center;
     align-self: center;

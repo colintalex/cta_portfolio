@@ -31,6 +31,10 @@ const SkillsWrapper = styled.div`
     grid-gap: 15px;
     grid-template-columns: 1fr 2fr;
 
+    .skills-section{
+        padding: 0 10px;
+    }
+
     @media (max-width: 800px){
         grid-template-rows: .5fr 1fr;
         grid-template-columns: 1fr;
@@ -50,12 +54,14 @@ const SkillsWrapper = styled.div`
     li {
         list-style: none;
         display: inline-block;
-        padding: 5px;
+        padding: 5px 10px;
         margin: 5px 5px;
         background: #5f5f5f;
         color: white;
-        font-size: 1.2em;
+        font-size: 1em;
         border-radius: 5px;
+        font-family: 'Roboto', light;
+
     }
 
     div{
@@ -68,13 +74,13 @@ const SkillsWrapper = styled.div`
 const SkillsModule = () => {
     return(
         <SkillsWrapper id='skills-module' className='module'>
-            <div>
+            <div className='skills-section'>
                 <h3 className='module-header'>Languages</h3>
                 <ul>
                     {languages.map(skill => <li>{skill}</li>)}
                 </ul>
             </div>
-            <div>
+            <div className='skills-section'>
                 <h3>Skilled Areas</h3>
                 <ul>
                     {technology.map(skill => <li>{skill}</li>)}
