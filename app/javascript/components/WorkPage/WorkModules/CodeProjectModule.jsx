@@ -42,8 +42,8 @@ const StyledProjDescription = styled.p`
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
     grid-column: 1 / 3;
-    overflow: hidden;
-    min-height: 150px;
+    overflow: scroll;
+    height: 200px;
 `
 
 const StyledProjImage = styled.img`
