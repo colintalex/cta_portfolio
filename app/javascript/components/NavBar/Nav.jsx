@@ -27,7 +27,7 @@ const StyledNav = styled.nav`
         }
     }
 
-    @media (max-width:900px){
+    @media (max-width:950px){
         #menu-icon {
             display: inline-block;
             vertical-align: middle;
@@ -46,7 +46,7 @@ const StyledNav = styled.nav`
         }
     }
 
-    @media (max-width:900px){
+    @media (max-width:950px){
         h2{
             font-size: 2em;  
         }
@@ -111,6 +111,7 @@ const MenuButton = styled.button`
     background: none;
     border: none;
     outline:none;
+    margin-top: 12px;
 `
 
 const Nav = () => {
