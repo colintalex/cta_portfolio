@@ -92,7 +92,7 @@ const Quote = styled.div`
     padding: 10px 10px 0 10px;
     color: black;
     height: 100px;
-    background: #CC851Eed;
+    background: #CC851Ee3;
     height: 100%;
     border-radius: 15px 15px 0 0;
 
