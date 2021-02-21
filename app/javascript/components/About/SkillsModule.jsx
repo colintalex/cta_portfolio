@@ -32,7 +32,7 @@ const SkillsWrapper = styled.div`
     grid-template-columns: 1fr 2fr;
 
     @media (max-width: 800px){
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: .5fr 1fr;
         grid-template-columns: 1fr;
     }
 
@@ -44,6 +44,7 @@ const SkillsWrapper = styled.div`
     }
     ul {
         margin-top: 0px;
+        padding-left: 0px;
         text-align: center;
     }
     li {
