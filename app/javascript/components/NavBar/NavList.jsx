@@ -14,7 +14,7 @@ const StyledListItem = styled.li`
     margin: 10px 20px;
     padding: 2px 10px;
     font-size: 1.8em;
-    background: gray;
+    background: #ddd;
     border-radius: 5px;
     color: white;
 
@@ -22,19 +22,19 @@ const StyledListItem = styled.li`
         margin-right: 25px;
     }
 
-    transition: background-color .4s;
+    transition: background .4s;
     &:hover {
-        background-color: turquoise;
+        background: #CC851E;
     }
 `
 
 const StyledLink = styled(Link)`
-    color: #d8d8d8;
+    color: #333;
     text-decoration: none;
     transition: color .4s;
 
     &:hover {
-        color: black
+        color: #efefef;
     }
 `
 
