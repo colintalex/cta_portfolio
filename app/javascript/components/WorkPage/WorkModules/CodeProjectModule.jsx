@@ -7,7 +7,7 @@ import Carousel from 'react-elastic-carousel';
 
 const StyledProjGridContainer = styled.div`
     display: grid !important;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
     justify-content: space-around;
     padding: 25px;
@@ -15,6 +15,11 @@ const StyledProjGridContainer = styled.div`
     hr {
         border-color: gray;
         margin-top: 0px;
+    }
+
+    @media (max-width: 950px){
+        grid-template-columns: 1fr;
+
     }
 `
 
@@ -46,7 +51,7 @@ const StyledProjImage = styled.img`
     margin-left: auto;
     margin-right: auto;
     width: auto;
-    max-height: 600px;
+    max-height: 400px;
     border-radius: 5px;
 `
 
