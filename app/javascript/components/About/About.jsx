@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import ProfilePhoto from '../../../../public/profile.jpeg'
 import EducationModule from './EducationModule'
+import SkillsModule from './SkillsModule'
 import WorkModule from './WorkModule'
 
 const StyledAboutPage = styled.div`
@@ -21,7 +22,6 @@ const StyledAboutPage = styled.div`
         grid-template-columns: 1fr 2fr;
         grid-gap: 15px;
         margin: 15px;
-        margin-bottom: 30px;
     }
 
     div#bottom-row {
@@ -76,7 +76,7 @@ const QuoteWrapper = styled.div`
     width: auto;
     border-radius: 30px;
     display: grid;
-    background: #CC851E;
+    background: #CC851Eed;
     grid-template-rows: .5fr 1fr;
     backdrop-filter: drop-shadow(2px 10px 6px black);
     // justify-self: center;
@@ -99,6 +99,7 @@ const Quote = styled.div`
         font-size: 1.5em;
         text-align: center;
         margin-left: 30px;
+        margin-top: 5px;
     }
     @media (max-width: 1200px){
         h3{
@@ -128,9 +129,10 @@ const Quote = styled.div`
     `
 
 const StyledImg = styled.img`
-    height: 400px;
-    width: 400px;
-    margin: 0 auto;
+    height: 95%;
+    width: 95%;
+    margin: auto;
+    border: black 2px solid;
 `
 
 const StyledBio = styled.div`
@@ -163,6 +165,9 @@ const AboutPage = () => {
                     </StyledBio>
                 </QuoteWrapper>
             </div>
+            <SkillsModule>
+
+            </SkillsModule>
             <div id='bottom-row'>
                 <EducationModule/>
                 <WorkModule/>
