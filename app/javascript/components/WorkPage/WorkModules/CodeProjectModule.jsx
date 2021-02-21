@@ -50,7 +50,7 @@ const StyledProjImage = styled.img`
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: auto;
+    width: inherit;
     max-height: 400px;
     border-radius: 5px;
 `
@@ -83,7 +83,7 @@ const StyledtechWrapper = styled.div`
 const StyledLinksWrapper = styled.div`
     grid-column: 1 / 3;
     text-align: center;
-    font-size: 1.8em;
+    font-size: 1.5em;
     a {
         text-decoration: none;
         color: #a9a9a9;
