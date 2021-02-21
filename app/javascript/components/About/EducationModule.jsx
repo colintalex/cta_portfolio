@@ -64,6 +64,7 @@ const EducationModule = () => {
     return(
         <StyledEducation>
             <h3 class='module-header'>Education</h3>
+            <hr/>
             <div className='module'>
                 <h4 id='section-header'>Turing School of Software & Design</h4>
                 <h5 id='section-details'>Backend Software Engineering, Jan - Aug 2020</h5>

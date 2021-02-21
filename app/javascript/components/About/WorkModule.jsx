@@ -62,6 +62,7 @@ const WorkModule = () => {
     return(
         <StyledWork>
             <h3 className='module-header'>Work Experience</h3>
+            <hr/>
             <div className='module'>
                 <h4 id='section-header'>MetroExpress CarWash</h4>
                 <h5 id='section-details'>Manager, 2017-2020</h5>
