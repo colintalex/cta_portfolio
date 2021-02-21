@@ -12,7 +12,12 @@ const StyledWorkPage = styled.div`
     max-width: 1400px;
     font-family: 'Big Shoulders Display', light;
     margin: 10px auto;
-    border-radius: 5px;
+    border-radius: 0 0 5px 5px;
+    margin-top: 0px;
+
+    #tabs-container{
+        margin-top: 0px;
+    }
 
     @media (max-width: 900px){
         margin: 0px;

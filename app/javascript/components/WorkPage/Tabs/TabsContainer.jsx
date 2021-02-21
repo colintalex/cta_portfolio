@@ -77,14 +77,14 @@ const StyledArrowIcon = styled(FaArrowCircleLeft)`
 
 const StyledHeaderWrapper = styled.div`
     background: url(https://media.istockphoto.com/vectors/seamless-wooden-pattern-wood-grain-texture-dense-lines-abstract-white-vector-id1202084477?b=1&k=6&m=1202084477&s=612x612&w=0&h=kJP6WEtSY1-mJkD7tFgX_A7NFX-EZv1hrjxLDpxFdjg=);
-    border-radius: 10px;
+    border-radius: 0 0 5px 5px;
     background-size: cover;
 `
 
 const FogEffectLayer = styled.div`
     padding: 10px;
-    background: #120b018a;
-    border-radius: 10px;
+    background: #120b01d4;
+    border-radius: 0 0 5px 5px;
 `
 
 const TabsContainer = () => {
