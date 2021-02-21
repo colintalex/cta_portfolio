@@ -11,7 +11,7 @@ const StyledAboutPage = styled.div`
     max-width: 1200px;
     font-family: 'Big Shoulders Display', light;
     margin: 10px auto;
-    border-radius: 5px;
+    border-radius: 15px;
 
     .module-header{
         text-align: center;
@@ -76,20 +76,22 @@ const QuoteWrapper = styled.div`
     width: auto;
     border-radius: 30px;
     display: grid;
-    background: #CC851Eed;
-    grid-template-rows: .5fr 1fr;
+    background: url(https://media.istockphoto.com/vectors/seamless-wooden-pattern-wood-grain-texture-dense-lines-abstract-white-vector-id1202084477?b=1&k=6&m=1202084477&s=612x612&w=0&h=kJP6WEtSY1-mJkD7tFgX_A7NFX-EZv1hrjxLDpxFdjg=);
+    grid-template-rows: .2fr 1fr;
     backdrop-filter: drop-shadow(2px 10px 6px black);
-    // justify-self: center;
-    // align-self: center
-
-
+    justify-self: center;
+    align-self: center;
+    border-radius: 15px;
 `
 
 const Quote = styled.div`
-    margin: 15px auto;
-    padding: 0 10px;
+    padding: 10px 10px 0 10px;
     color: black;
     height: 100px;
+    background: #CC851Eed;
+    height: 100%;
+    border-radius: 15px 15px 0 0;
+
     h3{
         font-size: 2.1em;
         margin: 5px 0;
@@ -140,7 +142,7 @@ const StyledBio = styled.div`
     font-size: 1.1em;
     color: #1e1e1e;
     background: #C7C7C8;
-    border-radius: 0 0 15px 15px;;
+    border-radius: 0 0 15px 15px;
     font-family: 'Roboto', medium;
 `
 
