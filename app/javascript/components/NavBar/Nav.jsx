@@ -11,6 +11,7 @@ const StyledNav = styled.nav`
     font-family: 'Big Shoulders Display', light;
     height: 60px;
     background: #1f1f1f;
+    padding: 0 20px 10px 20px;
 
     @media (max-width: 1200px){
         svg {
