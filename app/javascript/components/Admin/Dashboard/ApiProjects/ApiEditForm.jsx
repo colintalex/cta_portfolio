@@ -1,36 +1,43 @@
 import React, { Fragment } from 'react'
 import { useForm } from 'react-hook-form'
 
-const GraphicEditForm = ({ currentGraphicProject, _handleProjectUpdate, setEditMode }) => {
+const ApiEditForm = ({ currentApiProject, _handleProjectUpdate, setEditMode }) => {
 
-    var project = currentGraphicProject.attributes
+    const project = currentApiProject.attributes;
+
     const { register, handleSubmit, watch, errors } = useForm({
         defaultValues: {
             title: project.title,
             description: project.description,
-            image_path: project.image_path,
-            id: currentGraphicProject.id
+            github_url: project.github_url,
+            deploy_url: project.deploy_url,
+            images: project.images,
+            technology: project.technology,
+            id: currentApiProject.id
         }
     });
-
-
 
     return(
         <div>
             <form onSubmit={handleSubmit(_handleProjectUpdate)}>
-                <label for='title'>Title</label>
+                <label for=''>Title</label>
                 <input type='text' name='title' ref={register} />
-                <label for='description'>Description</label>
+                <label for=''>Description</label>
                 <input type='text' name='description' ref={register} />
-                <button>Add Photos</button>
+                <label for=''>GitHub</label>
+                <input type='text' name='github_url' ref={register} />
+                <label for=''>Deployment</label>
+                <input type='text' name='deploy_url' ref={register} />
+                <label for=''>Technology</label>
+                <input type='text' name='technology' ref={register} />
                 <br/>Select images to delete<br/>
+
                 {
                     project.images.map(img => {
                         return(
                             <Fragment>
                                 <label for={img.id}>
                                     <img src={img.url} key={img.id} height='150' width='150' />
-                                    {img.id}
                                 </label>
                                 <input type='checkbox' id={img.id} value={img.id} name='images' ref={register}/>
                             </Fragment>
@@ -45,4 +52,4 @@ const GraphicEditForm = ({ currentGraphicProject, _handleProjectUpdate, setEditM
     )
 }
 
-export default GraphicEditForm;
+export default ApiEditForm;

@@ -1,55 +1,55 @@
-class Api::V1::CodeProjectsController < ApplicationController
+class Api::V1::ApiProjectsController < ApplicationController
   skip_before_action :verify_authenticity_token #Remove after 3rd party request testing (Postman)
 
   def index
-    code_projects = CodeProject.all
+    api_projects = ApiProject.all
 
-    render json: CodeProjectSerializer.new(code_projects)
+    render json: ApiProjectSerializer.new(api_projects)
   end
 
   def show
-    code_project = CodeProject.find(params[:id].to_i)
+    api_project = ApiProject.find(params[:id].to_i)
 
-    if code_project
-      render json: CodeProjectSerializer.new(code_project)
+    if api_project
+      render json: ApiProjectSerializer.new(api_project)
     else
       # render errors here
     end
   end
 
   def create
-    project = CodeProject.new(project_params)
+    project = ApiProject.new(project_params)
     image_params[:images] && image_params[:images].each do |img|
       img.class == ActionDispatch::Http::UploadedFile ? project.images.attach(img) : next
     end
     if project.save
-      render json: CodeProjectSerializer.new(project)
+      render json: ApiProjectSerializer.new(project)
     else
       # render errors here
     end
   end
 
   def update
-    code_project = CodeProject.find(params[:id].to_i)
+    api_project = ApiProject.find(params[:id].to_i)
     if image_params[:images] then
       integer_ids = image_params[:images].map(&:to_i)
-      to_be_destroyed = code_project.images.find(integer_ids)
+      to_be_destroyed = api_project.images.find(integer_ids)
       to_be_destroyed.each(&:purge)
     elsif params[:images].present? then
-      code_project.images[0].purge ## FIXX WILL DELETE FINAL IMG IF NOT CHECKED IN A SUBMIT
+      api_project.images[0].purge ## FIXX WILL DELETE FINAL IMG IF NOT CHECKED IN A SUBMIT
     end
-    code_project.update(project_params)
-    if code_project.save
-      render json: CodeProjectSerializer.new(code_project)
+    api_project.update(project_params)
+    if api_project.save
+      render json: ApiProjectSerializer.new(api_project)
     else
       # errors here
     end
   end
 
   def destroy
-    code_project = CodeProject.find(params[:id].to_i)
-    if code_project
-      code_project.destroy
+    api_project = ApiProject.find(params[:id].to_i)
+    if api_project
+      api_project.destroy
       render json: 'Successfully deleted'
     else
       # errors

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { GrHeroku } from 'react-icons/gr'
+import { FaGithub } from 'react-icons/fa'
 import Carousel from 'react-elastic-carousel';
 import styled from 'styled-components'
 
 const StyledProjGridContainer = styled.div`
-    display: grid !important;
-    grid-template-columns: 1fr;
+     display: grid !important;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
     justify-content: space-around;
     padding: 25px;
@@ -14,12 +16,18 @@ const StyledProjGridContainer = styled.div`
         border-color: gray;
         margin-top: 0px;
     }
+
+    @media (max-width: 950px){
+        grid-template-columns: 1fr;
+
+    }
 `
 
 const StyledProjGridModule = styled.div`
-    display: inline-block;
+      display: inline-block;
     border-radius: 10px;
-    background: #35868C;
+    background: rgb(80,80,79);
+    background: linear-gradient(0deg,rgb(0 0 0 / 80%) 30%,rgb(181 134 62 / 95%) 100%);
     padding: 15px;
 `
 
@@ -35,7 +43,7 @@ const StyledProjDescription = styled.p`
     font-size: 1.2em;
     grid-column: 1 / 3;
     overflow: scroll;
-    height: 150px;
+    height: 200px;
 `
 
 const StyledProjImage = styled.img`
@@ -43,15 +51,22 @@ const StyledProjImage = styled.img`
     margin-left: auto;
     margin-right: auto;
     width: auto;
-    max-height: 600px;
+    max-height: 400px;
     border-radius: 5px;
 `
 
 const ImageWrapper = styled.div`
-    height: auto;
+    height: 400px;
     width: auto;
     padding-top: 30px;
     margin-bottom: 25px;
+
+    button {
+        background: #1e97cc63;
+        &:hover {
+            background: #1e97cc
+        }
+    }
 `
 
 const StyledProjectContent = styled.div`
@@ -63,11 +78,66 @@ const StyledProjectContent = styled.div`
     border-radius: 5px;
 `
 
+const StyledProjTech = styled.p`
+    font-size: 1.7em;
+    margin: 5px;
+`
+
+const StyledtechWrapper = styled.div`
+    display: inline-block;
+    text-align: end;
+` 
+
+const StyledLinksWrapper = styled.div`
+    grid-column: 1 / 3;
+    text-align: center;
+    font-size: 1.5em;
+    a {
+        text-decoration: none;
+        color: #a9a9a9;
+        margin: 0 10px;
+
+        transition color .6s;
+
+        &:hover {
+            color: black;
+        }
+        &:hover svg {
+            color: black;
+        }
+    }
+`
+
+const StyledHerokuIcon = styled(GrHeroku)`
+    color: #E1AD5B;
+    height: 40px;
+    width: 40px;
+    stroke: #CC851E;
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 0;
+    stroke-width: 0.5px;
+    vertical-align: bottom;
+    transition color .6s;
+`
+
+const StyledGitIcon = styled(FaGithub)`
+    color: #E1AD5B;
+    height: 40px;
+    width: 40px;
+    stroke: #CC851E;
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 0;
+    stroke-width: 10px;
+    vertical-align: bottom;
+    transition color .6s;
+`
+
+
 const FullstackProjectModule = ({ activeTab }) => {
     const [graphicProjects, setGraphicProjects] = useState([]);
 
     useEffect (() => {
-        axios.get('/api/v1/graphic_projects')
+        axios.get('/api/v1/fullstack_projects')
         .then(data => {
             setGraphicProjects(data.data.data)
         })
@@ -83,7 +153,10 @@ const FullstackProjectModule = ({ activeTab }) => {
                     <div>
                         <StyledProjHeading>{proj.title}</StyledProjHeading>
                     </div>
-                    <StyledProjDescription>
+                    <StyledtechWrapper>
+                        <StyledProjTech className="project-tech" >Built with: {proj.technology}</StyledProjTech>
+                    </StyledtechWrapper>
+                    <StyledProjDescription className='project-desc'>
                         <hr/>
                         {proj.description}
                     </StyledProjDescription>
@@ -95,6 +168,10 @@ const FullstackProjectModule = ({ activeTab }) => {
                         {proj.images && proj.images.map(img => <StyledProjImage src={img.url}/>)}
                     </Carousel>
                 </ImageWrapper>
+                <StyledLinksWrapper className='project-links'>
+                    <a href={proj.github_url}>GitHub Repo <StyledGitIcon/></a>
+                    <a href={proj.deploy_url}>Deployment Link<StyledHerokuIcon/></a>
+                </StyledLinksWrapper>
             </StyledProjGridModule>
         )
     })

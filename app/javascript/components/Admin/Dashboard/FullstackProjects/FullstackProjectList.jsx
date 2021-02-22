@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useForm } from 'react-hook-form'
+import FullstackEditForm from './FullstackEditForm'
 
-import GraphicEditForm from './GraphicEditForm'
-
-const GraphicProjectList = ({ graphicProjects, setUpdated }) => {
+const FullstackProjectList = ({ fullstackProjects, setUpdated }) => {
     const [ editMode, setEditMode ] = useState(false)
-    const [ currentGraphicProject, setCurrentGraphicProject ] = useState({})
+    const [ currentFullstackProject, setCurrentFullstackProject ] = useState({})
 
     const _handleProjectDelete = (data) => {
-        axios.delete(`/api/v1/graphic_projects/${parseInt(data)}`)
+        axios.delete(`/api/v1/fullstack_projects/${parseInt(data)}`)
         .then(data => {
             setUpdated(true)
             setUpdated(false)
@@ -19,7 +18,7 @@ const GraphicProjectList = ({ graphicProjects, setUpdated }) => {
     }
 
     const _handleProjectUpdate = (data) => {
-        axios.put(`/api/v1/graphic_projects/${parseInt(data.id)}`, data)
+        axios.put(`/api/v1/fullstack_projects/${parseInt(data.id)}`, data)
         .then(resp => {
             setUpdated(true)
             setUpdated(false)
@@ -29,18 +28,21 @@ const GraphicProjectList = ({ graphicProjects, setUpdated }) => {
     }
 
 
-    const listGraphicProjects = graphicProjects && graphicProjects.map(item => {
+    const listfullstackProjects = fullstackProjects && fullstackProjects.map(item => {
             var proj = item.attributes
             return (
                 <div key={item.id} >
                     Title: {proj.title},
-                    Desc: {proj.description} <br/>
+                    Desc: {proj.description},
+                    GitHub: {proj.github_url},
+                    Deployment: {proj.deploy_url},
+                    Technology: {proj.technology} <br/>
                     Images: {
                         proj.images && proj.images.map(img => <img src={img.url} key={img.id} height='150' width='150'/>) // Add keys!!
                     } <br/>
                     <button type='submit' onClick={e => {
                         setEditMode(true)
-                        setCurrentGraphicProject(item)
+                        setCurrentFullstackProject(item)
                         }}
                     >Edit</button>
                     <button type='submit' onClick={e => _handleProjectDelete(item.id)}>Delete</button>
@@ -50,10 +52,10 @@ const GraphicProjectList = ({ graphicProjects, setUpdated }) => {
 
     return (
         <div>
-            {listGraphicProjects}
+            {listfullstackProjects}
             { editMode &&
-                <GraphicEditForm 
-                    currentGraphicProject={currentGraphicProject}
+                <FullstackEditForm 
+                    currentFullstackProject={currentFullstackProject}
                     setEditMode={setEditMode}
                     _handleProjectUpdate={_handleProjectUpdate}
                 />
@@ -62,4 +64,4 @@ const GraphicProjectList = ({ graphicProjects, setUpdated }) => {
     )
 }
 
-export default GraphicProjectList
+export default FullstackProjectList

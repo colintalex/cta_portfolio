@@ -1,4 +1,4 @@
-class CodeProject < ApplicationRecord
+class ApiProject < ApplicationRecord
     include Rails.application.routes.url_helpers
     validates :title, presence: true, uniqueness: true
     validates :description, presence: true

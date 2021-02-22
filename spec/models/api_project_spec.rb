@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CodeProject, type: :model do
+RSpec.describe ApiProject, type: :model do
 describe 'Validations' do
     it { should validate_presence_of :title }
     it { should validate_presence_of :description }
@@ -9,7 +9,7 @@ describe 'Validations' do
   end
 
   it 'is valid with valid attributes' do
-    code_project = CodeProject.new(
+    code_project = ApiProject.new(
       title: 'Title1',
       description: 'DESCRIPTION',
       github_url: 'github.com/project',
@@ -19,7 +19,7 @@ describe 'Validations' do
   end
 
   it 'is not valid without title' do
-    code_project = CodeProject.new(
+    code_project = ApiProject.new(
       description: 'DESCRIPTION',
       github_url: 'github.com/project',
       technology: 'Ruby, Rails, PostgresQL')
@@ -28,7 +28,7 @@ describe 'Validations' do
   end
 
   it 'is not valid without description' do
-    code_project = CodeProject.new(
+    code_project = ApiProject.new(
       title: 'Title1',
       github_url: 'github.com/project',
       technology: 'Ruby, Rails, PostgresQL')
@@ -37,7 +37,7 @@ describe 'Validations' do
   end
 
   it 'is not valid without github_url' do
-    code_project = CodeProject.new(
+    code_project = ApiProject.new(
       title: 'Title1',
       description: 'DESCRIPTION',
       technology: 'Ruby, Rails, PostgresQL')
@@ -46,7 +46,7 @@ describe 'Validations' do
   end
 
   it 'is not valid without technology' do
-    code_project = CodeProject.new(
+    code_project = ApiProject.new(
       title: 'Title1',
       description: 'DESCRIPTION',
       github_url: 'github.com/project')

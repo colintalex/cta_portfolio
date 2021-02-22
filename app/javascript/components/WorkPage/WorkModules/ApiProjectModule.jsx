@@ -136,7 +136,7 @@ const ApiProjectModule = ({ activeTab }) => {
     const [codeProjects, setCodeProjects] = useState([]);
 
     useEffect (() => {
-        axios.get('/api/v1/code_projects')
+        axios.get('/api/v1/api_projects')
         .then(data => {
             setCodeProjects(data.data.data)
         })

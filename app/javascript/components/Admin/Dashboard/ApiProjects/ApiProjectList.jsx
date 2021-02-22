@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import CodeEditForm from './CodeEditForm'
+import ApiEditForm from './ApiEditForm'
 
-const CodeProjectList = ({ codeProjects, setUpdated }) => {
+const ApiProjectList = ({ apiProjects, setUpdated }) => {
     const [ editMode, setEditMode ] = useState(false)
-    const [ currentCodeProject, setCurrentCodeProject ] = useState({})
+    const [ currentApiProject, setCurrentApiProject ] = useState({})
 
     const _handleProjectDelete = (data) => {
-        axios.delete(`/api/v1/code_projects/${parseInt(data)}`)
+        axios.delete(`/api/v1/api_projects/${parseInt(data)}`)
         .then(data => {
             setUpdated(true)
             setUpdated(false)
@@ -16,7 +16,7 @@ const CodeProjectList = ({ codeProjects, setUpdated }) => {
     }
 
     const _handleProjectUpdate = (data) => {
-        axios.put(`/api/v1/code_projects/${parseInt(data.id)}`, data)
+        axios.put(`/api/v1/api_projects/${parseInt(data.id)}`, data)
         .then(resp => {
             setUpdated(true)
             setUpdated(false)
@@ -25,7 +25,7 @@ const CodeProjectList = ({ codeProjects, setUpdated }) => {
         .catch(error => console.log(error))
     }
 
-    const listCodeProjects = codeProjects.map(item => {
+    const listapiProjects = apiProjects.map(item => {
         var proj = item.attributes
         return (
             <div key={item.id} >
@@ -39,7 +39,7 @@ const CodeProjectList = ({ codeProjects, setUpdated }) => {
                 } <br/>
                 <button type='submit' onClick={e => {
                     setEditMode(true)
-                    setCurrentCodeProject(item)
+                    setCurrentApiProject(item)
                     }}
                 >Edit</button>
                 <button type='submit' onClick={e => _handleProjectDelete(item.id)}>Delete</button>
@@ -49,10 +49,10 @@ const CodeProjectList = ({ codeProjects, setUpdated }) => {
 
     return (
         <div>
-            {listCodeProjects}
+            {listapiProjects}
             { editMode &&
-                <CodeEditForm
-                currentCodeProject={currentCodeProject}
+                <ApiEditForm
+                currentApiProject={currentApiProject}
                 setEditMode={setEditMode}
                 _handleProjectUpdate={_handleProjectUpdate}
                 />
@@ -61,4 +61,4 @@ const CodeProjectList = ({ codeProjects, setUpdated }) => {
     )
 }
 
-export default CodeProjectList
+export default ApiProjectList

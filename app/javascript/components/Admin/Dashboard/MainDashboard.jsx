@@ -1,6 +1,6 @@
 import React from 'react'
-import ContainerCodeProjects from './CodeProjects/ContainerCodeProjects'
-import ContainerGraphicProjects from './GraphicProjects/ContainerGraphicProjects'
+import ContainerApiProjects from './ApiProjects/ContainerApiProjects'
+import ContainerFullstackProjects from './FullstackProjects/ContainerFullstackProjects'
 
 const MainDashboard = ({ currentAdmin }) => {
 
@@ -8,10 +8,10 @@ const MainDashboard = ({ currentAdmin }) => {
         <div>
             <h4>Main Dashboard</h4>
             <hr/>
-            <ContainerCodeProjects
+            <ContainerApiProjects
                 currentAdmin={currentAdmin}
             /> <hr/>
-            <ContainerGraphicProjects
+            <ContainerFullstackProjects
                 currentAdmin={currentAdmin}
             />
         </div>
