@@ -12,6 +12,7 @@ const StyledAboutPage = styled.div`
     font-family: 'Big Shoulders Display', light;
     margin: 10px auto;
     border-radius: 15px;
+    background: #535353;
 
     .module-header{
         text-align: center;
@@ -139,7 +140,8 @@ const StyledImg = styled.img`
     height: 95%;
     width: 95%;
     margin: auto;
-    border: black 2px solid;
+    border: #cacaca 2px solid;
+    backdrop-filter: drop-shadow(2px 10px 6px black);
 `
 
 const StyledBio = styled.div`

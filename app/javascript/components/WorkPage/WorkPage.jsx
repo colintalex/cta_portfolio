@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import CodeProjectModule from './WorkModules/CodeProjectModule';
-import GraphicProjectModule from './WorkModules/GraphicProjectModule';
+import ApiProjectModule from './WorkModules/ApiProjectModule';
+import FullstackProjectModule from './WorkModules/FullstackProjectModule';
 import TabsContainer from './Tabs/TabsContainer';
 import styled from 'styled-components'
 

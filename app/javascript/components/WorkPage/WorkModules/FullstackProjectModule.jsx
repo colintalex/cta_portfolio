@@ -63,7 +63,7 @@ const StyledProjectContent = styled.div`
     border-radius: 5px;
 `
 
-const GraphicProjectModule = ({ activeTab }) => {
+const FullstackProjectModule = ({ activeTab }) => {
     const [graphicProjects, setGraphicProjects] = useState([]);
 
     useEffect (() => {
@@ -109,4 +109,4 @@ const GraphicProjectModule = ({ activeTab }) => {
     )
 }
 
-export default GraphicProjectModule
+export default FullstackProjectModule
