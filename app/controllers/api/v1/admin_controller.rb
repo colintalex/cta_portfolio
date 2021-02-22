@@ -1,4 +1,5 @@
 class Api::V1::AdminController < ApplicationController
+  protect_from_forgery with: :null_session
   def show
     admin = Admin.find(params[:id].to_i)
 

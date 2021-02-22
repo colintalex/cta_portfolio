@@ -10,6 +10,7 @@ const AdminDashboard = () => {
         return (
             <MainDashboard
                 currentAdmin={currentAdmin}
+                setCurrentAdmin={setCurrentAdmin}
             />
         )
     }else{
