@@ -7,7 +7,7 @@ const AdminSettings = ({ currentAdmin, _handleAdminUpdate}) => {
     const { register, handleSubmit, watch, errors } = useForm({
         defaultValues: {
             id: currentAdmin.id,
-            email: currentAdmin.email
+            email: currentAdmin.attributes.email
         }
     })
 
