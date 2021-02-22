@@ -58,7 +58,7 @@ class Api::V1::FullstackProjectsController < ApplicationController
   private
 
   def project_params
-    params.permit(:title, :description)
+    params.permit(:title, :description, :github_url, :deploy_url, :technology)
   end
 
   def image_params

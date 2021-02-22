@@ -22,6 +22,12 @@ const FullstackEditForm = ({ currentFullstackProject, _handleProjectUpdate, setE
                 <input type='text' name='title' ref={register} />
                 <label for='description'>Description</label>
                 <input type='text' name='description' ref={register} />
+                <label for='github_url'>GitHub URL</label>
+                <input type='text' name='github_url' placeholder='GitHub URL' ref={register} />
+                <label for='deploy_url'>Deployment URL</label>
+                <input type='text' name='deploy_url' placeholder='Deployment URL' ref={register} />
+                <label for='technology'>Technology</label>
+                <input type='text' name='technology' placeholder='Technology' ref={register} />
                 <button>Add Photos</button>
                 <br/>Select images to delete<br/>
                 {

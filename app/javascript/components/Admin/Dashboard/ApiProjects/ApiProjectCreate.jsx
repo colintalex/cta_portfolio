@@ -36,7 +36,7 @@ const ApiProjectCreate = ({ setUpdated }) => {
             Create a new API project here
             <form onSubmit={handleSubmit(_handleProjectCreate)}>
                 <input type='text' name='title' placeholder='Title' ref={register} />
-                <input type='text' name='description' placeholder='Description' ref={register} />
+                <input type='textarea' name='description' placeholder='Description' ref={register} />
                 <input type='text' name='github_url' placeholder='GitHub URL' ref={register} />
                 <input type='text' name='deploy_url' placeholder='Deployment URL' ref={register} />
                 <input type='text' name='technology' placeholder='Technology' ref={register} />

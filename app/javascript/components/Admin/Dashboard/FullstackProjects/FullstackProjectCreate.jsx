@@ -38,7 +38,10 @@ const FullstackProjectCreate = ({ currentAdmin, setUpdated }) => {
             Create a new Fullstack project here
             <form id='fullstack-create-form' onSubmit={handleSubmit(_handleProjectCreate)} encType='multipart/form-data'>
                 <input type='text' name='title' placeholder='Title' ref={register} />
-                <input type='text' name='description' placeholder='Description' ref={register} />
+                <input type='textarea' name='description' placeholder='Description' ref={register} />
+                <input type='text' name='github_url' placeholder='GitHub URL' ref={register} />
+                <input type='text' name='deploy_url' placeholder='Deployment URL' ref={register} />
+                <input type='text' name='technology' placeholder='Technology' ref={register} />
                 <input type='file' multiple name='images' placeholder='Images' ref={register} />
                 <button type='submit'>Submit</button>
             </form>
