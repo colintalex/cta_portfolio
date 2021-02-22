@@ -47,15 +47,6 @@ const StyledProjDescription = styled.p`
     height: 200px;
 `
 
-const StyledProjImage = styled.img`
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: inherit;
-    max-height: 400px;
-    border-radius: 5px;
-`
-
 const ImageWrapper = styled.div`
     height: auto;
     width: auto;
@@ -97,16 +88,16 @@ const StyledProjectContent = styled.div`
     background: rgb(255 255 255 / 58%);
     padding: 8px;
     border-radius: 5px;
+
+    @media (max-width: 900px){
+        grid-template-columns: 1fr;
+    }
 `
 
 const StyledProjTech = styled.p`
     font-size: 1.7em;
     margin: 5px;
 `
-const StyledtechWrapper = styled.div`
-    display: inline-block;
-    text-align: end;
-` 
 
 const StyledLinksWrapper = styled.div`
     grid-column: 1 / 3;
@@ -166,6 +157,16 @@ const StyledChallenges = styled.div`
 
     ul{
         font-size: 1.3em;
+    }
+
+    @media (max-width: 900px){
+        h4 {
+            font-size: 1.3em;
+        }
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
     }
 `
 
