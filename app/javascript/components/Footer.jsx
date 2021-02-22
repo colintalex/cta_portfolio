@@ -3,11 +3,8 @@ import styled from 'styled-components'
 import StyledIcons from './NavBar/StyledIcons'
 
 const StyledFooter = styled.div`
-    background: #1f1f1f;
-    height: 5vh;
-    border-style: solid;
-    border-width: 1px;
-    border-top-color: #cc851e94;
+    max-width: 1200px; 
+    margin: 0 auto;
     height: auto;
     
     #footer-links {
@@ -37,18 +34,32 @@ const IconsWrapper = styled.div`
         width: 30px;
     }
 
+    #icon-wrapper {
+        padding-right: 15px;
+    }
+
 `
 
+const FootWrapper = styled.div`
+    background: #1f1f1f;
+    height: 5vh;
+    width: 100%
+    border-style: solid;
+    border-width: 1px;
+    border-top-color: #cc851e94;
+`
 const Footer = () => {
     return(
-        <StyledFooter>
-            <StyledTag>
-                <p id='footer-tag'>Colin Alexander 2020</p>
-            </StyledTag>
-            <IconsWrapper>
-                <StyledIcons/>
-            </IconsWrapper>
-        </StyledFooter>
+        <FootWrapper>
+            <StyledFooter>
+                <StyledTag>
+                    <p id='footer-tag'>Colin Alexander 2020</p>
+                </StyledTag>
+                <IconsWrapper>
+                    <StyledIcons/>
+                </IconsWrapper>
+            </StyledFooter>
+        </FootWrapper>
     )
 }
 
