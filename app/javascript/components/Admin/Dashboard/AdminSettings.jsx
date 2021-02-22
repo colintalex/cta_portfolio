@@ -3,12 +3,7 @@ import { useForm } from 'react-hook-form'
 
 const AdminSettings = ({ currentAdmin, _handleAdminUpdate}) => {
 
-    const { register, handleSubmit, watch, errors } = useForm({
-        defaultValues: {
-            id: currentAdmin.id,
-            email: currentAdmin.attributes.email
-        }
-    })
+    const { register, handleSubmit, watch, errors } = useForm()
 
 
     return (
