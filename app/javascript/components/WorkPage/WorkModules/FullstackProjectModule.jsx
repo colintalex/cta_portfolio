@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { GrHeroku } from 'react-icons/gr'
 import { FaGithub } from 'react-icons/fa'
-import Carousel from 'react-elastic-carousel';
+import AwesomeSlider from 'react-awesome-slider'
+import 'react-awesome-slider/dist/styles.css';
 import styled from 'styled-components'
 
 const StyledProjGridContainer = styled.div`
-     display: grid !important;
-    grid-template-columns: 1fr 1fr;
+    display: grid !important;
+    grid-template-columns: 1fr;
     grid-gap: 30px;
     justify-content: space-around;
     padding: 25px;
@@ -24,7 +25,7 @@ const StyledProjGridContainer = styled.div`
 `
 
 const StyledProjGridModule = styled.div`
-      display: inline-block;
+    display: inline-block;
     border-radius: 10px;
     background: rgb(80,80,79);
     background: linear-gradient(0deg,rgb(0 0 0 / 80%) 30%,rgb(181 134 62 / 95%) 100%);
@@ -50,21 +51,41 @@ const StyledProjImage = styled.img`
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: auto;
+    width: inherit;
     max-height: 400px;
     border-radius: 5px;
 `
 
 const ImageWrapper = styled.div`
-    height: 400px;
+    height: auto;
     width: auto;
     padding-top: 30px;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
+
+    .awssld__content img {
+        object-fit: contain !important;
+        height: 500px;
+    }
+    .awssld__content{
+        background: none;
+    }
+    .awssld {
+        height: 500px;
+    }
 
     button {
         background: #1e97cc63;
         &:hover {
             background: #1e97cc
+        }
+    }
+
+    @media (max-width: 600px) {
+        .awssld__content img{
+            height: 300px;
+        }
+        .awssld {
+            height: 300px;
         }
     }
 `
@@ -82,7 +103,6 @@ const StyledProjTech = styled.p`
     font-size: 1.7em;
     margin: 5px;
 `
-
 const StyledtechWrapper = styled.div`
     display: inline-block;
     text-align: end;
@@ -92,6 +112,7 @@ const StyledLinksWrapper = styled.div`
     grid-column: 1 / 3;
     text-align: center;
     font-size: 1.5em;
+    margin-top: 25px;
     a {
         text-decoration: none;
         color: #a9a9a9;
@@ -162,11 +183,9 @@ const FullstackProjectModule = ({ activeTab }) => {
                     </StyledProjDescription>
                 </StyledProjectContent>
                 <ImageWrapper>
-                    <Carousel
-                        enableAutoPlay autoPlaySpeed={5500}
-                    >
-                        {proj.images && proj.images.map(img => <StyledProjImage src={img.url}/>)}
-                    </Carousel>
+                    <AwesomeSlider>
+                        {proj.images && proj.images.map(img => <div data-src={img.url}/>)}
+                    </AwesomeSlider>
                 </ImageWrapper>
                 <StyledLinksWrapper className='project-links'>
                     <a href={proj.github_url}>GitHub Repo <StyledGitIcon/></a>

@@ -3,11 +3,12 @@ import axios from 'axios'
 import styled from 'styled-components'
 import { GrHeroku } from 'react-icons/gr'
 import { FaGithub } from 'react-icons/fa'
-import Carousel from 'react-elastic-carousel';
+import AwesomeSlider from 'react-awesome-slider'
+import 'react-awesome-slider/dist/styles.css';
 
 const StyledProjGridContainer = styled.div`
     display: grid !important;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 30px;
     justify-content: space-around;
     padding: 25px;
@@ -56,15 +57,35 @@ const StyledProjImage = styled.img`
 `
 
 const ImageWrapper = styled.div`
-    height: 400px;
+    height: auto;
     width: auto;
     padding-top: 30px;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
+
+    .awssld__content img {
+        object-fit: contain !important;
+        height: 500px;
+    }
+    .awssld__content{
+        background: none;
+    }
+    .awssld {
+        height: 500px;
+    }
 
     button {
         background: #1e97cc63;
         &:hover {
             background: #1e97cc
+        }
+    }
+
+    @media (max-width: 600px) {
+        .awssld__content img{
+            height: 300px;
+        }
+        .awssld {
+            height: 300px;
         }
     }
 `
@@ -91,6 +112,7 @@ const StyledLinksWrapper = styled.div`
     grid-column: 1 / 3;
     text-align: center;
     font-size: 1.5em;
+    margin-top: 25px;
     a {
         text-decoration: none;
         color: #a9a9a9;
@@ -161,9 +183,9 @@ const ApiProjectModule = ({ activeTab }) => {
                     </StyledProjDescription>
                 </StyledProjectContent>
                 <ImageWrapper>
-                    <Carousel>
-                        {proj.images && proj.images.map(img => <StyledProjImage src={img.url}/>)}
-                    </Carousel>
+                    <AwesomeSlider>
+                        {proj.images && proj.images.map(img => <div data-src={img.url}/>)}
+                    </AwesomeSlider>
                 </ImageWrapper>
                 <StyledLinksWrapper className='project-links'>
                     <a href={proj.github_url}>GitHub Repo <StyledGitIcon/></a>

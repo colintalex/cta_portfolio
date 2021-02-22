@@ -15,6 +15,8 @@ const StyledWorkPage = styled.div`
     border-radius: 0 0 5px 5px;
     margin-top: 0px;
 
+    
+
     #tabs-container{
         margin-top: 0px;
     }
@@ -63,6 +65,7 @@ const StyledWorkPage = styled.div`
             }
         }
     }
+
     @media (max-width: 400px){
         img {
             max-width: 350px;
