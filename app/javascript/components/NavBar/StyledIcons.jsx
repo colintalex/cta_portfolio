@@ -41,15 +41,13 @@ const StyledLinkedInIcon = styled(AiOutlineLinkedin)`
 
 const StyledIcons = () => {
     return(
-        <StyledIconWrapper>
+        <StyledIconWrapper id='icon-wrapper'>
             <a href={linkUrls['github']}>
                 <StyledGitHubIcon className="socialIcon"/>
             </a>
             <a href={linkUrls['github']}>
                 <StyledLinkedInIcon className="socialIcon"/>
             </a>
-            {/* <a> LINK TO EMAIL FORM </a> */}
-            <StyledMailIcon className="socialIcon"/> 
         </StyledIconWrapper>
     )
 }

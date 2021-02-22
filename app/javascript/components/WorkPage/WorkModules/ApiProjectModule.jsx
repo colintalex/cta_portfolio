@@ -160,7 +160,7 @@ const StyledChallenges = styled.div`
     }
 
     ul{
-        font-size: 1.3em;
+        font-size: 1.4em;
     }
 
     @media (max-width: 900px){
