@@ -163,6 +163,16 @@ const StyledGitIcon = styled(FaGithub)`
 const StyledChallenges = styled.div`
     display: inline-block;
     margin: 5px;
+
+    h4{ 
+        font-size: 1.5em;
+        margin: 5px;
+        font-family: 'Big Shoulders Display',medium;
+    }
+
+    ul{
+        font-size: 1.3em;
+    }
 `
 
 
@@ -191,7 +201,7 @@ const ApiProjectModule = ({ activeTab }) => {
                     </StyledProjDescription>
                     <StyledChallenges>
                         <hr/>
-                        Challenges:
+                        <h4>Challenges:</h4>
                         <ul>
                             {proj.challenges && proj.challenges.map(chal => <li>{chal}</li>)}
                         </ul>

@@ -153,9 +153,20 @@ const StyledGitIcon = styled(FaGithub)`
     transition color .6s;
 `
 
+
 const StyledChallenges = styled.div`
     display: inline-block;
     margin: 5px;
+
+    h4{ 
+        font-size: 1.5em;
+        margin: 5px;
+        font-family: 'Big Shoulders Display',medium;
+    }
+
+    ul{
+        font-size: 1.3em;
+    }
 `
 
 const FullstackProjectModule = ({ activeTab }) => {
@@ -176,15 +187,15 @@ const FullstackProjectModule = ({ activeTab }) => {
             <StyledProjGridModule>
                 <StyledProjectContent>
                     <StyledProjHeading>{proj.title}</StyledProjHeading>
-                    <StyledProjTech className="project-tech" >Built with: {proj.technology}</StyledProjTech>
+                    <StyledProjTech className="project-tech" >{proj.technology}</StyledProjTech>
                     <StyledProjDescription className='project-desc'>
                         <hr/>
                         {proj.description}
                     </StyledProjDescription>
                     <StyledChallenges>
                         <hr/>
+                        <h4>Challenges:</h4>
                         <ul>
-                            Challenges:
                             {proj.challenges && proj.challenges.map(chal => <li>{chal}</li>)}
                         </ul>
                     </StyledChallenges>
