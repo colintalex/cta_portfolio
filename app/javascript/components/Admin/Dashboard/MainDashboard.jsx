@@ -8,9 +8,12 @@ const MainDashboard = ({ currentAdmin, setCurrentAdmin }) => {
     return (
         <div>
             <h2>Main Dashboard</h2>
+            <h4>Welcome {currentAdmin && currentAdmin.attributes.name}!</h4>
+            <h4>{currentAdmin && currentAdmin.attributes.email}</h4>
             <hr/>
             <AdminSettings
-                currentAdmin={currentAdmin, setCurrentAdmin}
+                currentAdmin={currentAdmin}
+                setCurrentAdmin={setCurrentAdmin}
             />
             <ContainerApiProjects
                 currentAdmin={currentAdmin}
