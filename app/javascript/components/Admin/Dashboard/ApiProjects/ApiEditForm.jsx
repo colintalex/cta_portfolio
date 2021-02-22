@@ -13,6 +13,7 @@ const ApiEditForm = ({ currentApiProject, _handleProjectUpdate, setEditMode }) =
             deploy_url: project.deploy_url,
             images: project.images,
             technology: project.technology,
+            challenges: project.challenges,
             id: currentApiProject.id
         }
     });

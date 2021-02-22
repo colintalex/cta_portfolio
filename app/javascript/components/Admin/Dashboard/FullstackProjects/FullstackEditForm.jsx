@@ -8,7 +8,11 @@ const FullstackEditForm = ({ currentFullstackProject, _handleProjectUpdate, setE
         defaultValues: {
             title: project.title,
             description: project.description,
-            image_path: project.image_path,
+            github_url: project.github_url,
+            deploy_url: project.deploy_url,
+            images: project.images,
+            technology: project.technology,
+            challenges: project.challenges,
             id: currentFullstackProject.id
         }
     });
