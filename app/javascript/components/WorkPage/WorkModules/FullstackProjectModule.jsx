@@ -34,6 +34,7 @@ const StyledProjGridModule = styled.div`
 const StyledProjHeading = styled.h3`
     margin: 5px;
     display: inline;
+    grid-column: 1 / 4;
     font-size: 2em;
 `
 
@@ -41,7 +42,7 @@ const StyledProjDescription = styled.p`
     margin: 5px;
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
-    grid-column: 1 / 3;
+    grid-column: 1 / 4;
     overflow: scroll;
     height: 200px;
 `
@@ -92,7 +93,7 @@ const ImageWrapper = styled.div`
 const StyledProjectContent = styled.div`
     height: auto;
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     background: rgb(255 255 255 / 58%);
     padding: 8px;
     border-radius: 5px;
@@ -152,6 +153,10 @@ const StyledGitIcon = styled(FaGithub)`
     transition color .6s;
 `
 
+const StyledChallenges = styled.div`
+    display: inline-block;
+    margin: 5px;
+`
 
 const FullstackProjectModule = ({ activeTab }) => {
     const [graphicProjects, setGraphicProjects] = useState([]);
@@ -170,16 +175,19 @@ const FullstackProjectModule = ({ activeTab }) => {
         return (
             <StyledProjGridModule>
                 <StyledProjectContent>
-                    <div>
-                        <StyledProjHeading>{proj.title}</StyledProjHeading>
-                    </div>
-                    <StyledtechWrapper>
-                        <StyledProjTech className="project-tech" >Built with: {proj.technology}</StyledProjTech>
-                    </StyledtechWrapper>
+                    <StyledProjHeading>{proj.title}</StyledProjHeading>
+                    <StyledProjTech className="project-tech" >Built with: {proj.technology}</StyledProjTech>
                     <StyledProjDescription className='project-desc'>
                         <hr/>
                         {proj.description}
                     </StyledProjDescription>
+                    <StyledChallenges>
+                        <hr/>
+                        <ul>
+                            Challenges:
+                            {proj.challenges && proj.challenges.map(chal => <li>{chal}</li>)}
+                        </ul>
+                    </StyledChallenges>
                 </StyledProjectContent>
                 <ImageWrapper>
                     <AwesomeSlider>

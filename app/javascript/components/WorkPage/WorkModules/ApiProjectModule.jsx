@@ -35,15 +35,19 @@ const StyledProjHeading = styled.h3`
     margin: 5px;
     display: inline;
     font-size: 2em;
+    grid-column: 1 / 4;
+    padding-left: 15px;
 `
 
-const StyledProjDescription = styled.p`
+const StyledProjDescription = styled.div`
     margin: 5px;
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
-    grid-column: 1 / 3;
+    grid-column: 1 / 4;
     overflow: scroll;
     height: 200px;
+    display: inline-block;
+    padding: 0 15px;
 `
 
 const StyledProjImage = styled.img`
@@ -92,19 +96,23 @@ const ImageWrapper = styled.div`
 const StyledProjectContent = styled.div`
     height: auto;
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     background: rgb(255 255 255 / 58%);
     padding: 8px;
     border-radius: 5px;
+
+    hr{
+        grid-column: 1/ 5;
+    }
 `
 
 const StyledProjTech = styled.p`
     font-size: 1.7em;
+    text-align: end;
     margin: 5px;
 `
 const StyledtechWrapper = styled.div`
     display: inline-block;
-    text-align: end;
 ` 
 
 const StyledLinksWrapper = styled.div`
@@ -152,6 +160,11 @@ const StyledGitIcon = styled(FaGithub)`
     transition color .6s;
 `
 
+const StyledChallenges = styled.div`
+    display: inline-block;
+    margin: 5px;
+`
+
 
 const ApiProjectModule = ({ activeTab }) => {
     const [codeProjects, setCodeProjects] = useState([]);
@@ -170,16 +183,28 @@ const ApiProjectModule = ({ activeTab }) => {
         return (
             <StyledProjGridModule>
                 <StyledProjectContent>
-                    <div>
-                        <StyledProjHeading>{proj.title}</StyledProjHeading>
-                    </div>
-                    <StyledtechWrapper>
-                        <StyledProjTech className="project-tech" >Built with: {proj.technology}</StyledProjTech>
-                    </StyledtechWrapper>
+                    <StyledProjHeading>{proj.title}</StyledProjHeading>
+                    <StyledProjTech className="project-tech" >{proj.technology}</StyledProjTech>
                     <StyledProjDescription className="project-desc">
                         <hr/>
-                        {proj.description}
+                        <p>{proj.description}</p>
                     </StyledProjDescription>
+                    <StyledChallenges>
+                        <hr/>
+                        Challenges:
+                        <ul>
+                            {/* {proj.challenges && proj.challenges.map(chal => <li>{chal}</li>)} */}
+                            <li>
+                                Lots of tough challenges
+                            </li>
+                            <li>
+                                Diffuculty overload
+                            </li>
+                            <li>
+                                Accomplish much, wow
+                            </li>
+                        </ul>
+                    </StyledChallenges>
                 </StyledProjectContent>
                 <ImageWrapper>
                     <AwesomeSlider>
