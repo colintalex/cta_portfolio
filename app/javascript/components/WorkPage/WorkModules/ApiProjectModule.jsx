@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { GrHeroku } from 'react-icons/gr'
 import { FaGithub } from 'react-icons/fa'
 import AwesomeSlider from 'react-awesome-slider'
-import 'react-awesome-slider/dist/styles.css';
 
 const StyledProjGridContainer = styled.div`
     display: grid !important;

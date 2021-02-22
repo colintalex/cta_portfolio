@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import styled from 'styled-components'
 import { GrHeroku } from 'react-icons/gr'
 import { FaGithub } from 'react-icons/fa'
 import AwesomeSlider from 'react-awesome-slider'
-import 'react-awesome-slider/dist/styles.css';
-import styled from 'styled-components'
 
 const StyledProjGridContainer = styled.div`
     display: grid !important;
