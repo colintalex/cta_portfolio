@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import CodeProjectModule from '../WorkModules/CodeProjectModule'
-import GraphicProjectModule from '../WorkModules/GraphicProjectModule'
+import ApiProjectModule from '../WorkModules/ApiProjectModule'
+import FullstackProjectModule from '../WorkModules/FullstackProjectModule'
 import styled from 'styled-components'
 import { FaArrowCircleLeft } from 'react-icons/fa'
 
@@ -97,22 +97,22 @@ const TabsContainer = () => {
                 <StyledPageHeader>My Personal Work</StyledPageHeader>
                 <StyledTabList activeTab={activeTab}>
                     <StyledTabItem activetab={activeTab} className='tab' id='tab-code-projects'>
-                        <StyledTabs id='code-tab-button' onClick={e => setActiveTab('tab-code-projects')}>Code Work</StyledTabs>
+                        <StyledTabs id='code-tab-button' onClick={e => setActiveTab('tab-code-projects')}>API Projects</StyledTabs>
                     </StyledTabItem>
                         <StyledArrowIcon
                         id="tab-arrow"
                             activetab={activeTab}
                         />
                     <StyledTabItem activetab={activeTab} className='tab' id='tab-graphic-projects'>
-                        <StyledTabs id='graphic-tab-button' onClick={e => setActiveTab('tab-graphic-projects')}>Graphic Design</StyledTabs>
+                        <StyledTabs id='graphic-tab-button' onClick={e => setActiveTab('tab-graphic-projects')}>FullStack Projects</StyledTabs>
                     </StyledTabItem>
                 </StyledTabList>
                 </FogEffectLayer>
             </StyledHeaderWrapper>
-            <CodeProjectModule
+            <ApiProjectModule
                 activeTab={activeTab}
             />
-            <GraphicProjectModule
+            <FullstackProjectModule
                 activeTab={activeTab}
             />
         </div>

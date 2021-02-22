@@ -132,7 +132,7 @@ const StyledGitIcon = styled(FaGithub)`
 `
 
 
-const CodeProjectModule = ({ activeTab }) => {
+const ApiProjectModule = ({ activeTab }) => {
     const [codeProjects, setCodeProjects] = useState([]);
 
     useEffect (() => {
@@ -182,4 +182,4 @@ const CodeProjectModule = ({ activeTab }) => {
     )
 }
 
-export default CodeProjectModule
+export default ApiProjectModule
