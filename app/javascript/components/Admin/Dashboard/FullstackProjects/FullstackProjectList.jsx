@@ -36,7 +36,8 @@ const FullstackProjectList = ({ fullstackProjects, setUpdated }) => {
                     Desc: {proj.description},
                     GitHub: {proj.github_url},
                     Deployment: {proj.deploy_url},
-                    Technology: {proj.technology} <br/>
+                    Technology: {proj.technology},
+                    Challenges: {proj.challenges && proj.challenges.join(', ')} <br/>
                     Images: {
                         proj.images && proj.images.map(img => <img src={img.url} key={img.id} height='150' width='150'/>) // Add keys!!
                     } <br/>

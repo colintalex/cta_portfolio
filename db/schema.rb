@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_22_073321) do
+ActiveRecord::Schema.define(version: 2021_02_22_134716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_073321) do
     t.string "technology"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "challenges"
   end
 
   create_table "fullstack_projects", force: :cascade do |t|
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_073321) do
     t.string "github_url"
     t.string "deploy_url"
     t.string "technology"
+    t.string "challenges"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

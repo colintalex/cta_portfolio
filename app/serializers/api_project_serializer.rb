@@ -6,4 +6,8 @@ class ApiProjectSerializer
   attribute :images do |obj|
       obj.get_image_urls
   end
+
+  attribute :challenges do |obj|
+        obj.challenges.present? ? obj.challenges.split(', ') : obj.challenges
+  end
 end

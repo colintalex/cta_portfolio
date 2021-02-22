@@ -8,14 +8,11 @@ import styled from 'styled-components'
 const StyledWorkPage = styled.div`
     min-height: 90vh;
     overflow: scroll;
-    // background: #E1AD5B;
     max-width: 1400px;
     font-family: 'Big Shoulders Display', light;
     margin: 10px auto;
     border-radius: 0 0 5px 5px;
     margin-top: 0px;
-
-    
 
     #tabs-container{
         margin-top: 0px;
@@ -51,11 +48,11 @@ const StyledWorkPage = styled.div`
             font-size: 1.5em;
         }
         .tab {
-            margin: 0 15px;
         }
         #tab-arrow {
             width: 30px;
             height: 30px;
+            margin: 0 5px;
         }
         .project-links {
             font-size: 1.2em;

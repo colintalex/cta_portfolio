@@ -34,6 +34,7 @@ const StyledProjGridModule = styled.div`
 const StyledProjHeading = styled.h3`
     margin: 5px;
     display: inline;
+    grid-column: 1 / 4;
     font-size: 2em;
 `
 
@@ -41,18 +42,9 @@ const StyledProjDescription = styled.p`
     margin: 5px;
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
-    grid-column: 1 / 3;
+    grid-column: 1 / 4;
     overflow: scroll;
     height: 200px;
-`
-
-const StyledProjImage = styled.img`
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: inherit;
-    max-height: 400px;
-    border-radius: 5px;
 `
 
 const ImageWrapper = styled.div`
@@ -92,20 +84,20 @@ const ImageWrapper = styled.div`
 const StyledProjectContent = styled.div`
     height: auto;
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     background: rgb(255 255 255 / 58%);
     padding: 8px;
     border-radius: 5px;
+
+    @media (max-width: 900px){
+        grid-template-columns: 1fr;
+    }
 `
 
 const StyledProjTech = styled.p`
     font-size: 1.7em;
     margin: 5px;
 `
-const StyledtechWrapper = styled.div`
-    display: inline-block;
-    text-align: end;
-` 
 
 const StyledLinksWrapper = styled.div`
     grid-column: 1 / 3;
@@ -153,6 +145,31 @@ const StyledGitIcon = styled(FaGithub)`
 `
 
 
+const StyledChallenges = styled.div`
+    display: inline-block;
+    margin: 5px;
+
+    h4{ 
+        font-size: 1.5em;
+        margin: 5px;
+        font-family: 'Big Shoulders Display',medium;
+    }
+
+    ul{
+        font-size: 1.3em;
+    }
+
+    @media (max-width: 900px){
+        h4 {
+            font-size: 1.3em;
+        }
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+`
+
 const FullstackProjectModule = ({ activeTab }) => {
     const [graphicProjects, setGraphicProjects] = useState([]);
 
@@ -170,16 +187,19 @@ const FullstackProjectModule = ({ activeTab }) => {
         return (
             <StyledProjGridModule>
                 <StyledProjectContent>
-                    <div>
-                        <StyledProjHeading>{proj.title}</StyledProjHeading>
-                    </div>
-                    <StyledtechWrapper>
-                        <StyledProjTech className="project-tech" >Built with: {proj.technology}</StyledProjTech>
-                    </StyledtechWrapper>
+                    <StyledProjHeading>{proj.title}</StyledProjHeading>
+                    <StyledProjTech className="project-tech" >{proj.technology}</StyledProjTech>
                     <StyledProjDescription className='project-desc'>
                         <hr/>
                         {proj.description}
                     </StyledProjDescription>
+                    <StyledChallenges>
+                        <hr/>
+                        <h4>Challenges:</h4>
+                        <ul>
+                            {proj.challenges && proj.challenges.map(chal => <li>{chal}</li>)}
+                        </ul>
+                    </StyledChallenges>
                 </StyledProjectContent>
                 <ImageWrapper>
                     <AwesomeSlider>

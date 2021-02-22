@@ -59,7 +59,7 @@ class Api::V1::ApiProjectsController < ApplicationController
   private
 
   def project_params
-    params.permit(:title, :description, :github_url, :deploy_url, :technology)
+    params.permit(:title, :description, :github_url, :deploy_url, :technology, :challenges)
   end
 
   def image_params

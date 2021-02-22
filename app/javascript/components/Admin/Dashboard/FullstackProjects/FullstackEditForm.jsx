@@ -8,7 +8,11 @@ const FullstackEditForm = ({ currentFullstackProject, _handleProjectUpdate, setE
         defaultValues: {
             title: project.title,
             description: project.description,
-            image_path: project.image_path,
+            github_url: project.github_url,
+            deploy_url: project.deploy_url,
+            images: project.images,
+            technology: project.technology,
+            challenges: project.challenges,
             id: currentFullstackProject.id
         }
     });
@@ -28,6 +32,8 @@ const FullstackEditForm = ({ currentFullstackProject, _handleProjectUpdate, setE
                 <input type='text' name='deploy_url' placeholder='Deployment URL' ref={register} />
                 <label for='technology'>Technology</label>
                 <input type='text' name='technology' placeholder='Technology' ref={register} />
+                <label for='challenges'>Challenges</label>
+                <input type='text' name='challenges' placeholder='Technology' ref={register} />
                 <button>Add Photos</button>
                 <br/>Select images to delete<br/>
                 {

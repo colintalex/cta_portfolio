@@ -33,7 +33,7 @@ const StyledTabList = styled.ul`
 
 const StyledTabItem = styled.li`
     display: inline;
-    margin: 0 25px;
+    margin: 0px;
     transition: color .6s;
     
     #code-tab-button {
