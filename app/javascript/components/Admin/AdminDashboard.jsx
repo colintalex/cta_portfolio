@@ -6,11 +6,18 @@ const AdminDashboard = () => {
     const [ isAuthenticated, setIsAuthenticated ] = useState(JSON.parse(sessionStorage.getItem('authenticated')) || false )
     const [ currentAdmin, setCurrentAdmin ] = useState(JSON.parse(sessionStorage.getItem('currentAdmin')) || {})
 
+    const _handleAdminUpdate = (data) => {
+        axios.put(`/api/v1/admin/${parseInt(data.id)}`, data)
+        .then(resp => {
+            setCurrentAdmin(resp.data.data)
+        })
+        .catch(error => console.log(error))
+    }
     if(isAuthenticated) {
         return (
             <MainDashboard
                 currentAdmin={currentAdmin}
-                setCurrentAdmin={setCurrentAdmin}
+                _handleAdminUpdate={_handleAdminUpdate}
             />
         )
     }else{

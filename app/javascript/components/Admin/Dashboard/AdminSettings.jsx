@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { useForm } from 'react-hook-form'
 
-const AdminSettings = ({ currentAdmin, setCurrentAdmin}) => {
+const AdminSettings = ({ currentAdmin, _handleAdminUpdate}) => {
 
     const { register, handleSubmit, watch, errors } = useForm({
         defaultValues: {
@@ -11,13 +11,7 @@ const AdminSettings = ({ currentAdmin, setCurrentAdmin}) => {
         }
     })
 
-    const _handleAdminUpdate = (data) => {
-        axios.put(`/api/v1/admin/${parseInt(data.id)}`, data)
-        .then(resp => {
-            setCurrentAdmin(resp.data.data)
-        })
-        .catch(error => console.log(error))
-    }
+
     return (
         <div>
             <form onSubmit={handleSubmit(_handleAdminUpdate)}>

@@ -3,7 +3,7 @@ import AdminSettings from './AdminSettings'
 import ContainerApiProjects from './ApiProjects/ContainerApiProjects'
 import ContainerFullstackProjects from './FullstackProjects/ContainerFullstackProjects'
 
-const MainDashboard = ({ currentAdmin, setCurrentAdmin }) => {
+const MainDashboard = ({ currentAdmin, _handleAdminUpdate }) => {
 
     return (
         <div>
@@ -13,7 +13,7 @@ const MainDashboard = ({ currentAdmin, setCurrentAdmin }) => {
             <hr/>
             <AdminSettings
                 currentAdmin={currentAdmin}
-                setCurrentAdmin={setCurrentAdmin}
+                _handleAdminUpdate={_handleAdminUpdate}
             />
             <ContainerApiProjects
                 currentAdmin={currentAdmin}
