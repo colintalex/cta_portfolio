@@ -67,7 +67,7 @@ const FullstackProjectModule = ({ activeTab }) => {
     const [graphicProjects, setGraphicProjects] = useState([]);
 
     useEffect (() => {
-        axios.get('/api/v1/graphic_projects')
+        axios.get('/api/v1/fullstack_projects')
         .then(data => {
             setGraphicProjects(data.data.data)
         })

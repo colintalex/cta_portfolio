@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :admin, only: [:show, :edit, :update]
-      resources :code_projects
-      resources :graphic_projects
+      resources :api_projects
+      resources :fullstack_projects
 
       namespace :auth do
         post '/login', to: 'auth#login'

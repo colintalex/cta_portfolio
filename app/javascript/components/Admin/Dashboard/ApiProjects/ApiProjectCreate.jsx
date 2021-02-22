@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { useForm } from 'react-hook-form'
 
-const CodeProjectCreate = ({ setUpdated }) => {
+const ApiProjectCreate = ({ setUpdated }) => {
     const { register, handleSubmit, watch, errors } = useForm();
 
     const _handleProjectCreate = (data, e) => {
@@ -22,7 +22,7 @@ const CodeProjectCreate = ({ setUpdated }) => {
                 'content-type': `multipart/form-data; boundary=${imageData._boundary}`
             }
         }
-        axios.post('/api/v1/code_projects', imageData, config)
+        axios.post('/api/v1/api_projects', imageData, config)
         .then(resp => {
             setUpdated(true)
             setUpdated(false)
@@ -33,7 +33,7 @@ const CodeProjectCreate = ({ setUpdated }) => {
 
     return (
         <div>
-            Create a new code project here
+            Create a new API project here
             <form onSubmit={handleSubmit(_handleProjectCreate)}>
                 <input type='text' name='title' placeholder='Title' ref={register} />
                 <input type='text' name='description' placeholder='Description' ref={register} />
@@ -47,4 +47,4 @@ const CodeProjectCreate = ({ setUpdated }) => {
     )
 }
 
-export default CodeProjectCreate
+export default ApiProjectCreate

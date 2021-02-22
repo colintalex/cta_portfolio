@@ -8,7 +8,7 @@ const ContainerGraphicProjects = ({ currentAdmin }) => {
     const [ updated, setUpdated ] = useState(false)
 
     useEffect(() => {
-        axios.get('/api/v1/graphic_projects')
+        axios.get('/api/v1/fullstack_projects')
         .then(data => {
             setGraphicProjects(data.data.data)
         })

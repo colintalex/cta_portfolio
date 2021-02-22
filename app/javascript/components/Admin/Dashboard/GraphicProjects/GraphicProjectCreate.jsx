@@ -23,7 +23,7 @@ const GraphicProjectCreate = ({ currentAdmin, setUpdated }) => {
                 'content-type': `multipart/form-data; boundary=${imageData._boundary}`
             }
         }
-        axios.post('/api/v1/graphic_projects', imageData, config)
+        axios.post('/api/v1/fullstack_projects', imageData, config)
         .then(resp => {
             setUpdated(true)
             setUpdated(false)

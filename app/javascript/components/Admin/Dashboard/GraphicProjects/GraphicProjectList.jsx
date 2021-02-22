@@ -9,7 +9,7 @@ const GraphicProjectList = ({ graphicProjects, setUpdated }) => {
     const [ currentGraphicProject, setCurrentGraphicProject ] = useState({})
 
     const _handleProjectDelete = (data) => {
-        axios.delete(`/api/v1/graphic_projects/${parseInt(data)}`)
+        axios.delete(`/api/v1/fullstack_projects/${parseInt(data)}`)
         .then(data => {
             setUpdated(true)
             setUpdated(false)
@@ -19,7 +19,7 @@ const GraphicProjectList = ({ graphicProjects, setUpdated }) => {
     }
 
     const _handleProjectUpdate = (data) => {
-        axios.put(`/api/v1/graphic_projects/${parseInt(data.id)}`, data)
+        axios.put(`/api/v1/fullstack_projects/${parseInt(data.id)}`, data)
         .then(resp => {
             setUpdated(true)
             setUpdated(false)

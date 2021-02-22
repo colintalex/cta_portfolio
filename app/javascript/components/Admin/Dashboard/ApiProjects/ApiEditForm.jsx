@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react'
 import { useForm } from 'react-hook-form'
 
-const CodeEditForm = ({ currentCodeProject, _handleProjectUpdate, setEditMode }) => {
+const ApiEditForm = ({ currentApiProject, _handleProjectUpdate, setEditMode }) => {
 
-    const project = currentCodeProject.attributes;
+    const project = currentApiProject.attributes;
 
     const { register, handleSubmit, watch, errors } = useForm({
         defaultValues: {
@@ -13,7 +13,7 @@ const CodeEditForm = ({ currentCodeProject, _handleProjectUpdate, setEditMode })
             deploy_url: project.deploy_url,
             images: project.images,
             technology: project.technology,
-            id: currentCodeProject.id
+            id: currentApiProject.id
         }
     });
 
@@ -52,4 +52,4 @@ const CodeEditForm = ({ currentCodeProject, _handleProjectUpdate, setEditMode })
     )
 }
 
-export default CodeEditForm;
+export default ApiEditForm;
