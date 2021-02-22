@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useForm } from 'react-hook-form'
 
 
-const GraphicProjectCreate = ({ currentAdmin, setUpdated }) => {
+const FullstackProjectCreate = ({ currentAdmin, setUpdated }) => {
     const { register, handleSubmit, watch, errors } = useForm();
 
     const _handleProjectCreate = (data) => {
@@ -27,7 +27,7 @@ const GraphicProjectCreate = ({ currentAdmin, setUpdated }) => {
         .then(resp => {
             setUpdated(true)
             setUpdated(false)
-            document.getElementById('graphicCreateForm').reset();
+            document.getElementById('fullstack-create-form').reset();
         })
         .catch(error => console.log(error))
     }
@@ -35,8 +35,8 @@ const GraphicProjectCreate = ({ currentAdmin, setUpdated }) => {
 
     return (
         <div>
-            Create a new graphic project here
-            <form id='graphicCreateForm' onSubmit={handleSubmit(_handleProjectCreate)} encType='multipart/form-data'>
+            Create a new Fullstack project here
+            <form id='fullstack-create-form' onSubmit={handleSubmit(_handleProjectCreate)} encType='multipart/form-data'>
                 <input type='text' name='title' placeholder='Title' ref={register} />
                 <input type='text' name='description' placeholder='Description' ref={register} />
                 <input type='file' multiple name='images' placeholder='Images' ref={register} />
@@ -46,4 +46,4 @@ const GraphicProjectCreate = ({ currentAdmin, setUpdated }) => {
     )
 }
 
-export default GraphicProjectCreate
+export default FullstackProjectCreate

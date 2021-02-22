@@ -1,15 +1,15 @@
 import React, { Fragment } from 'react'
 import { useForm } from 'react-hook-form'
 
-const GraphicEditForm = ({ currentGraphicProject, _handleProjectUpdate, setEditMode }) => {
+const FullstackEditForm = ({ currentFullstackProject, _handleProjectUpdate, setEditMode }) => {
 
-    var project = currentGraphicProject.attributes
+    var project = currentFullstackProject.attributes
     const { register, handleSubmit, watch, errors } = useForm({
         defaultValues: {
             title: project.title,
             description: project.description,
             image_path: project.image_path,
-            id: currentGraphicProject.id
+            id: currentFullstackProject.id
         }
     });
 
@@ -45,4 +45,4 @@ const GraphicEditForm = ({ currentGraphicProject, _handleProjectUpdate, setEditM
     )
 }
 
-export default GraphicEditForm;
+export default FullstackEditForm;

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useForm } from 'react-hook-form'
+import FullstackEditForm from './FullstackEditForm'
 
-import GraphicEditForm from './GraphicEditForm'
-
-const GraphicProjectList = ({ graphicProjects, setUpdated }) => {
+const FullstackProjectList = ({ fullstackProjects, setUpdated }) => {
     const [ editMode, setEditMode ] = useState(false)
-    const [ currentGraphicProject, setCurrentGraphicProject ] = useState({})
+    const [ currentFullstackProject, setCurrentFullstackProject ] = useState({})
 
     const _handleProjectDelete = (data) => {
         axios.delete(`/api/v1/fullstack_projects/${parseInt(data)}`)
@@ -29,7 +28,7 @@ const GraphicProjectList = ({ graphicProjects, setUpdated }) => {
     }
 
 
-    const listGraphicProjects = graphicProjects && graphicProjects.map(item => {
+    const listfullstackProjects = fullstackProjects && fullstackProjects.map(item => {
             var proj = item.attributes
             return (
                 <div key={item.id} >
@@ -40,7 +39,7 @@ const GraphicProjectList = ({ graphicProjects, setUpdated }) => {
                     } <br/>
                     <button type='submit' onClick={e => {
                         setEditMode(true)
-                        setCurrentGraphicProject(item)
+                        setCurrentFullstackProject(item)
                         }}
                     >Edit</button>
                     <button type='submit' onClick={e => _handleProjectDelete(item.id)}>Delete</button>
@@ -50,10 +49,10 @@ const GraphicProjectList = ({ graphicProjects, setUpdated }) => {
 
     return (
         <div>
-            {listGraphicProjects}
+            {listfullstackProjects}
             { editMode &&
-                <GraphicEditForm 
-                    currentGraphicProject={currentGraphicProject}
+                <FullstackEditForm 
+                    currentFullstackProject={currentFullstackProject}
                     setEditMode={setEditMode}
                     _handleProjectUpdate={_handleProjectUpdate}
                 />
@@ -62,4 +61,4 @@ const GraphicProjectList = ({ graphicProjects, setUpdated }) => {
     )
 }
 
-export default GraphicProjectList
+export default FullstackProjectList
