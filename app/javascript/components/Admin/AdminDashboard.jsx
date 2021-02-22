@@ -8,7 +8,7 @@ const AdminDashboard = () => {
     const [ currentAdmin, setCurrentAdmin ] = useState(JSON.parse(sessionStorage.getItem('currentAdmin')) || {})
 
     const _handleAdminUpdate = (data) => {
-        axios.put(`/api/v1/admin/${parseInt(data.id)}`, data)
+        axios.put(`/api/v1/admin/${currentAdmin.id}`, data)
         .then(resp => {
             setCurrentAdmin(resp.data.data)
         })

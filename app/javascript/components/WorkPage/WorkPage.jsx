@@ -45,7 +45,8 @@ const StyledWorkPage = styled.div`
             }
         }
         #tabs-container button {
-            font-size: 1.5em;
+            font-size: 1.3em;
+            margin: 0px;
         }
         .tab {
         }

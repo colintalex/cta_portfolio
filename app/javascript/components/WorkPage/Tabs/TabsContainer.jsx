@@ -40,12 +40,15 @@ const StyledTabItem = styled.li`
         color: ${props => 
             (props.activetab == 'tab-code-projects') ? '#E1AD5B' : '#1e97cc'
         };
+        margin-right: 20px;
     }
     
     #graphic-tab-button {
         color: ${props => 
             (props.activetab == 'tab-graphic-projects') ? '#E1AD5B' : '#1e97cc'
         };
+        margin-left: 20px;
+
     }
 
 `
@@ -97,7 +100,7 @@ const TabsContainer = () => {
                 <StyledPageHeader>My Personal Work</StyledPageHeader>
                 <StyledTabList activeTab={activeTab}>
                     <StyledTabItem activetab={activeTab} className='tab' id='tab-code-projects'>
-                        <StyledTabs id='code-tab-button' onClick={e => setActiveTab('tab-code-projects')}>API Projects</StyledTabs>
+                        <StyledTabs id='code-tab-button' onClick={e => setActiveTab('tab-code-projects')}>Backend Projects</StyledTabs>
                     </StyledTabItem>
                         <StyledArrowIcon
                         id="tab-arrow"
