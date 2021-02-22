@@ -36,7 +36,6 @@ const StyledProjHeading = styled.h3`
     display: inline;
     font-size: 2em;
     grid-column: 1 / 4;
-    padding-left: 15px;
 `
 
 const StyledProjDescription = styled.div`
@@ -47,16 +46,6 @@ const StyledProjDescription = styled.div`
     overflow: scroll;
     height: 200px;
     display: inline-block;
-    padding: 0 15px;
-`
-
-const StyledProjImage = styled.img`
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: inherit;
-    max-height: 400px;
-    border-radius: 5px;
 `
 
 const ImageWrapper = styled.div`
@@ -104,16 +93,16 @@ const StyledProjectContent = styled.div`
     hr{
         grid-column: 1/ 5;
     }
+
+    @media (max-width: 900px){
+        grid-template-columns: 1fr;
+    }
 `
 
 const StyledProjTech = styled.p`
     font-size: 1.7em;
-    text-align: end;
     margin: 5px;
 `
-const StyledtechWrapper = styled.div`
-    display: inline-block;
-` 
 
 const StyledLinksWrapper = styled.div`
     grid-column: 1 / 3;
@@ -172,6 +161,16 @@ const StyledChallenges = styled.div`
 
     ul{
         font-size: 1.3em;
+    }
+
+    @media (max-width: 900px){
+        h4 {
+            font-size: 1.2em;
+        }
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
     }
 `
 
