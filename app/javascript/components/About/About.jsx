@@ -169,8 +169,10 @@ const AboutPage = () => {
                         <h4>- Albert Einstein</h4>
                     </Quote>
                     <StyledBio>
-                        <p>As far back as I can remember, I was always building or fixing something. Whether it was renovations/repairs in the house, fixing bicycles or making a go-kart: there was always something brewing. I was blessed to have a workshop to tinker around in, which naturally grew my creative cravings.
-                        Fixing and building was my escape for the stresses of growing up, and to this day, my passionate focus.</p>
+                        <p>As far back as I can remember, I was always building or fixing something. Whether it was renovations/repairs in the house, fixing bicycles or making a go-kart: there was always something brewing.
+                        Fixing and building was my escape and my outlet, I enjoy the process and I'm always fascinated by what I learn.<br/><br/>
+                        To this day, I geek out on learning how it all works. With the digital era upon us, I was drawn to software engineering like a moth to light. Using the best parts of my brain to enjoyable and effectively solve problems is all I can ask for. 
+                        I'm truly grateful to be on this path, and beyond appreciative for all the love and support from family, friends and fellow engineers!</p>
                     </StyledBio>
                 </QuoteWrapper>
             </div>
