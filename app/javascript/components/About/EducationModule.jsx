@@ -17,7 +17,7 @@ const StyledEducation = styled.div`
         color: black;
     }
     #section-details {
-        color: #CC851E;
+        rgb(30, 151, 204);
         padding-left: 5px;
         margin: 0;
     }
