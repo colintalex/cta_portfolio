@@ -30,6 +30,8 @@ const ApiEditForm = ({ currentApiProject, _handleProjectUpdate, setEditMode }) =
                 <input type='text' name='deploy_url' ref={register} />
                 <label for=''>Technology</label>
                 <input type='text' name='technology' ref={register} />
+                <label for=''>Challenges</label>
+                <input type='text' name='challenges' ref={register} />
                 <br/>Select images to delete<br/>
 
                 {

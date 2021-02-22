@@ -40,6 +40,7 @@ const ApiProjectCreate = ({ setUpdated }) => {
                 <input type='text' name='github_url' placeholder='GitHub URL' ref={register} />
                 <input type='text' name='deploy_url' placeholder='Deployment URL' ref={register} />
                 <input type='text' name='technology' placeholder='Technology' ref={register} />
+                <input type='text' name='challenges' placeholder='Challenges' ref={register} />
                 <input type='file' multiple name='images' placeholder='Images' ref={register} />
                 <input type='submit' />
             </form>

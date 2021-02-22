@@ -193,16 +193,7 @@ const ApiProjectModule = ({ activeTab }) => {
                         <hr/>
                         Challenges:
                         <ul>
-                            {/* {proj.challenges && proj.challenges.map(chal => <li>{chal}</li>)} */}
-                            <li>
-                                Lots of tough challenges
-                            </li>
-                            <li>
-                                Diffuculty overload
-                            </li>
-                            <li>
-                                Accomplish much, wow
-                            </li>
+                            {proj.challenges && proj.challenges.map(chal => <li>{chal}</li>)}
                         </ul>
                     </StyledChallenges>
                 </StyledProjectContent>
