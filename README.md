@@ -4,7 +4,7 @@
 
 ## Personal Portfolio Website
 
-#### Ruby on Rails App with PostgresQL, displaying on React w/ Webpack. TDD using RSpec/Capybar.
+#### Ruby on Rails App with PostgresQL, displaying on React w/ Webpack. TDD using RSpec/Capybara.
 #### Deployed live on Ubuntu v20 remote server, www.colinalex.com
 
 <hr/>
