@@ -10,7 +10,7 @@
 <hr/>
 <p align="center" style="margin-top:15px;">
   <a href="" target="">
-    <img src="https://storage.googleapis.com/images_ctaportfolio/dlok3naz6f7hkw27upa941y9llj2?GoogleAccessId=cta-portfolio%40ctaportfolio.iam.gserviceaccount.com&Expires=1614081983&Signature=dJNaLV4gzyv7QA%2B9sVS3SxNw82BJqwcoEVOjTCyyssorYVtG6AZB6HTVUtGEhbM0IlVoXsKJQeFaDdr7nBui%2BHdSrNCq3M2zorXWYzcbb8EBzxG%2Fl98QMypA2l70tURA7pPBSshs7301O1gReUFTBnRTkbvpZSUvV3kNT6s3SEkT5eujKfRu2jYOXdDpdDkgBiNLVw0p7sT9E0GFM9SVi5G42o7TdxeOYvhx3nzeNwrbdXemctAsfvtiTk%2FuehqvcgMZr3maUSdmbl2eEfp5E2XQeqtBKeXWUAqHuxcH7vGt598BkgZHfRpf8qSgqL7Ptsm1X2gEE3MN9U6WIp391g%3D%3D&response-content-disposition=inline%3B+filename%3D%22Screen+Shot+2021-02-22+at+2.16.35+AM.png%22%3B+filename%2A%3DUTF-8%27%27Screen%2520Shot%25202021-02-22%2520at%25202.16.35%2520AM.png&response-content-type=image%2Fpng" alt="profile" height="500"/>
+    <img src="./app/assets/images/screenshot.png" alt="profile" height="500"/>
   </a>
 </p>
 <hr/>
