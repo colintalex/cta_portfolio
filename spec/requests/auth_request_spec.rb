@@ -8,7 +8,7 @@ RSpec.describe "Admin endpoints", type: :request do
     )}
 
     describe "logs in admin with good credentials" do
-        xit "returns a successful response" do
+        it "returns a successful response" do
         post "/api/v1/auth/login", :params => {auth: {email: admin.email, password: admin.password}}
 
         expect(response).to have_http_status(:success)
@@ -21,7 +21,7 @@ RSpec.describe "Admin endpoints", type: :request do
     end
 
     context 'Update an admin with id and body' do
-        xit "returns a successful response" do
+        it "returns a successful response" do
         new_attr = {email: 'colintalex@gmail.com'}
         
         put "/api/v1/admin/#{admin.id}", :params => new_attr
