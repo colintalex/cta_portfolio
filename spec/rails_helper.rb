@@ -1,5 +1,4 @@
-require 'simplecov'
-SimpleCov.start
+
 
 require 'spec_helper'
 require File.expand_path('../config/environment', __dir__)
