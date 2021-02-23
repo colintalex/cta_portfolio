@@ -3,7 +3,7 @@ class Api::V1::Auth::AuthController < ApplicationController
     
     def login
         admin = Admin.find_by(email: admin_params[:email])
-        if admin && admin.authenticate(params[:password])
+        if admin && admin.authenticate(admin_params[:password])
             payload = {admin_id: admin.id}
             admin.token = JWT.encode(payload, Rails.application.credentials.JWT_SECRET) # Hide secret in ENV
             admin.save
