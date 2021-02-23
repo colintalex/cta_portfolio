@@ -1,6 +1,6 @@
 # README
 [![Build Status](https://travis-ci.com/colintalex/cta_portfolio.svg?branch=main)](https://travis-ci.com/colintalex/cta_portfolio)
-<img src='./app/assets/images/coverage.svg'>
+![Coverage](./coverage/coverage.svg)
 
 ## Personal Portfolio Website
 
