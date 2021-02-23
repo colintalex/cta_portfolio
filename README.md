@@ -4,7 +4,8 @@
 
 ## Personal Portfolio Website
 
-#### Ruby on Rails App with MySQL utilizing Webpack tags to render ReactJS in view.
+#### Ruby on Rails App with PostgresQL, displaying on React w/ Webpack. TDD using RSpec/Capybar.
+#### Deployed live on Ubuntu v20 remote server, www.colinalex.com
 
 <hr/>
 <p align="center" style="margin-top:15px;">
