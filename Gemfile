@@ -33,11 +33,10 @@ group :development, :test do
   gem 'pry'
   gem 'capybara'
   gem 'shoulda-matchers'
-  gem 'simplecov'
 end
 
 group :test do
-  gem 'simplecov-shield'
+  # gem 'simplecov'
 end
 
 group :development do
